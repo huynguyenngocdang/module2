@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class ConvertTemperature {
+
+    interface Calculate{
+        double valueConverted();
+    }
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         int choice;
@@ -9,26 +13,33 @@ public class ConvertTemperature {
             System.out.println("2. Celsius to Fahrenheit");
             System.out.println("0. Exit ");
             choice = scanner.nextInt();
-        } while (choice != 0);
+
         switch (choice) {
             case 1:
                 System.out.println("Input Fahrenheit");
                 double fahrenheit = scanner.nextDouble();
-                double celsius = fahrenheitToCelsius(fahrenheit);
-                System.out.println("Celsius: " + celsius);
+//                double celsius = fahrenheitToCelsius(fahrenheit);
+//                System.out.println("Celsius: " + celsius);
+                Calculate c = () -> ((5.0 / 9) * (fahrenheit - 32));
+
+                System.out.println("Celsius: " + c.valueConverted());
                 break;
             case 2:
                 System.out.println("Input Celsius");
-                celsius = scanner.nextDouble();
-                fahrenheit = celsiusToFahrenheit(celsius);
-
-                System.out.println("Fahrenheit: " + fahrenheit);
+                double celsius = scanner.nextDouble();
+//                fahrenheit = celsiusToFahrenheit(celsius);
+//                System.out.println("Fahrenheit: " + fahrenheit);
+                Calculate f = () -> ((celsius * 9 / 5) + 32);
+                System.out.println("Fahrenheit: " + f.valueConverted());
                 break;
-
+            case 0:
+                System.out.println("Exiting");
+                break;
             default:
                 System.out.println("Invalid input");
                 break;
         }
+        } while (choice != 0);
 
 
     }
