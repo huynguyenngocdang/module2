@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class AddElementArray {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        int[] numbers = {10, 4, 6, 7, 8};
+
+        System.out.println("Input array size");
+        int size = scanner.nextInt();
+        int[] numbers = getArray(size);
 
         String displayOrigin = displayArray(numbers);
         System.out.println("Origin: " + displayOrigin);
@@ -20,6 +23,18 @@ public class AddElementArray {
             System.out.println("Index added is out of range");
         }
     }
+
+    private static int[] getArray(int size) {
+        int[] numbers = new int[size];
+        int currentIndex = 0;
+        do {
+            System.out.printf("Input element %d ", (currentIndex+1));
+            numbers[currentIndex] = scanner.nextInt();
+            currentIndex++;
+        } while (currentIndex < size);
+        return numbers;
+    }
+
     private static String displayArray (int[] numbers) {
         String display = "";
         for (int number : numbers) {
