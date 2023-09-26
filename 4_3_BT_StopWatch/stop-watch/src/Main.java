@@ -10,10 +10,13 @@ public class Main {
         int choice;
         StopWatch stopWatch = new StopWatch(0, 0, false);
         do {
-            System.out.println("1. Start stopwatch");
-            System.out.println("2. End stopwatch");
-            System.out.println("3. Get elapsed time");
-            System.out.println("0. Exit");
+            System.out.println("""
+                            \n1. Start stopwatch
+                            2. End stopwatch
+                            3. Get elapsed time
+                            0. Exit
+                             """
+                    );
             choice = scanner.nextInt();
 
 
