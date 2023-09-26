@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Create a circle");
         double radius = scanner.nextDouble();
-        Circle thisCircle = new Circle(radius);
-        System.out.println("This radius: " + thisCircle.getRadius());
-        System.out.println("This color: " + thisCircle.color);
-        System.out.println("This area: " + thisCircle.getArea());
+        Circle testCircle = new Circle(radius);
+        System.out.println("This radius: " + testCircle.getRadius());
+        System.out.println("This color: " + testCircle.getColor());
+        System.out.println("This area: " + testCircle.getArea());
     }
 }

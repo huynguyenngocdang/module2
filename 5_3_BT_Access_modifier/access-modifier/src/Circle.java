@@ -1,6 +1,6 @@
 public class Circle {
-    double r;
-    String color = "red";
+    private double r = 1;
+    private String color = "red";
 
     Circle() {
 
@@ -11,10 +11,14 @@ public class Circle {
         this.color = color;
     }
 
-    double getRadius () {
+    double getRadius() {
         return this.r;
     }
     double getArea () {
         return Math.PI * Math.pow(this.r, 2);
+    }
+
+    String getColor() {
+        return this.color;
     }
 }
