@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="45b0796c-2e47-4547-87c1-788d5f58220a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../11_5_BT_Trien_khai_queue_lien_ket_vong/simple-queue/src/IProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11_5_BT_Trien_khai_queue_lien_ket_vong/simple-queue/src/MyNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11_5_BT_Trien_khai_queue_lien_ket_vong/simple-queue/src/MyQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11_5_BT_Trien_khai_queue_lien_ket_vong/simple-queue/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11_6_BT_Trien_khai_queue_mang/simple-queue-array/src/MyQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../11_6_BT_Trien_khai_queue_mang/simple-queue-array/src/MyQueueClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../X_1_JFrame/simple-JFrame/src/MyFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../X_2_JFrame_Labels/simple-JFrame-labels/src/MyJFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11_1_TH_Trien_khai_stack_su_dung_LinkedList/simple-stack/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11_1_TH_Trien_khai_stack_su_dung_LinkedList/simple-stack/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11_3_BT_Dao_nguoc_phan_tu_stack/simple-reverse/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11_3_BT_Dao_nguoc_phan_tu_stack/simple-reverse/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11_4_BT_Dem_word_count/simple-word-count/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../11_4_BT_Dem_word_count/simple-word-count/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_10_BT_Ung_dung_doc_so_thanh_chu/number-to-word/src/numberToWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1_10_BT_Ung_dung_doc_so_thanh_chu/number-to-word/src/numberToWord.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2WW3FgXhUODjWWpZVowRHOtdgdz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Huy/CodeGym/Project module 2/module2/1_6_TH_Kiem_tra_nam_nhuan",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45b0796c-2e47-4547-87c1-788d5f58220a" name="Changes" comment="" />
+      <created>1696834406964</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696834406964</updated>
+      <workItem from="1696834407974" duration="44000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

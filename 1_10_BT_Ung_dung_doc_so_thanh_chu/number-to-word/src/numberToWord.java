@@ -21,6 +21,9 @@ public class numberToWord {
                 "seventy ",
                 "eighty ",
                 "ninety "};
+        if (numConvert == 0) {
+            System.out.println("Zero");
+        }
 
         if (numConvert % 100 < 20) {
             word = numNames[numConvert % 100];
