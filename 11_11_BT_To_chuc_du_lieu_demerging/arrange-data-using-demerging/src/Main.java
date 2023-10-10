@@ -15,11 +15,11 @@ public class Main {
             queueMale.sortStudentByDob();
             queueFemale.sortStudentByDob();
 
-            while (queueFemale.getStudentLinkedList().size() != 0) {
+            while (!queueFemale.getStudentLinkedList().isEmpty()) {
                 result +=  queueFemale.dequeueStudent().toString() + "\n" ;
             }
 
-            while (queueMale.getStudentLinkedList().size() != 0) {
+            while (!queueMale.getStudentLinkedList().isEmpty()) {
                result +=  queueMale.dequeueStudent().toString() + "\n";
             }
 
