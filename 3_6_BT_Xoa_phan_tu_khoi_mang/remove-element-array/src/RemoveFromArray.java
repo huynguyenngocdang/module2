@@ -11,9 +11,7 @@ public class RemoveFromArray {
         System.out.println("Origin array: " + displayOrigin);
         System.out.println("Input value to remove");
         int valReplace = scanner.nextInt();
-//        int[] numbersNew = removeArray(numbers, valReplace);
-//        String displayRemoved = displayArray(numbersNew);
-//        System.out.println("New array: " + displayRemoved);
+
             numbers = removeArray(numbers, valReplace);
         String displayRemoved = displayArray(numbers);
         System.out.println("New array: " + displayRemoved);

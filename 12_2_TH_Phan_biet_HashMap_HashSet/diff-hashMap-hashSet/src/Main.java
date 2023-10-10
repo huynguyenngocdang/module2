@@ -19,7 +19,7 @@ public class Main {
             System.out.println(student.toString());
         }
         System.out.println("...........Set");
-        
+
         Set<Student> students = new HashSet<>();
         students.add(student1);
         students.add(student2);
