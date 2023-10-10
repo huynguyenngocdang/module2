@@ -14,7 +14,6 @@ public class Helper {
         return a;
 
     }
-
     public boolean isZero (int a) {
 
         if (a == 0) {
