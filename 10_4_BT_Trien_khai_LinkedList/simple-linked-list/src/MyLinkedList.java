@@ -1,102 +1,62 @@
+import org.w3c.dom.Node;
+
 import java.util.LinkedList;
 
 public class MyLinkedList<E> {
+    private LinkedList<E> myList = new LinkedList<>();
+    private E type;
     private Node head;
-    private int numNodes;
+    private int numNodes = 10;
 
-    private class Node {
-        private Node next;
-        private Object data;
-        private Node first;
-
-        private Node last;
-
-        public Node(Object data) {
-            this.data = data;
-        }
-
-        public Object getData() {
-            return this.data;
-        }
+    public void MyLinkedList(E element) {
+        this.type = element;
     }
 
     public void add(int index, E element) {
-        Node temp = head;
-        Node holder;
-
-        for (int i = 0; i < index - 1 && temp.next != null; i++) {
-            temp = temp.next;
-        }
-        holder = temp.next;
-        temp.next = new Node(element);
-        temp.next.next = holder;
-        numNodes++;
+        myList.add(index, element);
+    }
+    public void addFirst(E element) {
+        myList.addFirst(element);
     }
 
-    public void addFirst(E e) {
-
-    }
-
-    public void addLast(E e) {
-
+    public void addLast (E element) {
+        myList.addLast(element);
     }
 
     public E remove(int index) {
-
-        return null;
+        return myList.remove(index);
     }
-
     public boolean remove(Object e) {
-
-        return false;
+        return remove(e);
     }
-
     public int size() {
-
-        return 0;
+        return myList.size();
     }
-
     @Override
     public E clone() {
-
-        return null;
+        return (E) myList.clone();
     }
 
-    public boolean contains(E o) {
-
-        return false;
+    public boolean contains (E o) {
+        return myList.contains(o);
     }
-
     public int indexOf(E o) {
-
-        return 0;
+        return myList.indexOf(o);
     }
-
     public boolean add(E e) {
-
-        return false;
+        return myList.add(e);
     }
 
     public void ensureCapacity(int minCapacity) {
 
     }
-
     public E get(int i) {
-
-        return null;
+        return (E) myList.get(i);
     }
-
     public E getFirst() {
-
-        return null;
+        return (E) myList.getFirst();
     }
-
     public E getLast() {
-        return null;
-    }
-
-    public void clear() {
-
+        return (E) myList.getLast();
     }
 }
-
