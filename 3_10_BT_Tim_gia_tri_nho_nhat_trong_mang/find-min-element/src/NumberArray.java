@@ -8,14 +8,14 @@ public class NumberArray {
         ArrayList<Integer> numbers = inputArray();
         int min = findSmallestInArray(numbers);
         System.out.println("Array: " + displayArray(numbers));
-        System.out.println("Largest value: " + min + " at index of " + numbers.indexOf(min));
+        System.out.println("Smallest value: " + min + " at index of " + numbers.indexOf(min));
 
     }
 
     private static int findSmallestInArray(ArrayList<Integer> numbers) {
         int min = numbers.get(0);
         for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i) > min) {
+            if (numbers.get(i) < min) {
                 min = numbers.get(i);
             }
         }
