@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd99b081-b235-42f7-8a63-c08cd0329b96" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/BinarySearchTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BinarySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../12_6_BT_Cai_dat_duyet_theo_postorder_BST/search-post-order-BST/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_6_BT_Cai_dat_duyet_theo_postorder_BST/search-post-order-BST/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../13_2_BT_Tim_chuoi_tang_dan_co_do_dai_lon_nhat/find-largest-char-ascii/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../13_2_BT_Tim_chuoi_tang_dan_co_do_dai_lon_nhat/find-largest-char-ascii/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../13_2_BT_Tim_chuoi_tang_dan_co_do_dai_lon_nhat/find-largest-char-ascii/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../13_2_BT_Tim_chuoi_tang_dan_co_do_dai_lon_nhat/find-largest-char-ascii/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../13_2_BT_Tim_chuoi_tang_dan_co_do_dai_lon_nhat/find-largest-char-ascii/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../13_2_BT_Tim_chuoi_tang_dan_co_do_dai_lon_nhat/find-largest-char-ascii/find-largest-char-ascii.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../13_2_BT_Tim_chuoi_tang_dan_co_do_dai_lon_nhat/find-largest-char-ascii/src/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696987838954</updated>
-      <workItem from="1696987839943" duration="1156000" />
+      <workItem from="1696987839943" duration="3164000" />
     </task>
     <servers />
   </component>
