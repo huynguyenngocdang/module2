@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43d1fdcf-9541-42f0-bd3f-cf3db4c3cc48" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../14_4_BT_Cai_dat_sap_xep_chen_Insertion_Sort/implement-insertion-sort/src/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../14_4_BT_Cai_dat_sap_xep_chen_Insertion_Sort/implement-insertion-sort/src/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../14_4_BT_Cai_dat_sap_xep_chen_Insertion_Sort/implement-insertion-sort/src/InsertionSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696919792952</updated>
       <workItem from="1696919793946" duration="201000" />
-      <workItem from="1697009209898" duration="1163000" />
+      <workItem from="1697009209898" duration="1166000" />
     </task>
     <servers />
   </component>
