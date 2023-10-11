@@ -30,13 +30,15 @@ public class NumberArray {
 
     private static ArrayList<Integer> inputArray() {
         ArrayList<Integer> numbers = new ArrayList<>();
-        String answer;
-        do {
-            System.out.println("Input elements: ");
-            numbers.add(scanner.nextInt());
-            System.out.println("Continue Y/N: ");
-            answer = scanner.next().toUpperCase();
-        } while (!answer.equals("N"));
+
+        System.out.println("Input array, divide by coma");
+        String str = scanner.nextLine();
+        str = str.replaceAll(" ", "");
+        String[] answer = str.split(",");
+        for (String num : answer
+        ) {
+            numbers.add(Integer.valueOf(num));
+        }
         return numbers;
     }
 
