@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Sony Xperia 3",
+    "type": "Phone",
+    "producer": "Sony",
+    "price": 5000000,
+    "amount": 10,
+    "seller": "Anonymous"
+  },
+  {
+    "name": "Sony Xperia 5",
+    "type": "Phone",
+    "producer": "Sony",
+    "price": 10000000,
+    "amount": 10,
+    "seller": "Man"
+  },
+  {
+    "name": "Iphone 7",
+    "type": "Phone",
+    "producer": "Apple",
+    "price": 7000000,
+    "amount": 10,
+    "seller": "Anonymous"
+  },
+  {
+    "name": "Iphone 15",
+    "type": "Phone",
+    "producer": "Apple",
+    "price": 15000000,
+    "amount": 10,
+    "seller": "Man"
+  }
+]

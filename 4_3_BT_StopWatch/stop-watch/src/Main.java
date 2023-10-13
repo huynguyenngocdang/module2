@@ -4,8 +4,7 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        long startTime = 0;
-        long endTime = 0;
+
         long elapsed = 0;
         int choice;
         StopWatch stopWatch = new StopWatch(0, 0, false);
