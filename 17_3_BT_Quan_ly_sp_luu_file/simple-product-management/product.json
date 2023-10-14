@@ -1,0 +1,26 @@
+[
+  {
+    "productId": 1,
+    "productName": "Iphone7s",
+    "productPrice": 120.0,
+    "productType": "Phone",
+    "productManufacturer": "Apple",
+    "productDescription": "This is a Phone produced by Apple"
+  },
+  {
+    "productId": 2,
+    "productName": "Iphone15",
+    "productPrice": 240.0,
+    "productType": "Phone",
+    "productManufacturer": "Apple",
+    "productDescription": "This is a Phone produced by Apple"
+  },
+  {
+    "productId": 3,
+    "productName": "Sony_Xperia",
+    "productPrice": 200.0,
+    "productType": "Phone",
+    "productManufacturer": "Sony",
+    "productDescription": "This is a Phone produced by Sony"
+  }
+]
