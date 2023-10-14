@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "code": "AU",
+    "name": "Australia"
+  },
+  {
+    "id": 2,
+    "code": "CN",
+    "name": "China"
+  },
+  {
+    "id": 3,
+    "code": "AU",
+    "name": "Australia"
+  },
+  {
+    "id": 4,
+    "code": "CN",
+    "name": "China"
+  },
+  {
+    "id": 5,
+    "code": "JP",
+    "name": "Japan"
+  },
+  {
+    "id": 6,
+    "code": "CN",
+    "name": "China"
+  },
+  {
+    "id": 7,
+    "code": "JP",
+    "name": "Japan"
+  },
+  {
+    "id": 8,
+    "code": "TH",
+    "name": "Thailand"
+  }
+]
