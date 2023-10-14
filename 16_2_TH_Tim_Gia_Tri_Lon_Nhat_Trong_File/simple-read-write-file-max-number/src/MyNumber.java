@@ -28,10 +28,6 @@ public class MyNumber {
             Integer[] numbersRead = gson.fromJson(reader, Integer[].class);
             Arrays.sort(numbersRead, Collections.reverseOrder());
 
-//            for (int number: numbersRead
-//                 ) {
-//                System.out.println(number);
-//            }
             System.out.println(numbersRead[0]);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
