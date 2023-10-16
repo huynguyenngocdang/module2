@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "userName": "Admin",
+    "userPassword": "123",
+    "userType": "admin",
+    "userCash": 1000000.0,
+    "isSetPermission": true,
+    "isCreateUser": true,
+    "isRemoveUser": true
+  },
+  {
+    "id": 2,
+    "userName": "Huy",
+    "userPassword": "123",
+    "userType": "normal",
+    "userCash": 0.0,
+    "isSetPermission": false,
+    "isCreateUser": false,
+    "isRemoveUser": false
+  },
+  {
+    "id": 3,
+    "userName": "Giang",
+    "userPassword": "123",
+    "userType": "normal",
+    "userCash": 300.0,
+    "isSetPermission": false,
+    "isCreateUser": false,
+    "isRemoveUser": false
+  }
+]

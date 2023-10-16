@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "userName": "Amin",
+    "userPassword": "123",
+    "isSetPermission": true,
+    "isCreateUser": true,
+    "isRemoveUser": true
+  },
+  {
+    "id": 2,
+    "userName": "Huy",
+    "userPassword": "123",
+    "isSetPermission": false,
+    "isCreateUser": false,
+    "isRemoveUser": false
+  }
+]
