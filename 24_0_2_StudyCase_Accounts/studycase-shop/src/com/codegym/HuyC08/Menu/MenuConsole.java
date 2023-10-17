@@ -65,4 +65,21 @@ public class MenuConsole {
                 Your final wallet will be %.2f
                 Do you wish to change? (Y/N)""", currentlyHave, -priceChange, currentlyHave - priceChange);;
     }
+
+    public static void confirmPurchaseProduct( int sellerId, String sellerName, int productId, String productName, double productPrice, double productQuantity, double currentCash){
+        double productTotalCost = productPrice * productQuantity;
+        double cashAfterPurchase = currentCash - productTotalCost;
+        System.out.printf("""
+                You are about to buy from:
+                Seller id = %d
+                Seller name = %s 
+                Product id = %d
+                Product Name = %s
+                Product Price = %.2f
+                Product Quantity = %.2f
+                Product Total Cost = %.2f
+                Your current cash = %.2f
+                Your cash after purchase = %.2f
+                Do you want to buy (Y/N)""", sellerId, sellerName, productId, productName, productPrice, productQuantity, productTotalCost, currentCash, cashAfterPurchase);
+    }
 }

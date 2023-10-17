@@ -1,0 +1,62 @@
+[
+  {
+    "orderId": 1,
+    "customerId": 3,
+    "sellerId": 2,
+    "productId": 1,
+    "price": 700.0,
+    "quantity": 2.0,
+    "totalCost": 1400.0,
+    "orderDate": "17/10/2023,08:30:07"
+  },
+  {
+    "orderId": 2,
+    "customerId": 3,
+    "sellerId": 2,
+    "productId": 1,
+    "price": 700.0,
+    "quantity": 3.0,
+    "totalCost": 2100.0,
+    "orderDate": "17/10/2023,08:30:07"
+  },
+  {
+    "orderId": 3,
+    "customerId": 3,
+    "sellerId": 2,
+    "productId": 2,
+    "price": 1000.0,
+    "quantity": 1.0,
+    "totalCost": 1000.0,
+    "orderDate": "17/10/2023,11:13:05"
+  },
+  {
+    "orderId": 4,
+    "customerId": 3,
+    "sellerId": 2,
+    "productId": 2,
+    "price": 1000.0,
+    "quantity": 1.0,
+    "totalCost": 1000.0,
+    "orderDate": "17/10/2023,11:16:58"
+  },
+  {
+    "orderId": 5,
+    "customerId": 3,
+    "sellerId": 2,
+    "productId": 2,
+    "price": 1000.0,
+    "quantity": 1.0,
+    "totalCost": 1000.0,
+    "orderDate": "17/10/2023,11:35:45"
+  },
+  {
+    "orderId": 6,
+    "customerId": 3,
+    "sellerId": 2,
+    "productId": 2,
+    "price": 1000.0,
+    "quantity": 1.0,
+    "totalCost": 1000.0,
+    "orderDate": "17/10/2023,13:36:57"
+  }
+]

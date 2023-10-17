@@ -21,6 +21,7 @@ public class ProductService {
     public static LinkedList<Product> llProduct = productFileRead();
     private static LinkedList<Product> llProductCurrentUser;
     public static Product productCurrentUser;
+    public static Product productCurrentSeller;
     public static void productFileWrite(LinkedList<Product> llProduct) {
         try {
             FileWriter writer = new FileWriter("data/product.json");
@@ -66,6 +67,36 @@ public class ProductService {
             System.out.println(product.toString());
         }
     }
+    public static boolean isProductBelongSeller(int productId, int sellerId){
+
+        for (Product product: llProduct
+        ) {
+            if (product.getProductId() == productId && product.getSellerId() == sellerId) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public static void getProductSeller(int productId, int sellerId) {
+        for (Product product : llProduct
+                ) {
+            if (product.getProductId() == productId && product.getSellerId() == sellerId){
+                productCurrentSeller = product;
+            }
+        }
+    }
+    public static boolean isEnoughProductSeller(int amount) {
+        return (productCurrentSeller.getProductQuantity() - amount >= 0);
+    }
+
+    public static void printProductsAllUser() {
+        for (Product product: llProduct
+        ) {
+            System.out.println(product.toString());
+        }
+    }
 
     public static double reduceCurrentUserCash(double amount) {
        return  (UserService.currUser.getUserCash() - amount);
@@ -96,7 +127,7 @@ public class ProductService {
         productFileWrite(llProduct);
     }
 
-    public static void getCurrentProduct(int productId, int userId) {
+    public static void getCurrentProductUser(int productId, int userId) {
         getProductsCurrentUser(userId);
             for (Product product:llProduct
             ) {
@@ -142,17 +173,17 @@ public class ProductService {
         productFileWrite(llProduct);
     }
 
-    public static void updateProductDescription(String newProductManuDescription) {
+    public static void updateProductDescription(String newProductDescription) {
         llProduct.remove(productCurrentUser);
-        productCurrentUser.setProductDescription(newProductManuDescription);
+        productCurrentUser.setProductDescription(newProductDescription);
         llProduct.add(productCurrentUser);
         sortProductLinkedList();
         productFileWrite(llProduct);
     }
 
-    public static void updateProductManufacturer(String newProductManuFacturer) {
+    public static void updateProductManufacturer(String newProductManufacturer) {
         llProduct.remove(productCurrentUser);
-        productCurrentUser.setProductManufacturer(newProductManuFacturer);
+        productCurrentUser.setProductManufacturer(newProductManufacturer);
         llProduct.add(productCurrentUser);
         sortProductLinkedList();
         productFileWrite(llProduct);
@@ -162,6 +193,14 @@ public class ProductService {
         llProduct.remove(productCurrentUser);
         productCurrentUser.setProductQuantity(newProductQuantity);
         llProduct.add(productCurrentUser);
+        sortProductLinkedList();
+        productFileWrite(llProduct);
+    }
+
+    public static void updateProductQuantity(double newProductQuantity, Product product) {
+        llProduct.remove(product);
+        product.setProductQuantity(newProductQuantity);
+        llProduct.add(product);
         sortProductLinkedList();
         productFileWrite(llProduct);
     }

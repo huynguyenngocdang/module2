@@ -14,7 +14,7 @@
     "userName": "Huy",
     "userPassword": "123",
     "userType": "normal",
-    "userCash": 0.0,
+    "userCash": 4000.0,
     "isSetPermission": false,
     "isCreateUser": false,
     "isRemoveUser": false
@@ -24,7 +24,7 @@
     "userName": "Giang",
     "userPassword": "123",
     "userType": "normal",
-    "userCash": 300.0,
+    "userCash": 1000.0,
     "isSetPermission": false,
     "isCreateUser": false,
     "isRemoveUser": false

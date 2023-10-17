@@ -1,7 +1,9 @@
 package com.codegym.HuyC08.Menu;
 
+import com.codegym.HuyC08.Entity.PurchaseOrder;
 import com.codegym.HuyC08.Entity.User;
 import com.codegym.HuyC08.Service.ProductService;
+import com.codegym.HuyC08.Service.PurchaseOrderService;
 import com.codegym.HuyC08.Service.UserService;
 
 import java.util.Scanner;
@@ -13,12 +15,12 @@ public class Navigation {
         UserService.llUser = UserService.userFileRead();
         int choice = -1;
         int wrongPasswordCount = 0;
-        while (choice!= 0 && wrongPasswordCount <= UserService.wrongPasswordCountAttempt) {
+        while (choice!= 0 && wrongPasswordCount < UserService.wrongPasswordCountAttempt) {
             MenuMain.menuLogin();
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    if (wrongPasswordCount == UserService.wrongPasswordCountAttempt - 1) {
+                    if (wrongPasswordCount == (UserService.wrongPasswordCountAttempt - 1)) {
                         MenuConsole.wrongPasswordEnterFinal(wrongPasswordCount);
                     }
                     MenuConsole.inputUser("username");
@@ -88,6 +90,7 @@ public class Navigation {
                     navigationMenuUserShopDetail();
                     break;
                 case 3:
+                    navigationMenuUserShop();
                     break;
                 default:
                     MenuConsole.invalidInput();
@@ -153,6 +156,7 @@ public class Navigation {
         int productId;
         while (choice != 0) {
             MenuMain.menuUserShopDetail();
+            ProductService.llProduct = ProductService.productFileRead();
             choice = scanner.nextInt();
             switch (choice){
                 case 0:
@@ -166,7 +170,7 @@ public class Navigation {
                     ProductService.printProductsCurrentUser(UserService.currUser.getId());
                     break;
                 case 3:
-                    ProductService.llProduct = ProductService.productFileRead();
+
                     int newProductId = ProductService.getNewProductId();
                     int newProductSellerId = UserService.currUser.getId();
                     MenuConsole.inputUser("new product name");
@@ -199,7 +203,7 @@ public class Navigation {
                     MenuConsole.inputUser("your product id");
                      productId = scanner.nextInt();
                     if (ProductService.isProductBelongToUser(productId, UserService.currUser.getId())) {
-                        ProductService.getCurrentProduct(productId, UserService.currUser.getId());
+                        ProductService.getCurrentProductUser(productId, UserService.currUser.getId());
                         navigationMenuUserProductChange();
                     } else {
                         System.out.println("You does not own this product");
@@ -210,7 +214,7 @@ public class Navigation {
                     MenuConsole.inputUser("your product id");
                      productId = scanner.nextInt();
                     if (ProductService.isProductBelongToUser(productId, UserService.currUser.getId())) {
-                        ProductService.getCurrentProduct(productId, UserService.currUser.getId());
+                        ProductService.getCurrentProductUser(productId, UserService.currUser.getId());
                        double currentProductPrice =  ProductService.productCurrentUser.getProductPrice();
                        double currentProductQuantity = ProductService.productCurrentUser.getProductQuantity();
                        double currentUserCash = UserService.currUser.getUserCash();
@@ -249,6 +253,7 @@ public class Navigation {
         int choice = -1;
         while (choice!=0) {
             MenuMain.menuUserShopChangeProduct();
+            ProductService.llProduct = ProductService.productFileRead();
             choice = scanner.nextInt();
             switch (choice) {
                 case 0:
@@ -340,6 +345,8 @@ public class Navigation {
         int choice = -1;
         while (choice!=0) {
             MenuMain.menuUserShop();
+
+
             choice = scanner.nextInt();
             switch (choice) {
                 case 0:
@@ -347,8 +354,69 @@ public class Navigation {
                     navigationMenuUser();
                     break;
                 case 1:
+                    ProductService.printProductsAllUser();
                     break;
                 case 2:
+                    ProductService.printProductsAllUser();
+                    MenuConsole.inputUser("seller id you want to buy from");
+                    int sellerId = scanner.nextInt();
+                    MenuConsole.inputUser("product id you want to buy");
+                    int productId = scanner.nextInt();
+                    if (ProductService.isProductBelongSeller(productId, sellerId)){
+                        MenuConsole.inputUser("product quantity you want to buy");
+                        int productQuantity = scanner.nextInt();
+                        ProductService.getProductSeller(productId, sellerId);
+
+                        //check if enough quantity
+                        if (ProductService.isEnoughProductSeller(productQuantity)){
+                            int orderId = PurchaseOrderService.getNewPOId();
+                            int customerId = UserService.currUser.getId();
+                            double productPrice = ProductService.productCurrentSeller.getProductPrice();
+                            double totalCost = productPrice * productQuantity;
+
+                            String productName = ProductService.productCurrentSeller.getProductName();
+
+                            UserService.getCurrentSeller(sellerId);
+
+                            String sellerName = UserService.currSeller.getUserName();
+                            double currentUserCash = UserService.currUser.getUserCash();
+                            MenuConsole.confirmPurchaseProduct(sellerId,sellerName,productId,productName,productPrice,productQuantity,currentUserCash);
+                            String confirmPurchase = scanner.next().toLowerCase();
+                            //check if user confirm to buy
+                            if (confirmPurchase.equals("y")){
+                                //check enough user cash
+                                if (ProductService.isEnoughUserCash(totalCost)) {
+                                    //create new po, add to poFile
+                                    PurchaseOrder po = new PurchaseOrder(orderId,customerId,sellerId,productId,productPrice,productQuantity);
+                                    PurchaseOrderService.llPurchaseOrders.add(po);
+                                    PurchaseOrderService.purchaseOrderWrite(PurchaseOrderService.llPurchaseOrders);
+
+                                    //update product
+                                    double newProductQuantity = ProductService.productCurrentSeller.getProductQuantity() - productQuantity;
+                                    ProductService.updateProductQuantity(newProductQuantity, ProductService.productCurrentSeller);
+
+                                    //update seller
+                                    double newSellerCash = UserService.currSeller.getUserCash() + totalCost;
+                                    UserService.updateUserNewCash(newSellerCash, UserService.currSeller);
+
+                                    //update buyer
+                                    double newBuyerCash = UserService.currUser.getUserCash() - totalCost;
+                                    UserService.updateUserNewCash(newBuyerCash, UserService.currUser);
+                                } else {
+                                    System.out.println("You don't have enough cash to make this purchase");
+                                }
+                            } else {
+                                navigationMenuUserShop();
+                                break;
+                            }
+
+                        } else {
+                            System.out.println("There is not enough product to sell");
+                        }
+
+                    } else {
+                        System.out.println("This seller doesn't sell the input product");
+                    }
                     break;
                 default:
                     MenuConsole.invalidInput();

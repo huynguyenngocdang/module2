@@ -3,6 +3,7 @@ package com.codegym.HuyC08.Menu;
 public class MenuMain {
     public static void menuLogin() {
         System.out.println("""
+                Login menu
                 1. Login
                 2. Create new user
                 99. See user list
@@ -10,6 +11,7 @@ public class MenuMain {
     }
     public static void menuUser() {
         System.out.println("""
+                Main menu
                 1. User profile
                 2. Shop profile
                 3. Shop
@@ -18,6 +20,7 @@ public class MenuMain {
 
     public static void menuUserDetail() {
         System.out.println("""
+                User detail
                 1. See user details
                 2. Change user name
                 3. Change user password
@@ -26,6 +29,7 @@ public class MenuMain {
     }
     public static void menuUserShopDetail() {
         System.out.println("""
+                User shop detail
                 1. See user cash
                 2. See your current item
                 3. Add new item
@@ -36,6 +40,7 @@ public class MenuMain {
 
     public static void menuUserShopChangeProduct(){
         System.out.println("""
+                Change product Menu
                 1. Change product name
                 2. Change product type
                 3. Change product price
@@ -47,9 +52,9 @@ public class MenuMain {
 
     public static void menuUserShop() {
         System.out.println("""
+                Shop menu
                 1. Search for item
                 2. Purchase item
-                3. Check out
                 0. Exit""");
     }
 }
