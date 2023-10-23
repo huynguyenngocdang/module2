@@ -1,0 +1,13 @@
+[
+  {
+    "userId": 0,
+    "username": "admin",
+    "password": "123",
+    "walletBalance": 10000.0,
+    "userType": "ADMIN"
+  },
+  {
+    "userId": 0,
+    "walletBalance": 0.0
+  }
+]
