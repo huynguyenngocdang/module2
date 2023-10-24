@@ -85,7 +85,7 @@ public class NormalUserService implements UserServiceInterface {
         } else if (isInvalidUsername(username)) {
             System.out.println("Username must have at least 3 character with no special characters");
         } else if (isUserExist(username)) {
-            menuConsole.printUserAlreadyExist();
+            menuConsole.printTypeAlreadyExist("user");
         } else {
                 User newUser = userFactory.createUser(newId, username, password, 0, NORMAL, true);
                 users.add(newUser);
@@ -138,7 +138,7 @@ public class NormalUserService implements UserServiceInterface {
         } else if (isInvalidUsername(newUsername)) {
            menuConsole.printUserInvalidName();
         } else if (isUserExist(newUsername)) {
-            menuConsole.printUserAlreadyExist();
+            menuConsole.printTypeAlreadyExist("user");
         } else {
             currentUser.setUsername(newUsername);
         }

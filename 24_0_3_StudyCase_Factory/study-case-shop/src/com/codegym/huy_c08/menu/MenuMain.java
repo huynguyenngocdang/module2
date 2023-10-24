@@ -1,7 +1,7 @@
 package com.codegym.huy_c08.menu;
 
 public class MenuMain {
-    public void MenuLogin() {
+    public void menuLogin() {
         System.out.println("""
                 Menu Login
                 1. Login
@@ -10,7 +10,7 @@ public class MenuMain {
                 0. Exit""");
     }
 
-    public void MenuAdmin() {
+    public void menuAdmin() {
         System.out.println("""
                 Admin menu
                 1. User profile
@@ -24,8 +24,27 @@ public class MenuMain {
                 9. Manage promotion program
                 0. Exit""");
     }
+    public void menuPromotionManage(){
+        System.out.println("""
+                Promotion program
+                1. See all promotion program
+                2. Create new promotion program
+                3. Change promotion program
+                4. Remove promotion program
+                0. Exit""");
+    }
+    public void menuPromotionChange() {
+        System.out.println("""
+                Change current promotion
+                1. Change name
+                2. Change start date
+                3. Change end date
+                4. Change promotion amount
+                5. Change promotion percent
+                0. Exit""");
+    }
 
-    public void MenuUser() {
+    public void menuUser() {
         System.out.println("""
                 Main menu
                 1. User profile

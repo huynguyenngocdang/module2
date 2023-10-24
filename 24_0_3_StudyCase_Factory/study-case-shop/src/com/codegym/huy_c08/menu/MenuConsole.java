@@ -9,6 +9,10 @@ public class MenuConsole {
         System.out.println("Invalid input, please try again");
         printHorizontalRule();
     }
+    public void printInvalidInput(String reason){
+        System.out.println("Invalid input "+reason+ ", please try again");
+        printHorizontalRule();
+    }
     public void printUserInput(String stringInput){
         System.out.println("Input your " + stringInput);
         printHorizontalRule();
@@ -34,12 +38,12 @@ public class MenuConsole {
     public void printDoesNotChange(String reason) {
         System.out.println("You does not change " + reason);
     }
-    public void printUserDoesNotExist(){
-        System.out.println("This user does not exist in database");
+    public void printTypeDoesNotExist(String type){
+        System.out.println("This "+type+ " does not exist in database");
     }
 
-    public void printUserAlreadyExist(){
-        System.out.println("This user already exist in database");
+    public void printTypeAlreadyExist(String type){
+        System.out.println("This "+ type + " already exist in database");
     }
     public void printUserInvalidName() {
         System.out.println("Username must have at least 3 character with no special characters");

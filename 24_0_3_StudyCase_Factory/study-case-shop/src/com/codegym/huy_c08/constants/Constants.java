@@ -4,9 +4,13 @@ public interface Constants {
     String USER_FILE_PATH = "data/users.json";
     String ADMIN_FILE_PATH = "data/admins.json";
     String PRODUCT_FILE_PATH = "data/product.json";
+    String PROMOTION_FILE_PATH = "data/promotion.json";
 
-    String ADMIN_REGEX = "^admin_\\d{1,}$";
+    String ADMIN_REGEX = "^[aA][dD][mM][iI][nN]_\\d{1,}$";
     String USER_REGEX = "^[a-zA-Z0-9]{3,}$";
+    String PROMOTION_REGEX = "^KM[a-z|A-Z|0-9]{2,}$";
+
+    String DATE_REGEX = "^\\d{2}/\\d{2}/\\d{4}$";
     boolean isUserActiveTrue = true;
     boolean isUserActiveFalse = false;
     int USER_CHOICE_EXIT = 0;

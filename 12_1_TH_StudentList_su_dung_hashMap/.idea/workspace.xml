@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a06339-6994-4988-9d04-c7b9a1fa378a" name="Changes" comment="">
+    <list default="true" id="5d01bef2-c123-428b-9565-d45a11f3b8c5" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/PromotionService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/test/PromotionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/constants/Constants.java" afterDir="false" />
@@ -24,10 +21,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2WYoY2Ds56G2SMOl6JTUIAtDTQ9" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2XC2v34VKrCfwYspNssEbZ5j0Sm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,25 +34,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Huy/CodeGym/Project module 2/module2/12_2_TH_Phan_biet_HashMap_HashSet",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "last_opened_file_path": "C:/Huy/CodeGym/Project module 2/module2/12_1_TH_StudentList_su_dung_hashMap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="08a06339-6994-4988-9d04-c7b9a1fa378a" name="Changes" comment="" />
-      <created>1696918918148</created>
+      <changelist id="5d01bef2-c123-428b-9565-d45a11f3b8c5" name="Changes" comment="" />
+      <created>1698118967536</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1696918918148</updated>
-      <workItem from="1696918919117" duration="2000" />
-      <workItem from="1696932807745" duration="336000" />
-      <workItem from="1698118985262" duration="9000" />
+      <updated>1698118967536</updated>
+      <workItem from="1698118968532" duration="12000" />
     </task>
     <servers />
   </component>

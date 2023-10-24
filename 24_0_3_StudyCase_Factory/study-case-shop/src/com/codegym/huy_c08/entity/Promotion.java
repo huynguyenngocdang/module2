@@ -6,8 +6,18 @@ public class Promotion {
     private String promotionDateStart;
     private String promotionDateEnd;
     private double promotionAmount;
+    private double promotionPercent;
 
     public Promotion() {
+    }
+
+    public Promotion(int promotionId, String promotionCode, String promotionDateStart, String promotionDateEnd, double promotionAmount, double promotionPercent) {
+        this.promotionId = promotionId;
+        this.promotionCode = promotionCode;
+        this.promotionDateStart = promotionDateStart;
+        this.promotionDateEnd = promotionDateEnd;
+        this.promotionAmount = promotionAmount;
+        this.promotionPercent = promotionPercent;
     }
 
     public int getPromotionId() {
@@ -50,4 +60,23 @@ public class Promotion {
         this.promotionAmount = promotionAmount;
     }
 
+    public double getPromotionPercent() {
+        return promotionPercent;
+    }
+
+    public void setPromotionPercent(double promotionPercent) {
+        this.promotionPercent = promotionPercent;
+    }
+
+    @Override
+    public String toString() {
+        return "Promotion{" +
+                "promotionId=" + promotionId +
+                ", promotionCode='" + promotionCode + '\'' +
+                ", promotionDateStart='" + promotionDateStart + '\'' +
+                ", promotionDateEnd='" + promotionDateEnd + '\'' +
+                ", promotionAmount=" + promotionAmount +
+                ", promotionPercent=" + promotionPercent +
+                '}';
+    }
 }

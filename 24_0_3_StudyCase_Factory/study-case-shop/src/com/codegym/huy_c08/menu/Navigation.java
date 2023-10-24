@@ -2,10 +2,13 @@ package com.codegym.huy_c08.menu;
 
 import com.codegym.huy_c08.constants.Constants;
 import com.codegym.huy_c08.entity.Product;
+import com.codegym.huy_c08.entity.Promotion;
 import com.codegym.huy_c08.service.AdminService;
 import com.codegym.huy_c08.service.NormalUserService;
 import com.codegym.huy_c08.service.ProductService;
+import com.codegym.huy_c08.service.PromotionService;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class Navigation {
@@ -19,12 +22,13 @@ public class Navigation {
     private final NormalUserService normalUserService = new NormalUserService();
 
     private final ProductService productService = new ProductService();
+    private final PromotionService promotionService = new PromotionService();
     private Product currentProduct;
 
     public void navigationLogin() {
         int userChoice = Constants.USER_CHOICE_INIT;
         while (userChoice != Constants.USER_CHOICE_EXIT) {
-            menuMain.MenuLogin();
+            menuMain.menuLogin();
             adminService.refresh();
             userChoice = SCANNER.nextInt();
             switch (userChoice) {
@@ -75,7 +79,7 @@ public class Navigation {
         while (choice != Constants.USER_CHOICE_EXIT) {
             normalUserService.getCurrentUserInformation();
             menuConsole.printHorizontalRule();
-            menuMain.MenuUser();
+            menuMain.menuUser();
             choice = SCANNER.nextInt();
             switch (choice) {
                 case Constants.USER_CHOICE_EXIT:
@@ -313,7 +317,7 @@ public class Navigation {
         while (choice != Constants.USER_CHOICE_EXIT) {
             adminService.getCurrentUserInformation();
             menuConsole.printHorizontalRule();
-            menuMain.MenuAdmin();
+            menuMain.menuAdmin();
             choice = SCANNER.nextInt();
             switch (choice) {
                 case Constants.USER_CHOICE_EXIT:
@@ -343,7 +347,7 @@ public class Navigation {
                         adminService.changeSelectedUserName(newUsername);
                         adminService.updateUsers();
                     } else {
-                        menuConsole.printUserDoesNotExist();
+                        menuConsole.printTypeDoesNotExist("user");
                     }
                     break;
                 case Constants.USER_CHOICE_5:
@@ -356,7 +360,7 @@ public class Navigation {
                         adminService.changeSelectedUserPassword(newUserPassword);
                         adminService.updateUsers();
                     } else {
-                        menuConsole.printUserDoesNotExist();
+                        menuConsole.printTypeDoesNotExist("user");
                     }
                 case Constants.USER_CHOICE_6:
                     menuConsole.printUserInput("user id");
@@ -373,7 +377,7 @@ public class Navigation {
                             menuConsole.printDoesNotChange("this user status");
                         }
                     } else {
-                        menuConsole.printUserDoesNotExist();
+                        menuConsole.printTypeDoesNotExist("user");
                     }
                     break;
                 case Constants.USER_CHOICE_7:
@@ -391,7 +395,7 @@ public class Navigation {
                             menuConsole.printDoesNotChange("this user removal");
                         }
                     } else {
-                        menuConsole.printUserDoesNotExist();
+                        menuConsole.printTypeDoesNotExist("user");
                     }
                     break;
                 case Constants.USER_CHOICE_8:
@@ -406,7 +410,7 @@ public class Navigation {
                     }
                     break;
                 case Constants.USER_CHOICE_9:
-
+                    navigationMenuPromotionManage();
                     break;
                 default:
                     menuConsole.printInvalidInput();
@@ -415,5 +419,124 @@ public class Navigation {
         }
     }
 
+    private void navigationMenuPromotionManage() {
+        int choice = Constants.USER_CHOICE_INIT;
+        while (choice != Constants.USER_CHOICE_EXIT) {
+            menuMain.menuPromotionManage();
+            choice = SCANNER.nextInt();
+            switch (choice) {
+                case Constants.USER_CHOICE_EXIT:
+                    menuConsole.printExitMenu("Promotion program");
+                    break;
+                case Constants.USER_CHOICE_1:
+                    promotionService.getAllPromotion();
+                    break;
+                case Constants.USER_CHOICE_2:
+                    int newPromotionId = promotionService.getNewId();
+                    menuConsole.printUserInput("new promotion name");
+                    String newPromotionName = SCANNER.next();
+                    if (promotionService.validatePromotionName(newPromotionName)) {
+                        if (!promotionService.isPromotionExist(newPromotionName)) {
+                            menuConsole.printUserInput("promotion start date (dd/MM/yyyy)");
+                            String newPromotionStartDate = SCANNER.next();
+                            if (promotionService.dateMatch(newPromotionStartDate)) {
+                                menuConsole.printUserInput("promotion end date (dd/MM/yyyy)");
+                                String newPromotionEndDate = SCANNER.next();
+                                if (promotionService.dateMatch(newPromotionEndDate) && promotionService.dateCorrect(newPromotionStartDate, newPromotionEndDate)) {
+                                    menuConsole.printUserInput("promotion amount");
+                                    double newPromotionAmount = SCANNER.nextDouble();
+                                    if (promotionService.validatePromotionAmount(newPromotionAmount)) {
+                                        menuConsole.printUserInput("promotion percent(0-100)");
+                                        double newPromotionPercent = SCANNER.nextDouble();
+                                        if (promotionService.validatePromotionPercent(newPromotionPercent)) {
+                                            Promotion newPromotion = new Promotion(newPromotionId, newPromotionName, newPromotionStartDate, newPromotionEndDate, newPromotionAmount, newPromotionPercent);
+                                            promotionService.addPromotionToList(newPromotion);
+                                            promotionService.savePromotion();
+                                        } else {
+                                            menuConsole.printInvalidInput("promotion percent");
+                                        }
+                                    } else {
+                                        menuConsole.printInvalidInput("promotion amount");
+                                    }
+                                } else {
+                                    menuConsole.printInvalidInput("promotion end date");
+                                }
+                            } else {
+                                menuConsole.printInvalidInput("promotion start date");
+                            }
+                        } else {
+                            menuConsole.printTypeAlreadyExist("promotion name");
+                        }
+                    } else {
+                        menuConsole.printInvalidInput(",promotion name should start with KM and at lease 2 number");
+                    }
+                    break;
+                case Constants.USER_CHOICE_3:
+                    menuConsole.printUserInput("promotion id");
+                    int selectedPromotionId = SCANNER.nextInt();
+                    if (promotionService.isPromotionExist(selectedPromotionId)) {
+                        promotionService.setCurrentPromotion(selectedPromotionId);
+                        navigationMenuPromotionChange();
+                    } else {
+                        menuConsole.printInvalidInput();
+                    }
+                    break;
+                default:
+                    menuConsole.printInvalidInput("choice");
+                    break;
+            }
+        }
+    }
+
+    public void navigationMenuPromotionChange() {
+        int choice = Constants.USER_CHOICE_INIT;
+        while (choice != Constants.USER_CHOICE_EXIT) {
+            menuMain.menuPromotionChange();
+            choice = SCANNER.nextInt();
+            switch (choice) {
+                case Constants.USER_CHOICE_EXIT:
+                    menuConsole.printExitMenu("Change current promotion");
+                    break;
+                case Constants.USER_CHOICE_1:
+                    menuConsole.printUserInput("new promotion name");
+                    String newPromotionName = SCANNER.next();
+                    if (promotionService.isPromotionExist(newPromotionName)) {
+                        menuConsole.printTypeAlreadyExist("promotion");
+                    } else {
+                        if (promotionService.validatePromotionName(newPromotionName)) {
+                            promotionService.changePromotionName(newPromotionName);
+                            promotionService.savePromotion();
+                        } else {
+                            menuConsole.printInvalidInput(",promotion name should start with KM and at lease 2 number");
+                        }
+                    }
+                    break;
+                case Constants.USER_CHOICE_2:
+                    menuConsole.printUserInput("new promotion start date(dd/MM/yyyy)");
+                    String newPromotionStartDate = SCANNER.next();
+                    String currentPromotionEndDate = promotionService.getCurrentPromotionEndDate();
+                    if (promotionService.dateMatch(newPromotionStartDate) && promotionService.dateCorrect(newPromotionStartDate, currentPromotionEndDate)) {
+                        promotionService.changePromotionStartDate(newPromotionStartDate);
+                        promotionService.savePromotion();
+                    } else {
+                        menuConsole.printInvalidInput("promotion start date");
+                    }
+                    break;
+                case Constants.USER_CHOICE_3:
+                    menuConsole.printUserInput("new promotion start date(dd/MM/yyyy)");
+                    String newPromotionEndDate = SCANNER.next();
+                    String currentPromotionStartDate = promotionService.getCurrentPromotionStartDate();
+                    if (promotionService.dateMatch(newPromotionEndDate) && promotionService.dateCorrect(currentPromotionStartDate, newPromotionEndDate)) {
+                        promotionService.changePromotionEndDate(newPromotionEndDate);
+                    } else {
+                        menuConsole.printInvalidInput("promotion end date");
+                    }
+                    break;
+                default:
+                    menuConsole.printInvalidInput("choice");
+                    break;
+            }
+        }
+    }
 
 }

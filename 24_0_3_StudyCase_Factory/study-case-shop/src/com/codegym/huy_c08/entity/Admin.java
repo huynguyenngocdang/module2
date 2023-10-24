@@ -2,7 +2,7 @@ package com.codegym.huy_c08.entity;
 
 import java.util.List;
 
-public class Admin extends User implements PromotionProgram, AdminPermission {
+public class Admin extends User implements AdminPermission {
     // Implement methods from PromotionProgram interface
 
 
@@ -10,10 +10,7 @@ public class Admin extends User implements PromotionProgram, AdminPermission {
         super(userId, username, password, walletBalance, userType, isActive);
     }
 
-    @Override
-    public void createPromotionProgram() {
-        // Implementation
-    }
+
 
     @Override
     public void changeNormalUserPassword(User user, List<User> userList, String newPassword) {
