@@ -24,13 +24,14 @@ public class MenuMain {
                 9. Manage promotion program
                 0. Exit""");
     }
-    public void menuPromotionManage(){
+    public void menuPromotionProgram(){
         System.out.println("""
                 Promotion program
                 1. See all promotion program
                 2. Create new promotion program
                 3. Change promotion program
                 4. Remove promotion program
+                5. Remove all expired promotion program
                 0. Exit""");
     }
     public void menuPromotionChange() {

@@ -83,5 +83,8 @@ public class MenuConsole {
     public void notEnoughCash(String reason) {
         System.out.println("Not enough cash to " + reason);
     }
+    public void confirmChange(String reason) {
+        System.out.println("Do you wish to " + reason + "? (Y/N)");
+    }
 
 }

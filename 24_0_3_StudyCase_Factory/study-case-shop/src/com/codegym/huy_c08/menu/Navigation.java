@@ -8,7 +8,6 @@ import com.codegym.huy_c08.service.NormalUserService;
 import com.codegym.huy_c08.service.ProductService;
 import com.codegym.huy_c08.service.PromotionService;
 
-import java.text.ParseException;
 import java.util.Scanner;
 
 public class Navigation {
@@ -421,8 +420,9 @@ public class Navigation {
 
     private void navigationMenuPromotionManage() {
         int choice = Constants.USER_CHOICE_INIT;
+        int selectedPromotionId;
         while (choice != Constants.USER_CHOICE_EXIT) {
-            menuMain.menuPromotionManage();
+            menuMain.menuPromotionProgram();
             choice = SCANNER.nextInt();
             switch (choice) {
                 case Constants.USER_CHOICE_EXIT:
@@ -473,12 +473,31 @@ public class Navigation {
                     break;
                 case Constants.USER_CHOICE_3:
                     menuConsole.printUserInput("promotion id");
-                    int selectedPromotionId = SCANNER.nextInt();
+                     selectedPromotionId = SCANNER.nextInt();
                     if (promotionService.isPromotionExist(selectedPromotionId)) {
                         promotionService.setCurrentPromotion(selectedPromotionId);
                         navigationMenuPromotionChange();
                     } else {
                         menuConsole.printInvalidInput();
+                    }
+                    break;
+                    case Constants.USER_CHOICE_4:
+                        menuConsole.printUserInput("promotion id");
+                         selectedPromotionId = SCANNER.nextInt();
+                        if (promotionService.isPromotionExist(selectedPromotionId)) {
+                            promotionService.setCurrentPromotion(selectedPromotionId);
+                            promotionService.removeCurrentPromotion();
+                            promotionService.savePromotion();
+                        } else {
+                            menuConsole.printInvalidInput();
+                        }
+                        break;
+                case Constants.USER_CHOICE_5:
+                    menuConsole.confirmChange("remove all expired promotion program");
+                    String confirm = SCANNER.next().toLowerCase();
+                    if(confirm.equals(Constants.USER_CHOICE_CONFIRM)){
+                        promotionService.removeAllExpiredPromotion();
+                        promotionService.savePromotion();
                     }
                     break;
                 default:
@@ -528,10 +547,32 @@ public class Navigation {
                     String currentPromotionStartDate = promotionService.getCurrentPromotionStartDate();
                     if (promotionService.dateMatch(newPromotionEndDate) && promotionService.dateCorrect(currentPromotionStartDate, newPromotionEndDate)) {
                         promotionService.changePromotionEndDate(newPromotionEndDate);
+                        promotionService.savePromotion();
                     } else {
                         menuConsole.printInvalidInput("promotion end date");
                     }
                     break;
+                case Constants.USER_CHOICE_4:
+                    menuConsole.printUserInput("new promotion amount (>=0)");
+                    double newPromotionAmount = SCANNER.nextDouble();
+                    if(promotionService.validatePromotionAmount(newPromotionAmount)) {
+                        promotionService.changePromotionAmount(newPromotionAmount);
+                        promotionService.savePromotion();
+                    } else {
+                        menuConsole.printInvalidInput("promotion amount, must be larger or equal 0 ");
+                    }
+                    break;
+                case Constants.USER_CHOICE_5:
+                    menuConsole.printUserInput("new promotion percent (0-100)");
+                    double newPromotionPercent = SCANNER.nextDouble();
+                    if(promotionService.validatePromotionPercent(newPromotionPercent)) {
+                      promotionService.changePromotionPercent(newPromotionPercent);
+                      promotionService.savePromotion();
+                    } else {
+                        menuConsole.printInvalidInput("promotion percent, must be (0-100)");
+                    }
+                    break;
+
                 default:
                     menuConsole.printInvalidInput("choice");
                     break;
