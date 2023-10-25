@@ -1,0 +1,42 @@
+[
+  {
+    "productId": 1,
+    "sellerId": 1,
+    "productName": "Iphone7",
+    "productType": "Phone",
+    "productPrice": 700.0,
+    "productQuantity": 10.0,
+    "productManufacturer": "Apple",
+    "productDescription": "A Phone manufactured by Apple"
+  },
+  {
+    "productId": 2,
+    "sellerId": 2,
+    "productName": "Iphone15",
+    "productType": "Phone",
+    "productPrice": 1000.0,
+    "productQuantity": 10.0,
+    "productManufacturer": "Apple",
+    "productDescription": "A Phone manufactured by Apple"
+  },
+  {
+    "productId": 3,
+    "sellerId": 2,
+    "productName": "Iphone7",
+    "productType": "Phone",
+    "productPrice": 1000.0,
+    "productQuantity": 10.0,
+    "productManufacturer": "Apple",
+    "productDescription": "A Phone manufactured by Apple"
+  },
+  {
+    "productId": 4,
+    "sellerId": 2,
+    "productName": "iphoneNew",
+    "productType": "Phone",
+    "productPrice": 50.0,
+    "productQuantity": 10.0,
+    "productManufacturer": "Apple",
+    "productDescription": "A phone"
+  }
+]

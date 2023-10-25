@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9a2a8dc9-250f-4963-9b60-ebb994a84a1a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/PromotionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/test/PromotionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12_2_TH_Phan_biet_HashMap_HashSet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12_2_TH_Phan_biet_HashMap_HashSet/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/PurchaseOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/ShoppingCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/test/PurchaseOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/data/product.json" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/data/product.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/data/promotion.json" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/data/promotion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/Promotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/Promotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/PromotionProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/PromotionProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/PurchaseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/PurchaseOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/entity/ShoppingCart.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/menu/MenuConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/menu/MenuConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/menu/MenuMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/menu/MenuMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/menu/Navigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/menu/Navigation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/NormalUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/NormalUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/PromotionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../24_0_3_StudyCase_Factory/study-case-shop/src/com/codegym/huy_c08/service/PromotionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +31,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2XC2zCpINa1C1sBENj1zSbF6X7L" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,6 +44,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Huy/CodeGym/Project module 2/module2/12_4_BT_Quan_ly_san_pham",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -47,6 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698119000193</updated>
       <workItem from="1698119001183" duration="15000" />
+      <workItem from="1698216698992" duration="638000" />
     </task>
     <servers />
   </component>
