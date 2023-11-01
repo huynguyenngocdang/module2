@@ -10,7 +10,6 @@ import java.io.Reader;
 import java.io.Writer;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MyFileHandler {
     private final Gson GSON;

@@ -28,5 +28,15 @@
     "productQuantity": 10.0,
     "productManufacturer": "Apple",
     "productDescription": "A phone"
+  },
+  {
+    "productId": 5,
+    "sellerId": 3,
+    "productName": "Iphone15",
+    "productType": "Phone",
+    "productPrice": 250.0,
+    "productQuantity": 9.0,
+    "productManufacturer": "Apple",
+    "productDescription": "abc"
   }
 ]

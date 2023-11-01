@@ -52,5 +52,33 @@
     "promotionCode": "KM01",
     "promotionAmount": 0.0,
     "promotionPercent": 0.1
+  },
+  {
+    "purchaseOrderId": 5,
+    "customerId": 1,
+    "sellerId": 3,
+    "productId": 5,
+    "orderDate": "31/10/2023,15:53:30",
+    "price": 250.0,
+    "quantity": 1.0,
+    "totalCost": 250.0,
+    "totalCostAfterPromotion": 250.0,
+    "promotionCode": "none",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.0
+  },
+  {
+    "purchaseOrderId": 6,
+    "customerId": 1,
+    "sellerId": 3,
+    "productId": 5,
+    "orderDate": "31/10/2023,16:10:25",
+    "price": 250.0,
+    "quantity": 1.0,
+    "totalCost": 250.0,
+    "totalCostAfterPromotion": 225.0,
+    "promotionCode": "KM03",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.1
   }
 ]

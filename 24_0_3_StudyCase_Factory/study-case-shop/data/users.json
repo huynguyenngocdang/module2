@@ -3,7 +3,7 @@
     "userId": 1,
     "username": "Huy",
     "password": "123",
-    "walletBalance": 9100.0,
+    "walletBalance": 8625.0,
     "userType": "NORMAL",
     "isActive": true
   },
@@ -19,7 +19,7 @@
     "userId": 3,
     "username": "Son",
     "password": "123",
-    "walletBalance": 0.0,
+    "walletBalance": 475.0,
     "userType": "NORMAL",
     "isActive": true
   }

@@ -1,0 +1,26 @@
+[
+  {
+    "userId": 1,
+    "username": "Huy",
+    "password": "123",
+    "walletBalance": 9100.0,
+    "userType": "NORMAL",
+    "isActive": true
+  },
+  {
+    "userId": 2,
+    "username": "Giang",
+    "password": "123",
+    "walletBalance": 10900.0,
+    "userType": "NORMAL",
+    "isActive": true
+  },
+  {
+    "userId": 3,
+    "username": "Son",
+    "password": "123",
+    "walletBalance": 0.0,
+    "userType": "NORMAL",
+    "isActive": true
+  }
+]

@@ -14,5 +14,13 @@
     "promotionDateEnd": "24/10/2023",
     "promotionAmount": 0.0,
     "promotionPercent": 10.0
+  },
+  {
+    "promotionId": 3,
+    "promotionCode": "KM03",
+    "promotionDateStart": "23/10/2023",
+    "promotionDateEnd": "10/11/2023",
+    "promotionAmount": 0.0,
+    "promotionPercent": 10.0
   }
 ]
