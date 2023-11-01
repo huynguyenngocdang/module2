@@ -3,10 +3,11 @@ package com.codegym.huyc08.menu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuMain implements Menu {
-    private List<MenuItem> menuItems;
+public class MenuMain implements Menu{
+    private List<MenuItem>menuItems;
     private String title;
-    public MenuMain(String title) {
+
+    public MenuMain( String title) {
         this.menuItems = new ArrayList<>();
         this.title = title;
     }
@@ -26,14 +27,10 @@ public class MenuMain implements Menu {
 
     @Override
     public void executeMenuItem(int index) {
-        if (index >= 0 && index < menuItems.size()) {
+        if(index >= 0 && index < menuItems.size() ) {
             menuItems.get(index).getCommand().execute();
-        }
-//        else if(index == 0) {
-//            System.out.println("Exiting...");
-//        }
-        else  {
-            System.out.println("Invalid menu item!");
+        } else {
+            System.out.println("Invalid input! Please try again");
         }
     }
 }

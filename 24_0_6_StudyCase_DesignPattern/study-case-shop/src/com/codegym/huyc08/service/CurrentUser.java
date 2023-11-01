@@ -27,6 +27,7 @@ public class CurrentUser implements Observer  {
             System.out.println("Username already exists in the database");
         } else if (validator.isLikeable(newUsername, Constants.USER_REGEX)) {
             user.setUsername(newUsername);
+            System.out.println("Set new username successful");
             update();
         } else {
             System.out.println("Your username must have at least 3 characters");
