@@ -1,9 +1,9 @@
 [
   {
     "userId": 1,
-    "username": "Huy",
+    "username": "Man",
     "password": "123",
-    "walletBalance": 8625.0,
+    "walletBalance": 7650.0,
     "userType": "NORMAL",
     "isActive": true
   },
@@ -11,7 +11,7 @@
     "userId": 2,
     "username": "Giang",
     "password": "123",
-    "walletBalance": 10900.0,
+    "walletBalance": 11150.0,
     "userType": "NORMAL",
     "isActive": true
   },
@@ -19,7 +19,7 @@
     "userId": 3,
     "username": "Son",
     "password": "123",
-    "walletBalance": 475.0,
+    "walletBalance": 1200.0,
     "userType": "NORMAL",
     "isActive": true
   }

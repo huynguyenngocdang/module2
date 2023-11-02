@@ -14,10 +14,10 @@ public class LoginCommand implements Command {
         System.out.println("Input your password");
         String inputPassword = SCANNER.next();
 
-        LoginNavigator navigator = new LoginNavigator(null);
-        LoginLogger logger = new LoginLogger(navigator);
-        LoginAuthenticator authenticator = new LoginAuthenticator(logger);
-        authenticator.handle(new LoginRequest(inputUsername, inputPassword));
+        Navigator navigator = new Navigator(null);
+        Logger logger = new Logger(navigator);
+        LoginAuthenticator loginAuthenticator = new LoginAuthenticator(logger);
+        loginAuthenticator.handle(new LoginRequest(inputUsername, inputPassword));
 
     }
 

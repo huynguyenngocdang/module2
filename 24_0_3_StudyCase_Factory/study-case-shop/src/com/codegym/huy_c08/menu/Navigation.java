@@ -624,7 +624,6 @@ public class Navigation {
         }
     }
     private void refresh(){
-
         adminService.refresh();
         normalUserService.refresh();
         productService.refresh();

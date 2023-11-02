@@ -1,8 +1,8 @@
 package com.codegym.huyc08.service;
 
-public class LoginAuthenticator extends Handler{
+public class LoginAuthenticator extends LoginHandler {
 
-    public LoginAuthenticator(Handler next) {
+    public LoginAuthenticator(LoginHandler next) {
         super(next);
     }
 

@@ -1,9 +1,9 @@
 package com.codegym.huyc08.service;
 
-public class LoginLogger extends Handler {
+public class Logger extends LoginHandler {
 
 
-    public LoginLogger(Handler next) {
+    public Logger(LoginHandler next) {
         super(next);
     }
 

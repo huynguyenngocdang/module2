@@ -25,7 +25,7 @@
     "productName": "iphoneNew",
     "productType": "Phone",
     "productPrice": 50.0,
-    "productQuantity": 10.0,
+    "productQuantity": 5.0,
     "productManufacturer": "Apple",
     "productDescription": "A phone"
   },
@@ -35,7 +35,7 @@
     "productName": "Iphone15",
     "productType": "Phone",
     "productPrice": 250.0,
-    "productQuantity": 9.0,
+    "productQuantity": 6.0,
     "productManufacturer": "Apple",
     "productDescription": "abc"
   }

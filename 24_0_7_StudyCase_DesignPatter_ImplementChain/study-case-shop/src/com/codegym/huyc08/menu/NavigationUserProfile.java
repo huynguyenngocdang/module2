@@ -6,7 +6,7 @@ import com.codegym.huyc08.service.ExitCommand;
 
 import java.util.Scanner;
 
-public class NavigationUserProfile {
+public class NavigationUserProfile implements Command {
     Menu menuProfile = new MenuMain("User profile");
     private final Scanner SCANNER = new Scanner(System.in);
 
@@ -21,5 +21,10 @@ public class NavigationUserProfile {
             choice = SCANNER.nextInt();
             menuProfile.executeMenuItem(choice);
         } while (choice!= 0);
+    }
+
+    @Override
+    public void execute() {
+        navigationUserProfileMenu();
     }
 }
