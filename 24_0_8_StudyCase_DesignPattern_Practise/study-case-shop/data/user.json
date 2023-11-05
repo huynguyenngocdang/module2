@@ -1,7 +1,7 @@
 [
   {
     "userId": 1,
-    "username": "Son",
+    "username": "Huy",
     "password": "123",
     "walletBalance": 10000.0,
     "userType": "NORMAL",

@@ -20,23 +20,26 @@ public class JsonFileHandler implements MyFileHandler {
         this.GSON = new GsonBuilder().setPrettyPrinting().create();
     }
 
+    @Override
     public void saveToFile(String filePath, List<?> data) {
-        try {
+        try{
             Writer writer = new FileWriter(filePath);
             GSON.toJson(data, writer);
             writer.flush();
             writer.close();
         } catch (IOException ioException) {
-            throw new RuntimeException(ioException);
+            System.out.println("Can't write file");
         }
     }
 
+    @Override
     public ArrayList<?> readFromFile(String filePath, Type type) {
         try {
             Reader reader = new FileReader(filePath);
             return GSON.fromJson(reader, type);
         } catch (FileNotFoundException fileNotFoundException) {
-            throw new RuntimeException(fileNotFoundException);
+            System.out.println("Can't read file");
+            return null;
         }
     }
 }

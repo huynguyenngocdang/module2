@@ -11,6 +11,6 @@ public class CommandExit implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Exiting " + title);
+        System.out.println("Exit " + title);
     }
 }

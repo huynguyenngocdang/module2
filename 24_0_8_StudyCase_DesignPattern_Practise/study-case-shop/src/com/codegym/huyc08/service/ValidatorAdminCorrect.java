@@ -6,19 +6,21 @@ import com.codegym.huyc08.entity.User;
 import java.util.List;
 
 public class ValidatorAdminCorrect implements Validator{
-    private List<Admin> admins;
-    private String username;
+    private String name;
     private String password;
-    public ValidatorAdminCorrect(String username, String password) {
-        this.username = username;
+    private List<Admin> admins;
+
+    public ValidatorAdminCorrect(String name, String password ) {
+        this.name = name;
         this.password = password;
-        admins = ListManagementAdmin.getUserList();
+        this.admins = UserManagement.getAdmins();
     }
+
     @Override
     public boolean isCheck() {
-        for (User user : admins
+        for (User user: admins
         ) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            if(user.getUsername().equals(name) && user.getPassword().equals(password)) {
                 return true;
             }
         }

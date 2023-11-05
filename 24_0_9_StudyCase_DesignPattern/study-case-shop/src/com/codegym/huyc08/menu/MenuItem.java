@@ -1,0 +1,19 @@
+package com.codegym.huyc08.menu;
+
+public class MenuItem {
+    private String name;
+    private Command command;
+
+    public MenuItem(String name, Command command) {
+        this.name = name;
+        this.command = command;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Command getCommand() {
+        return command;
+    }
+}

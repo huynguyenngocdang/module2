@@ -5,21 +5,22 @@ import com.codegym.huyc08.entity.User;
 
 import java.util.List;
 
-public class ValidatorUserCorrect implements Validator {
-    private List<NormalUser> users;
-    private String username;
+public class ValidatorUserCorrect implements Validator{
+    private String name;
     private String password;
+    private List<NormalUser> users;
 
-    public ValidatorUserCorrect(String username, String password) {
-        this.username = username;
+    public ValidatorUserCorrect(String name, String password ) {
+        this.name = name;
         this.password = password;
-        users = ListManagementUser.getUserList();
+        this.users = UserManagement.getNormalUsers();
     }
+
     @Override
     public boolean isCheck() {
-        for (User user : users
+        for (User user: users
         ) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            if(user.getUsername().equals(name) && user.getPassword().equals(password)) {
                 return true;
             }
         }

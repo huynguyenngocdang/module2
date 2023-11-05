@@ -1,30 +1,30 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.menu.Command;
+import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.menu.NavigateMenuAdmin;
+import com.codegym.huyc08.menu.NavigateMenuUser;
 import com.codegym.huyc08.menu.Navigator;
-import com.codegym.huyc08.menu.NavigatorMenuUser;
 
-public class LoginNavigator extends Handler {
+public class LoginNavigator extends LoginHandler{
 
-    public LoginNavigator(Handler next) {
+    public LoginNavigator(LoginHandler next) {
         super(next);
     }
 
     @Override
     public boolean doHandle(LoginRequest request) {
-        String inputUsername = request.getUsername();
+        String username = request.getUsername();
+        Validator validateRegex = new ValidatorRegex(username, Constants.ADMIN_REGEX);
 
-        Validator validatorUser = new ValidatorUser(inputUsername);
-        Validator validatorAdmin = new ValidatorAdmin(inputUsername);
-        if(validatorUser.isCheck()) {
-            System.out.println("Navigate to user Menu");
-            Navigator navigationUserProfile = new NavigatorMenuUser();
-            navigationUserProfile.navigate();
-            return false;
-        } else if (validatorAdmin.isCheck()) {
-            System.out.println("Navigate to admin Menu");
-            return false;
+        if(validateRegex.isCheck()) {
+            Navigator navigateAdminMenu = new NavigateMenuAdmin();
+            navigateAdminMenu.navigate();
+
+        } else {
+            Navigator navigateUserMenu = new NavigateMenuUser();
+            navigateUserMenu.navigate();
+
         }
-        return true;
+        return false;
     }
 }
