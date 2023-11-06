@@ -1,0 +1,10 @@
+[
+  {
+    "promotionId": 1,
+    "promotionCode": "KM01",
+    "promotionDateStart": "5/10/2023",
+    "promotionDateEnd": "20/11/2023",
+    "promotionAmount": 0.0,
+    "promotionPercent": 10.0
+  }
+]

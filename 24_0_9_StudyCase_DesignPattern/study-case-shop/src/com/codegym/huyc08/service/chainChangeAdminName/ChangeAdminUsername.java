@@ -1,24 +1,24 @@
 package com.codegym.huyc08.service.chainChangeAdminName;
 
-import com.codegym.huyc08.service.Handler;
+import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.Observer;
-import com.codegym.huyc08.service.Request;
+import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.SingletonCurrentAdmin;
 import com.codegym.huyc08.service.Subject;
 
-public class ChangeAdminUsername extends Subject implements Handler {
-    private Handler next;
+public class ChangeAdminUsername extends Subject implements HandlerUserInformation {
+    private HandlerUserInformation next;
 
-    public ChangeAdminUsername(Handler next) {
+    public ChangeAdminUsername(HandlerUserInformation next) {
         this.next = next;
     }
 
     @Override
-    public boolean doHandle(Request request) {
+    public boolean doHandle(RequestUserInformation requestUserInformation) {
         try {
             Observer observer = SingletonCurrentAdmin.getInstance();
             addObserver(observer);
-            String username = request.getUsername();
+            String username = requestUserInformation.getUsername();
             SingletonCurrentAdmin.getInstance().changeAdminUsername(username);
             notifyObserver();
             removeObserver(observer);
@@ -31,12 +31,12 @@ public class ChangeAdminUsername extends Subject implements Handler {
     }
 
     @Override
-    public void handle(Request request) {
-        if(!doHandle(request)){
+    public void handle(RequestUserInformation requestUserInformation) {
+        if(!doHandle(requestUserInformation)){
             return;
         }
         if (next != null) {
-            next.handle(request);
+            next.handle(requestUserInformation);
         }
     }
 }

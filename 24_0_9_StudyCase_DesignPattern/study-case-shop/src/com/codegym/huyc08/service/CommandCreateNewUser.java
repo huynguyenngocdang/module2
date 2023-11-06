@@ -2,7 +2,7 @@ package com.codegym.huyc08.service;
 
 import com.codegym.huyc08.menu.Command;
 import com.codegym.huyc08.service.chainCreateNewUser.CreateNewUser;
-import com.codegym.huyc08.service.chainCreateNewUser.RequestCreateNewUser;
+import com.codegym.huyc08.service.chainCreateNewUser.RequestUserInformationCreateNewUser;
 import com.codegym.huyc08.service.chainCreateNewUser.ValidateUserExist;
 import com.codegym.huyc08.service.chainCreateNewUser.ValidateUsername;
 
@@ -19,10 +19,10 @@ public class CommandCreateNewUser implements Command {
         String password = SCANNER.next();
 
         //Chain of responsibility create new user;
-        Handler createNewUser = new CreateNewUser(null);
-        Handler validateUsername = new ValidateUsername(createNewUser);
-        Handler validateUserExist = new ValidateUserExist(validateUsername);
-        validateUserExist.handle(new RequestCreateNewUser(username, password));
+        HandlerUserInformation createNewUser = new CreateNewUser(null);
+        HandlerUserInformation validateUsername = new ValidateUsername(createNewUser);
+        HandlerUserInformation validateUserExist = new ValidateUserExist(validateUsername);
+        validateUserExist.handle(new RequestUserInformationCreateNewUser(username, password));
 
     }
 }

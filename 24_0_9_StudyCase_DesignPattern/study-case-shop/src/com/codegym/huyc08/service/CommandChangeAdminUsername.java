@@ -2,7 +2,7 @@ package com.codegym.huyc08.service;
 
 import com.codegym.huyc08.menu.Command;
 import com.codegym.huyc08.service.chainChangeAdminName.ChangeAdminUsername;
-import com.codegym.huyc08.service.chainChangeAdminName.RequestChangeAdminUsername;
+import com.codegym.huyc08.service.chainChangeAdminName.RequestUserInformationChangeAdminUsername;
 import com.codegym.huyc08.service.chainChangeAdminName.ValidateAdminExist;
 import com.codegym.huyc08.service.chainChangeAdminName.ValidateAdminFollowRegex;
 
@@ -16,9 +16,9 @@ public class CommandChangeAdminUsername implements Command {
         String newAdminName = SCANNER.next();
 
         //Validate admin name like admin - admin name exist - change admin name
-        Handler changeAdminName = new ChangeAdminUsername(null);
-        Handler validateAdminExist = new ValidateAdminExist(changeAdminName);
-        Handler validateAdminFollowRegex = new ValidateAdminFollowRegex(validateAdminExist);
-        validateAdminFollowRegex.handle(new RequestChangeAdminUsername(newAdminName));
+        HandlerUserInformation changeAdminName = new ChangeAdminUsername(null);
+        HandlerUserInformation validateAdminExist = new ValidateAdminExist(changeAdminName);
+        HandlerUserInformation validateAdminFollowRegex = new ValidateAdminFollowRegex(validateAdminExist);
+        validateAdminFollowRegex.handle(new RequestUserInformationChangeAdminUsername(newAdminName));
     }
 }

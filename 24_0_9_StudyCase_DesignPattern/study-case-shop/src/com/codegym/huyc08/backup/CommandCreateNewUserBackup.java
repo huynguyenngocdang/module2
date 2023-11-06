@@ -10,7 +10,7 @@ import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.Subject;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorUserExist;
-import com.codegym.huyc08.service.ValidatorRegex;
+import com.codegym.huyc08.service.ValidatorRegexString;
 
 import java.util.Scanner;
 
@@ -44,7 +44,7 @@ public class CommandCreateNewUserBackup extends Subject implements Command {
     }
 
     private boolean checkUserSyntax(String username) {
-        Validator validator = new ValidatorRegex(username, Constants.USER_REGEX);
+        Validator validator = new ValidatorRegexString(username, Constants.USER_REGEX);
         return validator.isCheck();
     }
     private boolean checkUserExist(String username) {

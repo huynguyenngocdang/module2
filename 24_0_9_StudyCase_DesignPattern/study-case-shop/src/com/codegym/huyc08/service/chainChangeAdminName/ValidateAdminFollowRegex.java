@@ -1,21 +1,21 @@
 package com.codegym.huyc08.service.chainChangeAdminName;
 
 import com.codegym.huyc08.constant.Constants;
-import com.codegym.huyc08.service.Handler;
-import com.codegym.huyc08.service.Request;
+import com.codegym.huyc08.service.HandlerUserInformation;
+import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegex;
+import com.codegym.huyc08.service.ValidatorRegexString;
 
-public class ValidateAdminFollowRegex implements Handler {
-    private Handler next;
+public class ValidateAdminFollowRegex implements HandlerUserInformation {
+    private HandlerUserInformation next;
 
-    public ValidateAdminFollowRegex(Handler next) {
+    public ValidateAdminFollowRegex(HandlerUserInformation next) {
         this.next = next;
     }
 
     @Override
-    public boolean doHandle(Request request) {
-        Validator validateAdminRegex = new ValidatorRegex(request.getUsername(), Constants.ADMIN_REGEX);
+    public boolean doHandle(RequestUserInformation requestUserInformation) {
+        Validator validateAdminRegex = new ValidatorRegexString(requestUserInformation.getUsername(), Constants.ADMIN_REGEX);
         if(validateAdminRegex.isCheck()) {
             System.out.println("Check admin regex successfully");
             return true;
@@ -27,12 +27,12 @@ public class ValidateAdminFollowRegex implements Handler {
     }
 
     @Override
-    public void handle(Request request) {
-        if(!doHandle(request)){
+    public void handle(RequestUserInformation requestUserInformation) {
+        if(!doHandle(requestUserInformation)){
             return;
         }
         if(next != null) {
-            next.handle(request);
+            next.handle(requestUserInformation);
         }
     }
 }

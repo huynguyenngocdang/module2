@@ -4,7 +4,7 @@ import com.codegym.huyc08.menu.Command;
 import com.codegym.huyc08.service.chainLogin.LoginAuthentication;
 import com.codegym.huyc08.service.chainLogin.LoginLogger;
 import com.codegym.huyc08.service.chainLogin.LoginRedirect;
-import com.codegym.huyc08.service.chainLogin.RequestLogin;
+import com.codegym.huyc08.service.chainLogin.RequestUserInformationLogin;
 
 import java.util.Scanner;
 
@@ -23,9 +23,9 @@ public class CommandLogin implements Command {
         String password = SCANNER.next();
 
         //authentication - logger - navigator
-        Handler navigator = new LoginRedirect(null);
-        Handler logger = new LoginLogger(navigator);
-        Handler authentication = new LoginAuthentication(logger);
-        authentication.handle(new RequestLogin(username, password));
+        HandlerUserInformation navigator = new LoginRedirect(null);
+        HandlerUserInformation logger = new LoginLogger(navigator);
+        HandlerUserInformation authentication = new LoginAuthentication(logger);
+        authentication.handle(new RequestUserInformationLogin(username, password));
     }
 }

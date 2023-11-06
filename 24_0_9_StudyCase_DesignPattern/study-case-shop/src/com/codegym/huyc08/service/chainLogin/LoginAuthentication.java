@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainLogin;
 
 import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.entity.UserType;
-import com.codegym.huyc08.service.Handler;
-import com.codegym.huyc08.service.Request;
+import com.codegym.huyc08.service.HandlerUserInformation;
+import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorAdminCorrect;
 import com.codegym.huyc08.service.ValidatorAdminExist;
@@ -12,20 +12,20 @@ import com.codegym.huyc08.service.ValidatorUserCorrect;
 
 import java.util.Scanner;
 
-public class LoginAuthentication implements Handler {
-    private Handler nextHandler;
+public class LoginAuthentication implements HandlerUserInformation {
+    private HandlerUserInformation nextHandlerUserInformation;
     private static int loginAttempt;
 
     private final Scanner SCANNER = new Scanner(System.in);
 
-    public LoginAuthentication(Handler nextHandler) {
-        this.nextHandler = nextHandler;
+    public LoginAuthentication(HandlerUserInformation nextHandlerUserInformation) {
+        this.nextHandlerUserInformation = nextHandlerUserInformation;
     }
 
     @Override
-    public boolean doHandle(Request request) {
-        String username = request.getUsername();
-        String password = request.getPassword();
+    public boolean doHandle(RequestUserInformation requestUserInformation) {
+        String username = requestUserInformation.getUsername();
+        String password = requestUserInformation.getPassword();
        UserType userType = determineUserType(username);
        switch (userType) {
            case NORMAL:
@@ -39,13 +39,13 @@ public class LoginAuthentication implements Handler {
     }
 
     @Override
-    public void handle(Request request) {
-        if(!doHandle(request)){
+    public void handle(RequestUserInformation requestUserInformation) {
+        if(!doHandle(requestUserInformation)){
             return;
         }
 
-        if (nextHandler != null) {
-            nextHandler.handle(request);
+        if (nextHandlerUserInformation != null) {
+            nextHandlerUserInformation.handle(requestUserInformation);
         }
     }
     private UserType determineUserType(String username) {

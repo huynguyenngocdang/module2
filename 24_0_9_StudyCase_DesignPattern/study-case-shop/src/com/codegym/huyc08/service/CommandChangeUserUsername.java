@@ -4,7 +4,7 @@ import com.codegym.huyc08.menu.Command;
 import com.codegym.huyc08.service.chainCreateNewUser.ValidateUserExist;
 import com.codegym.huyc08.service.chainCreateNewUser.ValidateUsername;
 import com.codegym.huyc08.service.chainChangeUsername.ChangeUserUsername;
-import com.codegym.huyc08.service.chainChangeUsername.RequestChangeUserUsername;
+import com.codegym.huyc08.service.chainChangeUsername.RequestUserInformationChangeUserUsername;
 import com.codegym.huyc08.service.chainChangeUsername.ValidateUsernameLikeAdmin;
 
 import java.util.Scanner;
@@ -18,10 +18,10 @@ public class CommandChangeUserUsername implements Command {
         String newUsername = SCANNER.next();
 
         //Validate user like admin - validate user exist - validate user follow regex - change username
-        Handler changeUsername = new ChangeUserUsername(null);
-        Handler validateUserRegex = new ValidateUsername(changeUsername);
-        Handler validateUserExist = new ValidateUserExist(validateUserRegex);
-        Handler validateUserLikeAdmin = new ValidateUsernameLikeAdmin(validateUserExist);
-        validateUserLikeAdmin.handle(new RequestChangeUserUsername(newUsername));
+        HandlerUserInformation changeUsername = new ChangeUserUsername(null);
+        HandlerUserInformation validateUserRegex = new ValidateUsername(changeUsername);
+        HandlerUserInformation validateUserExist = new ValidateUserExist(validateUserRegex);
+        HandlerUserInformation validateUserLikeAdmin = new ValidateUsernameLikeAdmin(validateUserExist);
+        validateUserLikeAdmin.handle(new RequestUserInformationChangeUserUsername(newUsername));
     }
 }

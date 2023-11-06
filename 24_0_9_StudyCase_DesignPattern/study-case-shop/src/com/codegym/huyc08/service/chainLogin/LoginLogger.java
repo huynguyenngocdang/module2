@@ -1,22 +1,22 @@
 package com.codegym.huyc08.service.chainLogin;
 
 import com.codegym.huyc08.entity.UserType;
-import com.codegym.huyc08.service.Handler;
-import com.codegym.huyc08.service.Request;
+import com.codegym.huyc08.service.HandlerUserInformation;
+import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.SingletonCurrentAdmin;
 import com.codegym.huyc08.service.SingletonCurrentUser;
 
-public class LoginLogger implements Handler {
-    private Handler nextHandler;
+public class LoginLogger implements HandlerUserInformation {
+    private HandlerUserInformation nextHandlerUserInformation;
 
-    public LoginLogger(Handler nextHandler) {
-        this.nextHandler = nextHandler;
+    public LoginLogger(HandlerUserInformation nextHandlerUserInformation) {
+        this.nextHandlerUserInformation = nextHandlerUserInformation;
     }
 
     @Override
-    public boolean doHandle(Request request) {
-        String username = request.getUsername();
-        String password = request.getPassword();
+    public boolean doHandle(RequestUserInformation requestUserInformation) {
+        String username = requestUserInformation.getUsername();
+        String password = requestUserInformation.getPassword();
         UserType userType = determineUserType(username);
         switch (userType) {
             case NORMAL:
@@ -30,12 +30,12 @@ public class LoginLogger implements Handler {
     }
 
     @Override
-    public void handle(Request request) {
-        if(!doHandle(request)) {
+    public void handle(RequestUserInformation requestUserInformation) {
+        if(!doHandle(requestUserInformation)) {
             return;
         }
-        if (nextHandler != null) {
-            nextHandler.handle(request);
+        if (nextHandlerUserInformation != null) {
+            nextHandlerUserInformation.handle(requestUserInformation);
         }
     }
     private UserType determineUserType(String username) {

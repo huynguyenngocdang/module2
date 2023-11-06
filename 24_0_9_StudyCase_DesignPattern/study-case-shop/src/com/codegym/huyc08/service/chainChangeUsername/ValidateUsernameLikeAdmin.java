@@ -1,21 +1,21 @@
 package com.codegym.huyc08.service.chainChangeUsername;
 
 import com.codegym.huyc08.constant.Constants;
-import com.codegym.huyc08.service.Handler;
-import com.codegym.huyc08.service.Request;
+import com.codegym.huyc08.service.HandlerUserInformation;
+import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegex;
+import com.codegym.huyc08.service.ValidatorRegexString;
 
-public class ValidateUsernameLikeAdmin implements Handler {
-    private Handler nextHandler;
+public class ValidateUsernameLikeAdmin implements HandlerUserInformation {
+    private HandlerUserInformation nextHandlerUserInformation;
 
-    public ValidateUsernameLikeAdmin(Handler nextHandler) {
-        this.nextHandler = nextHandler;
+    public ValidateUsernameLikeAdmin(HandlerUserInformation nextHandlerUserInformation) {
+        this.nextHandlerUserInformation = nextHandlerUserInformation;
     }
 
     @Override
-    public boolean doHandle(Request request) {
-        Validator validatorRegex = new ValidatorRegex(request.getUsername(), Constants.ADMIN_REGEX);
+    public boolean doHandle(RequestUserInformation requestUserInformation) {
+        Validator validatorRegex = new ValidatorRegexString(requestUserInformation.getUsername(), Constants.ADMIN_REGEX);
         if(validatorRegex.isCheck()) {
             System.out.println("Can't make new name start with admin");
             return false;
@@ -26,12 +26,12 @@ public class ValidateUsernameLikeAdmin implements Handler {
     }
 
     @Override
-    public void handle(Request request) {
-            if(!doHandle(request)) {
+    public void handle(RequestUserInformation requestUserInformation) {
+            if(!doHandle(requestUserInformation)) {
                 return;
             }
-            if(nextHandler != null) {
-                nextHandler.handle(request);
+            if(nextHandlerUserInformation != null) {
+                nextHandlerUserInformation.handle(requestUserInformation);
             }
     }
 }

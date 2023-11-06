@@ -4,24 +4,24 @@ import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.menu.MenuAdmin;
 import com.codegym.huyc08.menu.MenuUser;
 import com.codegym.huyc08.menu.Navigator;
-import com.codegym.huyc08.service.Handler;
-import com.codegym.huyc08.service.Request;
+import com.codegym.huyc08.service.HandlerUserInformation;
+import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegex;
+import com.codegym.huyc08.service.ValidatorRegexString;
 
-public class LoginRedirect implements Handler {
-    private Handler next;
+public class LoginRedirect implements HandlerUserInformation {
+    private HandlerUserInformation next;
 
-    public LoginRedirect(Handler next) {
+    public LoginRedirect(HandlerUserInformation next) {
         this.next = next;
     }
 
 
     @Override
-    public boolean doHandle(Request request) {
-        String username = request.getUsername();
-        Validator validator = new ValidatorRegex(username, Constants.USER_REGEX);
-        Validator validator1 = new ValidatorRegex(username, Constants.ADMIN_REGEX);
+    public boolean doHandle(RequestUserInformation requestUserInformation) {
+        String username = requestUserInformation.getUsername();
+        Validator validator = new ValidatorRegexString(username, Constants.USER_REGEX);
+        Validator validator1 = new ValidatorRegexString(username, Constants.ADMIN_REGEX);
         if(validator.isCheck()) {
             Navigator menuUser = new MenuUser();
             System.out.println("Redirecting to Menu User");
@@ -37,12 +37,12 @@ public class LoginRedirect implements Handler {
     }
 
     @Override
-    public void handle(Request request) {
-            if(!doHandle(request)) {
+    public void handle(RequestUserInformation requestUserInformation) {
+            if(!doHandle(requestUserInformation)) {
                 return;
             }
             if (next != null) {
-                next.handle(request);
+                next.handle(requestUserInformation);
             }
     }
 }

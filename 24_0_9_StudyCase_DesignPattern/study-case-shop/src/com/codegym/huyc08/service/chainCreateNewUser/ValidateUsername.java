@@ -1,21 +1,21 @@
 package com.codegym.huyc08.service.chainCreateNewUser;
 
 import com.codegym.huyc08.constant.Constants;
-import com.codegym.huyc08.service.Handler;
-import com.codegym.huyc08.service.Request;
+import com.codegym.huyc08.service.HandlerUserInformation;
+import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegex;
+import com.codegym.huyc08.service.ValidatorRegexString;
 
-public class ValidateUsername implements Handler {
-    private Handler nextHandler;
+public class ValidateUsername implements HandlerUserInformation {
+    private HandlerUserInformation nextHandlerUserInformation;
 
-    public ValidateUsername(Handler nextHandler) {
-        this.nextHandler = nextHandler;
+    public ValidateUsername(HandlerUserInformation nextHandlerUserInformation) {
+        this.nextHandlerUserInformation = nextHandlerUserInformation;
     }
 
     @Override
-    public boolean doHandle(Request request) {
-        Validator validatorRegex = new ValidatorRegex(request.getUsername(), Constants.USER_REGEX);
+    public boolean doHandle(RequestUserInformation requestUserInformation) {
+        Validator validatorRegex = new ValidatorRegexString(requestUserInformation.getUsername(), Constants.USER_REGEX);
         boolean isUserFollowRegex = validatorRegex.isCheck();
         if (isUserFollowRegex) {
             System.out.println("Check username regex completed");
@@ -27,12 +27,12 @@ public class ValidateUsername implements Handler {
     }
 
     @Override
-    public void handle(Request request) {
-        if(!doHandle(request)){
+    public void handle(RequestUserInformation requestUserInformation) {
+        if(!doHandle(requestUserInformation)){
             return;
         }
-        if (nextHandler != null) {
-            nextHandler.handle(request);
+        if (nextHandlerUserInformation != null) {
+            nextHandlerUserInformation.handle(requestUserInformation);
         }
     }
 }
