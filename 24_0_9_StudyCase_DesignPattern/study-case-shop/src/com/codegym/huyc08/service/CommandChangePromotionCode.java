@@ -1,6 +1,5 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.menu.Command;
 import com.codegym.huyc08.service.chainChangePromotionCode.ChangePromotionCode;
 import com.codegym.huyc08.service.chainChangePromotionCode.RequestChangePromotionCode;
 import com.codegym.huyc08.service.chainChangePromotionCode.ValidatePromotionExistByCode;

@@ -4,7 +4,7 @@ import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.UserFactory;
 import com.codegym.huyc08.entity.UserType;
-import com.codegym.huyc08.menu.Command;
+import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.Observer;
 import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.Subject;

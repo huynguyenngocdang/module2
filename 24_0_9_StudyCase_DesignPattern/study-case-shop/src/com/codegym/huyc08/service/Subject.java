@@ -3,7 +3,7 @@ package com.codegym.huyc08.service;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Subject {
+public abstract class Subject {
     List<Observer> observers = new ArrayList<>();
     public void addObserver(Observer observer) {
         observers.add(observer);

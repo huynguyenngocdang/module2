@@ -1,5 +1,7 @@
 package com.codegym.huyc08.menu;
 
+import com.codegym.huyc08.service.Command;
+
 public class MenuItem {
     private String name;
     private Command command;

@@ -1,7 +1,5 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.menu.Command;
-import com.codegym.huyc08.service.chainChangePromotionAmount.ChangePromotionAmount;
 import com.codegym.huyc08.service.chainChangePromotionPercent.ChangePromotionPercent;
 import com.codegym.huyc08.service.chainChangePromotionPercent.RequestChangePromotionPercent;
 import com.codegym.huyc08.service.chainChangePromotionPercent.ValidatePromotionPercentNotNegative;

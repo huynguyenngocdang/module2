@@ -1,7 +1,5 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.menu.Command;
-
 import java.util.Scanner;
 
 public class CommandChangeAdminPassword extends Subject implements Command {

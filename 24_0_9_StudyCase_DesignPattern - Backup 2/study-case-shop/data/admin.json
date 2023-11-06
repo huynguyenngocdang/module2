@@ -1,0 +1,10 @@
+[
+  {
+    "userId": -1,
+    "username": "admin_1",
+    "password": "123",
+    "walletBalance": 10000.0,
+    "userType": "ADMIN",
+    "isActive": true
+  }
+]

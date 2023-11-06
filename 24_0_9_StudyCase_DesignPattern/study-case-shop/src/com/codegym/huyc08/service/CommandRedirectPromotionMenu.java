@@ -1,6 +1,5 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.menu.Command;
 import com.codegym.huyc08.service.chainRedirectPromotionProfileMenu.RedirectPromotionProfileMenu;
 import com.codegym.huyc08.service.chainRedirectPromotionProfileMenu.RequestPromotionProfile;
 import com.codegym.huyc08.service.chainRedirectPromotionProfileMenu.SetCurrentPromotion;
