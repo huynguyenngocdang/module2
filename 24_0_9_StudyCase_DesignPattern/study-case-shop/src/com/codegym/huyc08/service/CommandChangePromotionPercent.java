@@ -1,9 +1,9 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.service.chainChangePromotionPercent.ChangePromotionPercent;
-import com.codegym.huyc08.service.chainChangePromotionPercent.RequestChangePromotionPercent;
-import com.codegym.huyc08.service.chainChangePromotionPercent.ValidatePromotionPercentNotNegative;
-import com.codegym.huyc08.service.chainChangePromotionPercent.ValidatePromotionPercentUnderHundred;
+import com.codegym.huyc08.service.chainChangePromotionPercent.ChangeModifyPromotionPercent;
+import com.codegym.huyc08.service.chainChangePromotionPercent.RequestChangeModifyPromotionPercent;
+import com.codegym.huyc08.service.chainChangePromotionPercent.ValidateModifyPromotionPercentNotNegative;
+import com.codegym.huyc08.service.chainChangePromotionPercent.ValidateModifyPromotionPercentUnderHundred;
 
 import java.util.Scanner;
 
@@ -15,10 +15,10 @@ public class CommandChangePromotionPercent implements Command {
         double newPercent = SCANNER.nextDouble();
 
         //validate not negative - validate under 100 - change new amount;
-        HandlerPromotion changePromotionPercent = new ChangePromotionPercent(null);
-        HandlerPromotion validatePromotionPercentUnderHundred = new ValidatePromotionPercentUnderHundred(changePromotionPercent);
-        HandlerPromotion validatePromotionPercentNotNegative = new ValidatePromotionPercentNotNegative(validatePromotionPercentUnderHundred);
-        validatePromotionPercentNotNegative.handle(new RequestChangePromotionPercent(newPercent));
+        HandlerModifyPromotion changePromotionPercent = new ChangeModifyPromotionPercent(null);
+        HandlerModifyPromotion validatePromotionPercentUnderHundred = new ValidateModifyPromotionPercentUnderHundred(changePromotionPercent);
+        HandlerModifyPromotion validatePromotionPercentNotNegative = new ValidateModifyPromotionPercentNotNegative(validatePromotionPercentUnderHundred);
+        validatePromotionPercentNotNegative.handle(new RequestChangeModifyPromotionPercent(newPercent));
 
     }
 }

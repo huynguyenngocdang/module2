@@ -1,22 +1,21 @@
 package com.codegym.huyc08.service.chainChangePromotionStartDate;
 
 import com.codegym.huyc08.constant.Constants;
-import com.codegym.huyc08.service.HandlerPromotion;
-import com.codegym.huyc08.service.RequestPromotion;
+import com.codegym.huyc08.service.HandlerModifyPromotion;
+import com.codegym.huyc08.service.RequestModifyPromotion;
 import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegexDate;
 import com.codegym.huyc08.service.ValidatorRegexString;
 
-public class ValidateStartDateFollowRegex implements HandlerPromotion {
-    private HandlerPromotion next;
+public class ValidateStartDateFollowRegex implements HandlerModifyPromotion {
+    private HandlerModifyPromotion next;
 
-    public ValidateStartDateFollowRegex(HandlerPromotion next) {
+    public ValidateStartDateFollowRegex(HandlerModifyPromotion next) {
         this.next = next;
     }
 
     @Override
-    public boolean doHandle(RequestPromotion requestPromotion) {
-        Validator validateDate = new ValidatorRegexString(requestPromotion.getString(), Constants.DATE_REGEX);
+    public boolean doHandle(RequestModifyPromotion requestModifyPromotion) {
+        Validator validateDate = new ValidatorRegexString(requestModifyPromotion.getPromotionDateStart(), Constants.DATE_REGEX);
         if(validateDate.isCheck()){
             System.out.println("Validate input follow date regex successfully");
             return true;
@@ -28,12 +27,12 @@ public class ValidateStartDateFollowRegex implements HandlerPromotion {
     }
 
     @Override
-    public void handle(RequestPromotion requestPromotion) {
-        if (!doHandle(requestPromotion)) {
+    public void handle(RequestModifyPromotion requestModifyPromotion) {
+        if (!doHandle(requestModifyPromotion)) {
             return;
         }
         if(next!= null) {
-            next.handle(requestPromotion);
+            next.handle(requestModifyPromotion);
         }
 
     }

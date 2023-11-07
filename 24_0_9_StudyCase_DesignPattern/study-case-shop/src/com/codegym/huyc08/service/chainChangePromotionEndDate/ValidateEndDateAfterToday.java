@@ -1,28 +1,26 @@
 package com.codegym.huyc08.service.chainChangePromotionEndDate;
 
 import com.codegym.huyc08.constant.Constants;
-import com.codegym.huyc08.service.HandlerPromotion;
-import com.codegym.huyc08.service.RequestPromotion;
+import com.codegym.huyc08.service.HandlerModifyPromotion;
+import com.codegym.huyc08.service.RequestModifyPromotion;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorDateBeforeDate;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
-public class ValidateEndDateAfterToday implements HandlerPromotion {
-    private HandlerPromotion next;
+public class ValidateEndDateAfterToday implements HandlerModifyPromotion {
+    private HandlerModifyPromotion next;
 
-    public ValidateEndDateAfterToday(HandlerPromotion next) {
+    public ValidateEndDateAfterToday(HandlerModifyPromotion next) {
         this.next = next;
     }
 
     @Override
-    public boolean doHandle(RequestPromotion requestPromotion) {
+    public boolean doHandle(RequestModifyPromotion requestModifyPromotion) {
         SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_PATTERN_REGEX);
         String todayDateZeroTime = dateFormat.format(new Date());
-        String newEndDate = requestPromotion.getString();
+        String newEndDate = requestModifyPromotion.getPromotionDateEnd();
         Validator validateEndDateAfterToday = new ValidatorDateBeforeDate(todayDateZeroTime, newEndDate );
         if(validateEndDateAfterToday.isCheck()) {
             System.out.println("Check end date after today successfully");
@@ -35,12 +33,12 @@ public class ValidateEndDateAfterToday implements HandlerPromotion {
     }
 
     @Override
-    public void handle(RequestPromotion requestPromotion) {
-        if(!doHandle(requestPromotion)){
+    public void handle(RequestModifyPromotion requestModifyPromotion) {
+        if(!doHandle(requestModifyPromotion)){
             return;
         }
         if(next!=null){
-            next.handle(requestPromotion);
+            next.handle(requestModifyPromotion);
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.service.chainChangePromotionStartDate.ChangePromotionStartDate;
-import com.codegym.huyc08.service.chainChangePromotionStartDate.RequestChangePromotionStartDate;
+import com.codegym.huyc08.service.chainChangePromotionStartDate.ChangeModifyPromotionStartDate;
+import com.codegym.huyc08.service.chainChangePromotionStartDate.RequestChangeModifyPromotionStartDate;
 import com.codegym.huyc08.service.chainChangePromotionStartDate.ValidateStartDateBeforeEndDate;
 import com.codegym.huyc08.service.chainChangePromotionStartDate.ValidateStartDateFollowRegex;
 import com.codegym.huyc08.service.chainChangePromotionStartDate.ValidateStartDateIsDate;
@@ -16,10 +16,10 @@ public class CommandChangePromotionDateStart implements Command {
         String newStartDate = SCANNER.next();
 
         //validate follow regex -validate date is date - validate start date before end date - change start date
-        HandlerPromotion changeStartDate = new ChangePromotionStartDate(null);
-        HandlerPromotion validateStartDateBeforeEndDate = new ValidateStartDateBeforeEndDate(changeStartDate);
-        HandlerPromotion validateStartDateIsDate = new ValidateStartDateIsDate(validateStartDateBeforeEndDate);
-        HandlerPromotion validateStartDateFollowRegex = new ValidateStartDateFollowRegex(validateStartDateIsDate);
-        validateStartDateFollowRegex.handle(new RequestChangePromotionStartDate(newStartDate));
+        HandlerModifyPromotion changeStartDate = new ChangeModifyPromotionStartDate(null);
+        HandlerModifyPromotion validateStartDateBeforeEndDate = new ValidateStartDateBeforeEndDate(changeStartDate);
+        HandlerModifyPromotion validateStartDateIsDate = new ValidateStartDateIsDate(validateStartDateBeforeEndDate);
+        HandlerModifyPromotion validateStartDateFollowRegex = new ValidateStartDateFollowRegex(validateStartDateIsDate);
+        validateStartDateFollowRegex.handle(new RequestChangeModifyPromotionStartDate(newStartDate));
     }
 }

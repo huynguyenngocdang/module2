@@ -1,6 +1,8 @@
 package com.codegym.huyc08.entity;
 
-public class Promotion {
+import com.codegym.huyc08.service.RequestNewPromotion;
+
+public class Promotion  {
     private int promotionId;
     private String promotionCode;
     private String promotionDateStart;
@@ -20,49 +22,61 @@ public class Promotion {
         this.promotionPercent = promotionPercent;
     }
 
+
     public int getPromotionId() {
         return promotionId;
     }
+
 
     public void setPromotionId(int promotionId) {
         this.promotionId = promotionId;
     }
 
+
     public String getPromotionCode() {
         return promotionCode;
     }
+
 
     public void setPromotionCode(String promotionCode) {
         this.promotionCode = promotionCode;
     }
 
+
     public String getPromotionDateStart() {
         return promotionDateStart;
     }
+
 
     public void setPromotionDateStart(String promotionDateStart) {
         this.promotionDateStart = promotionDateStart;
     }
 
+
     public String getPromotionDateEnd() {
         return promotionDateEnd;
     }
+
 
     public void setPromotionDateEnd(String promotionDateEnd) {
         this.promotionDateEnd = promotionDateEnd;
     }
 
+
     public double getPromotionAmount() {
         return promotionAmount;
     }
+
 
     public void setPromotionAmount(double promotionAmount) {
         this.promotionAmount = promotionAmount;
     }
 
+
     public double getPromotionPercent() {
         return promotionPercent;
     }
+
 
     public void setPromotionPercent(double promotionPercent) {
         this.promotionPercent = promotionPercent;

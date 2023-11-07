@@ -1,8 +1,8 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.service.chainChangePromotionAmount.ChangePromotionAmount;
-import com.codegym.huyc08.service.chainChangePromotionAmount.RequestChangePromotionAmount;
-import com.codegym.huyc08.service.chainChangePromotionAmount.ValidatePromotionAmountNotNegative;
+import com.codegym.huyc08.service.chainChangePromotionAmount.ChangeModifyPromotionAmount;
+import com.codegym.huyc08.service.chainChangePromotionAmount.RequestChangeModifyPromotionAmount;
+import com.codegym.huyc08.service.chainChangePromotionAmount.ValidateModifyPromotionAmountNotNegative;
 
 import java.util.Scanner;
 
@@ -14,8 +14,8 @@ public class CommandChangePromotionAmount implements Command {
         double newAmount = SCANNER.nextDouble();
 
         //validate not negative - change new amount;
-        HandlerPromotion changePromotionAmount = new ChangePromotionAmount(null);
-        HandlerPromotion validatePromotionAmountNotNegative = new ValidatePromotionAmountNotNegative(changePromotionAmount);
-        validatePromotionAmountNotNegative.handle(new RequestChangePromotionAmount(newAmount));
+        HandlerModifyPromotion changePromotionAmount = new ChangeModifyPromotionAmount(null);
+        HandlerModifyPromotion validatePromotionAmountNotNegative = new ValidateModifyPromotionAmountNotNegative(changePromotionAmount);
+        validatePromotionAmountNotNegative.handle(new RequestChangeModifyPromotionAmount(newAmount));
     }
 }

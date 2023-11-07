@@ -1,9 +1,9 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.service.chainChangePromotionCode.ChangePromotionCode;
-import com.codegym.huyc08.service.chainChangePromotionCode.RequestChangePromotionCode;
-import com.codegym.huyc08.service.chainChangePromotionCode.ValidatePromotionExistByCode;
-import com.codegym.huyc08.service.chainChangePromotionCode.ValidatePromotionFollowRegex;
+import com.codegym.huyc08.service.chainChangePromotionCode.ChangeModifyPromotionCode;
+import com.codegym.huyc08.service.chainChangePromotionCode.RequestChangeModifyPromotionCode;
+import com.codegym.huyc08.service.chainChangePromotionCode.ValidateModifyPromotionExistByCode;
+import com.codegym.huyc08.service.chainChangePromotionCode.ValidateModifyPromotionFollowRegex;
 
 import java.util.Scanner;
 
@@ -16,10 +16,10 @@ public class CommandChangePromotionCode implements Command {
         String newCode = SCANNER.next();
         int currentPromotionId = SingletonCurrentPromotion.getInstance().getCurrentPromotion().getPromotionId();
         //validate promotion code regex, validate promotion code exist, change promotion code
-        HandlerPromotion changeCode = new ChangePromotionCode(null);
-        HandlerPromotion validatePromotionCodeExist = new ValidatePromotionExistByCode(changeCode);
-        HandlerPromotion validatePromotionCodeFollowRegex = new ValidatePromotionFollowRegex(validatePromotionCodeExist);
-        validatePromotionCodeFollowRegex.handle(new RequestChangePromotionCode(currentPromotionId, newCode));
+        HandlerModifyPromotion changeCode = new ChangeModifyPromotionCode(null);
+        HandlerModifyPromotion validatePromotionCodeExist = new ValidateModifyPromotionExistByCode(changeCode);
+        HandlerModifyPromotion validatePromotionCodeFollowRegex = new ValidateModifyPromotionFollowRegex(validatePromotionCodeExist);
+        validatePromotionCodeFollowRegex.handle(new RequestChangeModifyPromotionCode(currentPromotionId, newCode));
 
     }
 }

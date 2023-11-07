@@ -1,20 +1,20 @@
 package com.codegym.huyc08.service.chainChangePromotionEndDate;
 
-import com.codegym.huyc08.service.HandlerPromotion;
-import com.codegym.huyc08.service.RequestPromotion;
+import com.codegym.huyc08.service.HandlerModifyPromotion;
+import com.codegym.huyc08.service.RequestModifyPromotion;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorRegexDate;
 
-public class ValidateEndDateIsDate implements HandlerPromotion {
-    private HandlerPromotion next;
+public class ValidateEndDateIsDate implements HandlerModifyPromotion {
+    private HandlerModifyPromotion next;
 
-    public ValidateEndDateIsDate(HandlerPromotion next) {
+    public ValidateEndDateIsDate(HandlerModifyPromotion next) {
         this.next = next;
     }
 
     @Override
-    public boolean doHandle(RequestPromotion requestPromotion) {
-        Validator validateDate = new ValidatorRegexDate(requestPromotion.getString());
+    public boolean doHandle(RequestModifyPromotion requestModifyPromotion) {
+        Validator validateDate = new ValidatorRegexDate(requestModifyPromotion.getPromotionDateEnd());
         if(validateDate.isCheck()){
             System.out.println("Validate input is a date successfully");
             return true;
@@ -26,12 +26,12 @@ public class ValidateEndDateIsDate implements HandlerPromotion {
     }
 
     @Override
-    public void handle(RequestPromotion requestPromotion) {
-        if (!doHandle(requestPromotion)) {
+    public void handle(RequestModifyPromotion requestModifyPromotion) {
+        if (!doHandle(requestModifyPromotion)) {
             return;
         }
         if(next!= null) {
-            next.handle(requestPromotion);
+            next.handle(requestModifyPromotion);
         }
 
     }

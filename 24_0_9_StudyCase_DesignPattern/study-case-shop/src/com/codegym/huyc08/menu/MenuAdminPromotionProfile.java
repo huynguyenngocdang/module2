@@ -9,6 +9,7 @@ import com.codegym.huyc08.service.CommandChangePromotionPercent;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandGetAllPromotionsInformation;
 import com.codegym.huyc08.service.CommandGetCurrentPromotionInformation;
+import com.codegym.huyc08.service.CommandRemoveCurrentPromotion;
 
 import java.util.Scanner;
 
@@ -23,6 +24,7 @@ public class MenuAdminPromotionProfile implements Navigator{
         menuPromotionProfile.addMenuItem(new MenuItem("Change promotion end date", new CommandChangePromotionDateEnd()));
         menuPromotionProfile.addMenuItem(new MenuItem("Change promotion amount", new CommandChangePromotionAmount()));
         menuPromotionProfile.addMenuItem(new MenuItem("Change promotion percent", new CommandChangePromotionPercent()));
+        menuPromotionProfile.addMenuItem(new MenuItem("Remove this promotion", new CommandRemoveCurrentPromotion()));
         int choice;
         do {
             menuPromotionProfile.display();

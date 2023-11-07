@@ -2,7 +2,23 @@
   {
     "promotionId": 1,
     "promotionCode": "KM01",
-    "promotionDateStart": "5/10/2023",
+    "promotionDateStart": "10/10/2023",
+    "promotionDateEnd": "01/11/2023",
+    "promotionAmount": 0.0,
+    "promotionPercent": 10.0
+  },
+  {
+    "promotionId": 2,
+    "promotionCode": "KM02",
+    "promotionDateStart": "01/10/2023",
+    "promotionDateEnd": "02/10/2023",
+    "promotionAmount": 0.0,
+    "promotionPercent": 10.0
+  },
+  {
+    "promotionId": 3,
+    "promotionCode": "KM03",
+    "promotionDateStart": "10/10/2023",
     "promotionDateEnd": "20/11/2023",
     "promotionAmount": 0.0,
     "promotionPercent": 10.0

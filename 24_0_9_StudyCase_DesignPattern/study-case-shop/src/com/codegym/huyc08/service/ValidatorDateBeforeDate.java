@@ -22,7 +22,7 @@ public class ValidatorDateBeforeDate implements Validator{
         try {
             Date dateStart = format.parse(startDate);
             Date dateEnd = format.parse(endDate);
-            return (dateStart.compareTo(dateEnd)<= 0);
+            return (dateStart.compareTo(dateEnd)< 0);
         } catch (ParseException e){
             return false;
         }
