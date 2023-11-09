@@ -1,13 +1,15 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.entity.NormalUser;
+import com.codegym.huyc08.entity.Product;
 import com.codegym.huyc08.entity.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SingletonCurrentUser implements Observer {
     private List<NormalUser> users;
+
     private NormalUser currentUser;
     private static SingletonCurrentUser instance;
     private final MyFileHandler fileHandler;
@@ -15,6 +17,7 @@ public class SingletonCurrentUser implements Observer {
     private SingletonCurrentUser() {
         fileHandler = new JsonFileHandler();
         users = SingletonListNormalUser.getInstance().getUsers();
+
     }
     public static SingletonCurrentUser getInstance() {
         if(instance == null) {
@@ -22,7 +25,7 @@ public class SingletonCurrentUser implements Observer {
         }
         return instance;
     }
-    public User getCurrentUser(){
+    public NormalUser getCurrentUser(){
         return currentUser;
     }
     public void setCurrentUser(String username, String password) {
@@ -45,6 +48,7 @@ public class SingletonCurrentUser implements Observer {
         }
         System.out.println("Can't set current user");
     }
+
 
     public void changeUsername(String newUsername) {
         currentUser.setUsername(newUsername);

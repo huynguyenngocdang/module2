@@ -28,5 +28,15 @@
     "productQuantity": 10.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
+  },
+  {
+    "productId": 4,
+    "sellerId": 1,
+    "productName": "iphone",
+    "productType": "Phone",
+    "productPrice": 100.0,
+    "productQuantity": 10.0,
+    "productManufacturer": "A",
+    "productDescription": "A new phone"
   }
 ]

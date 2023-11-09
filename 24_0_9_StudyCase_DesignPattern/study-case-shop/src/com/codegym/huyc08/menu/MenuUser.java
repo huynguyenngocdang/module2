@@ -14,7 +14,7 @@ public class MenuUser implements Navigator{
         Menu menuUser = new MenuTemplate("Menu User");
         menuUser.addMenuItem(new MenuItem("Exit", new CommandExit("Menu user")));
         menuUser.addMenuItem(new MenuItem("User profile", new MenuUserProfile()));
-        menuUser.addMenuItem(new MenuItem("Shop profile", new CommandUserShopProfile()));
+        menuUser.addMenuItem(new MenuItem("Shop profile", new MenuUserShopProfile()));
         menuUser.addMenuItem(new MenuItem("Shopping", new CommandUserShop()));
         int choice;
         do {

@@ -5,7 +5,7 @@ public class MenuMain {
         System.out.println("""
                 Menu Login
                 1. Login
-                2. Create new userq
+                2. Create new user
                 99. See all user
                 0. Exit""");
     }

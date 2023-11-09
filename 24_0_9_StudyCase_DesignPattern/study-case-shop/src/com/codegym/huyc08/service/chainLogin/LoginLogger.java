@@ -49,6 +49,7 @@ public class LoginLogger implements HandlerUserInformation {
         try {
             SingletonCurrentUser.getInstance().setCurrentUser(username, password);
             System.out.println("Set current user successfully");
+
             return true;
         } catch (NullPointerException e){
             System.out.println(e.getMessage());

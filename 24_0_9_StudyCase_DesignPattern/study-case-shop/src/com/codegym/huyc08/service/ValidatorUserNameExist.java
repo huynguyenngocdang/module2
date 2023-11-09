@@ -5,11 +5,11 @@ import com.codegym.huyc08.entity.User;
 
 import java.util.List;
 
-public class ValidatorUserExist implements Validator{
+public class ValidatorUserNameExist implements Validator{
     private String username;
     private List<NormalUser> users;
 
-    public ValidatorUserExist(String username) {
+    public ValidatorUserNameExist(String username) {
         this.username = username;
         this.users = SingletonListNormalUser.getInstance().getUsers();
     }

@@ -7,7 +7,7 @@ import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorAdminCorrect;
 import com.codegym.huyc08.service.ValidatorAdminExist;
-import com.codegym.huyc08.service.ValidatorUserExist;
+import com.codegym.huyc08.service.ValidatorUserNameExist;
 import com.codegym.huyc08.service.ValidatorUserCorrect;
 
 import java.util.Scanner;
@@ -58,7 +58,7 @@ public class LoginAuthentication implements HandlerUserInformation {
     private boolean handleNormalUser(String username, String password) {
         if(loginAttempt < Constants.MAX_LOGIN_ATTEMPT) {
             Validator validateUserCorrect = new ValidatorUserCorrect(username, password);
-            Validator validateUserExist = new ValidatorUserExist(username);
+            Validator validateUserExist = new ValidatorUserNameExist(username);
             boolean isUserExist = validateUserExist.isCheck();
             boolean isUserCorrect = validateUserCorrect.isCheck();
             if(isUserExist) {
