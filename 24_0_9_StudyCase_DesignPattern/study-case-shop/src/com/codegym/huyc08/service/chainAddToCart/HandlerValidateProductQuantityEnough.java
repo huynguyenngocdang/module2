@@ -3,6 +3,7 @@ package com.codegym.huyc08.service.chainAddToCart;
 import com.codegym.huyc08.service.HandlerAddToCart;
 import com.codegym.huyc08.service.RequestAddToCart;
 import com.codegym.huyc08.service.SingletonListProduct;
+import com.codegym.huyc08.service.SingletonShoppingCart;
 import com.codegym.huyc08.service.ValidateProductExist;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorProductBelongToUser;
@@ -17,13 +18,27 @@ public class HandlerValidateProductQuantityEnough implements HandlerAddToCart {
 
     @Override
     public boolean doHandle(RequestAddToCart requestAddToCart) {
-        Validator validator = new ValidatorProductEnoughQuantity(requestAddToCart.getProductId(), requestAddToCart.getProductQuantity());
-        if(validator.isCheck()) {
-            System.out.println("Check product has enough quantity successfully");
-            return true;
-        } else {
-            System.out.println("Product does not have enough quantity");
-            return false;
+        try {
+            double currentCartItemQuantity = SingletonShoppingCart.getInstance().getCartItem(requestAddToCart.getProductId()).getQuantity();
+            double currentRequest = currentCartItemQuantity + requestAddToCart.getProductQuantity();
+            Validator validator = new ValidatorProductEnoughQuantity(requestAddToCart.getProductId(), currentRequest);
+            if(validator.isCheck()) {
+                System.out.println("Check product has enough quantity successfully");
+                return true;
+            } else {
+                System.out.println("Product does not have enough quantity");
+                return false;
+            }
+
+        } catch (NullPointerException e) {
+            Validator validator = new ValidatorProductEnoughQuantity(requestAddToCart.getProductId(), requestAddToCart.getProductQuantity());
+            if(validator.isCheck()) {
+                System.out.println("Check product has enough quantity successfully");
+                return true;
+            } else {
+                System.out.println("Product does not have enough quantity");
+                return false;
+            }
         }
 
     }

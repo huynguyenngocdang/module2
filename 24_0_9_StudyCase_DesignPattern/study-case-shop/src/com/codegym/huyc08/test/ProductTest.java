@@ -14,9 +14,10 @@ public class ProductTest {
     public static void main(String[] args) {
         ArrayList<Product> productArrayListWrite = new ArrayList<>();
         MyFileHandler fileHandler = new JsonFileHandler();
-        productArrayListWrite.add(new Product(1, 1, "Iphone7", "Phone", 700,10,"Apple" ));
-        productArrayListWrite.add(new Product(2, 2, "Iphone15", "Phone", 1000,10,"Apple" ));
-        productArrayListWrite.add(new Product(3, 2, "Iphone7", "Phone", 1000,10,"Apple" ));
+        productArrayListWrite.add(new Product(1, 1, "Iphone7", "Phone", 200,10,"Apple" ));
+        productArrayListWrite.add(new Product(2, 2, "Iphone15", "Phone", 500,10,"Apple" ));
+        productArrayListWrite.add(new Product(3, 2, "Iphone7", "Phone", 700,10,"Apple" ));
+        productArrayListWrite.add(new Product(4, 3, "Iphone15", "Phone", 600,10,"Apple" ));
         fileHandler.saveToFile(Constants.PRODUCT_FILE_PATH, productArrayListWrite);
 
         ArrayList<Product>  productArrayListRead = new ArrayList<>();

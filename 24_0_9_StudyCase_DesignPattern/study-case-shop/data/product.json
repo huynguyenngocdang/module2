@@ -4,7 +4,7 @@
     "sellerId": 1,
     "productName": "Iphone7",
     "productType": "Phone",
-    "productPrice": 700.0,
+    "productPrice": 200.0,
     "productQuantity": 10.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
@@ -14,8 +14,8 @@
     "sellerId": 2,
     "productName": "Iphone15",
     "productType": "Phone",
-    "productPrice": 1000.0,
-    "productQuantity": 10.0,
+    "productPrice": 500.0,
+    "productQuantity": 7.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
   },
@@ -24,19 +24,19 @@
     "sellerId": 2,
     "productName": "Iphone7",
     "productType": "Phone",
-    "productPrice": 1000.0,
+    "productPrice": 700.0,
     "productQuantity": 10.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
   },
   {
     "productId": 4,
-    "sellerId": 1,
-    "productName": "iphone",
+    "sellerId": 3,
+    "productName": "Iphone15",
     "productType": "Phone",
-    "productPrice": 100.0,
+    "productPrice": 600.0,
     "productQuantity": 10.0,
-    "productManufacturer": "A",
-    "productDescription": "A new phone"
+    "productManufacturer": "Apple",
+    "productDescription": "A Phone manufactured by Apple"
   }
 ]

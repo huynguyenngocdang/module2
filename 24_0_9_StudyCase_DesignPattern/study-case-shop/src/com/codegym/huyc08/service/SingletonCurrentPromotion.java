@@ -29,6 +29,15 @@ public class SingletonCurrentPromotion implements Observer{
                 currentPromotion = promotion;
                 return;
             }
+        }
+    }
+    public void setCurrentPromotion(String promotionCode) {
+        for (Promotion promotion: promotions
+        ) {
+            if(promotion.getPromotionCode().equals(promotionCode)) {
+                currentPromotion = promotion;
+                return;
+            }
         };
     }
     public void getCurrentPromotionInformation(){

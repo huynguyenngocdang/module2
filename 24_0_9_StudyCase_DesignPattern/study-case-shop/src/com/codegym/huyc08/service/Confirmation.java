@@ -15,7 +15,7 @@ public class Confirmation implements Confirm{
 
     @Override
     public boolean isConfirm() {
-        System.out.println("Do you want to " + this.action);
+        System.out.println("Do you want to " + this.action + " (Y/N)");
         String choice = SCANNER.next().toLowerCase();
         switch (choice) {
             case Constants.USER_CONFIRM:

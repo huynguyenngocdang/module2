@@ -3,16 +3,16 @@
     "userId": 1,
     "username": "Huy",
     "password": "123",
-    "walletBalance": 10000.0,
+    "walletBalance": 8550.0,
     "userType": "NORMAL",
-    "address": "Hanoi",
+    "address": "HCM City",
     "isActive": true
   },
   {
     "userId": 2,
     "username": "Giang",
     "password": "123",
-    "walletBalance": 10000.0,
+    "walletBalance": 11450.0,
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": true

@@ -47,6 +47,7 @@ public class SingletonListNormalUser implements Observer, GenerateId {
         }
     }
 
+
     public NormalUser getCurrentUser(String username) {
         for (NormalUser user : users
         ) {

@@ -35,6 +35,11 @@ public class SingletonShoppingCart {
             }
         }
     }
+
+    public List<CartItem> getCartItems() {
+        return cartItems;
+    }
+
     private boolean itemExistInCart(CartItem cartItem) {
         for (CartItem currentCartItem: cartItems
              ) {
@@ -48,7 +53,8 @@ public class SingletonShoppingCart {
         if(cartItems.isEmpty()) {
             System.out.println("Your current cart is empty");
         } else {
-
+                double productTotalCartPrice = 0;
+                double currentUserBalance = SingletonCurrentUser.getInstance().getCurrentUser().getWalletBalance();
                 System.out.println("Line\t Product ID \t Product \t Quantity \t Price \t\t Total Price");
                 for (int i = 0; i < cartItems.size(); i++) {
                     CartItem currentCartItem = cartItems.get(i);
@@ -57,8 +63,11 @@ public class SingletonShoppingCart {
                     double productQuantity = currentCartItem.getQuantity();
                     double productPrice = currentCartItem.getProduct().getProductPrice();
                     double productTotalPrice = productPrice * productQuantity;
-                    System.out.println((i+1) +". \t\t\t" + productId + " \t\t\t " + productName + " \t " + productQuantity + " \t\t " + productPrice + " \t " + productTotalPrice);
+                    productTotalCartPrice += productTotalPrice;
+                    System.out.println((i+1) +". \t\t\t" + productId + " \t\t\t " + productName + " \t " + productQuantity + " \t\t " + productPrice + " \t\t " + productTotalPrice);
             }
+            System.out.println("Your current balance: " + currentUserBalance );
+            System.out.println("Your balance after purchase: " + (currentUserBalance - productTotalCartPrice));
         }
     }
     public void removeCartLine(int choice) {

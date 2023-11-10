@@ -16,4 +16,5 @@ public interface Constants {
     int MAX_LOGIN_ATTEMPT = 3;
     String USER_CONFIRM = "y";
     String USER_REJECT = "n";
+    double PERCENT =  0.01;
 }
