@@ -34,7 +34,7 @@ public class CommandCreateNewUserBackup extends Subject implements Command {
         if (checkUserSyntax(username)){
             var factory = new UserFactory();
             int newId = SingletonListNormalUser.getInstance().getNewId();
-            var newUser = factory.createUser(newId, username,password, 0, UserType.NORMAL, true);
+            var newUser = factory.createUser(newId, username,password, 0, UserType.NORMAL, "HCM City", true);
             SingletonListNormalUser.getInstance().addUser((NormalUser) newUser);
             notifyObserver();
 

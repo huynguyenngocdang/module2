@@ -24,7 +24,7 @@ public class CreateNewUser extends Subject implements HandlerUserInformation {
         var userFactory = new UserFactory();
         GenerateId generateId = SingletonListNormalUser.getInstance();
         int newId = generateId.getNewId();
-        var newNormalUser = userFactory.createUser(newId, requestUserInformation.getUsername(), requestUserInformation.getPassword(), 0, UserType.NORMAL, true);
+        var newNormalUser = userFactory.createUser(newId, requestUserInformation.getUsername(), requestUserInformation.getPassword(), 0, UserType.NORMAL, null, true);
         Observer observer = SingletonListNormalUser.getInstance();
         addObserver(observer);
         SingletonListNormalUser.getInstance().addUser((NormalUser) newNormalUser);

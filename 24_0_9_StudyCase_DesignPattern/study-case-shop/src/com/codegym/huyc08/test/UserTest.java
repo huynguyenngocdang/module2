@@ -24,10 +24,10 @@ public class UserTest {
         ArrayList<User> users = new ArrayList<>();
         ArrayList<User> admins = new ArrayList<>();
         UserFactory userFactory = new UserFactory();
-        User admin = userFactory.createUser(-1,"admin_1","123",10_000, ADMIN, true);
-        User normalUser1 = userFactory.createUser(1,"Huy", "123", 10_000, NORMAL, true);
-        User normalUser2 = userFactory.createUser(2,"Giang", "123", 10_000, NORMAL, true);
-        User normalUser3 = userFactory.createUser(3,"Son", "123", 10_000, NORMAL, false);
+        User admin = userFactory.createUser(-1,"admin_1","123",10_000, ADMIN, "HCM City",  true);
+        User normalUser1 = userFactory.createUser(1,"Huy", "123", 10_000, NORMAL, "HCM City", true);
+        User normalUser2 = userFactory.createUser(2,"Giang", "123", 10_000, NORMAL, "HCM City", true);
+        User normalUser3 = userFactory.createUser(3,"Son", "123", 10_000, NORMAL, "HCM City", false);
         admins.add(admin);
         users.add(normalUser1);
         users.add(normalUser2);

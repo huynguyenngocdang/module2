@@ -59,6 +59,9 @@ public class SingletonCurrentUser implements Observer {
     public void changeUserBalance(double newAmount) {
         currentUser.setWalletBalance(currentUser.getWalletBalance() + newAmount);
     }
+    public void changeUserAddress(String newAddress) {
+        currentUser.setAddress(newAddress);
+    }
     public boolean getCurrentUserStatus(){
         return currentUser.isActive();
     }

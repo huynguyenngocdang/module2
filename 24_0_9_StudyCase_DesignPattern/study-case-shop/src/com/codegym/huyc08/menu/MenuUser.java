@@ -15,7 +15,7 @@ public class MenuUser implements Navigator{
         menuUser.addMenuItem(new MenuItem("Exit", new CommandExit("Menu user")));
         menuUser.addMenuItem(new MenuItem("User profile", new MenuUserProfile()));
         menuUser.addMenuItem(new MenuItem("Shop profile", new MenuUserShopProfile()));
-        menuUser.addMenuItem(new MenuItem("Shopping", new CommandUserShop()));
+        menuUser.addMenuItem(new MenuItem("Shopping", new MenuUserShopping()));
         int choice;
         do {
             String username = SingletonCurrentUser.getInstance().getCurrentUser().getUsername();

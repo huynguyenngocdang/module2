@@ -40,6 +40,15 @@ public class SingletonListProduct implements GenerateId, Observer {
         }
         return max + 1;
     }
+    public Product getProduct(int productId) {
+        for (Product product: products
+             ) {
+            if(productId == product.getProductId()) {
+                return product;
+            }
+        }
+        return null;
+    }
 
     @Override
     public void update() {

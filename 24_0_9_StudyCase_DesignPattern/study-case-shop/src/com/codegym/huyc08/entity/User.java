@@ -6,14 +6,25 @@ public abstract class User {
     protected String password;
     protected double walletBalance;
     protected UserType userType;
+    protected String address;
     protected boolean isActive;
-    public User(int userId, String username, String password, double walletBalance, UserType userType, boolean isActive) {
+
+    public User(int userId, String username, String password, double walletBalance, UserType userType, String address, boolean isActive) {
         this.userId = userId;
         this.username = username;
         this.password = password;
         this.walletBalance = walletBalance;
         this.userType = userType;
+        this.address = address;
         this.isActive = isActive;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getUserId() {
@@ -72,6 +83,7 @@ public abstract class User {
                 ", password='" + password + '\'' +
                 ", walletBalance=" + walletBalance +
                 ", userType=" + userType +
+                ", address='" + address + '\'' +
                 ", isActive=" + isActive +
                 '}';
     }

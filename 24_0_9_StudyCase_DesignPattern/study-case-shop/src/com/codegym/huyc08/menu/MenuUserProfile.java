@@ -2,6 +2,7 @@ package com.codegym.huyc08.menu;
 
 import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.service.Command;
+import com.codegym.huyc08.service.CommandChangeUserAddress;
 import com.codegym.huyc08.service.CommandChangeUserBalance;
 import com.codegym.huyc08.service.CommandChangeUserPassword;
 import com.codegym.huyc08.service.CommandChangeUserUsername;
@@ -19,6 +20,7 @@ public class MenuUserProfile implements Navigator, Command {
         menuUserProfile.addMenuItem(new MenuItem("Change username", new CommandChangeUserUsername()));
         menuUserProfile.addMenuItem(new MenuItem("Change user password", new CommandChangeUserPassword()));
         menuUserProfile.addMenuItem(new MenuItem("Change user balance", new CommandChangeUserBalance()));
+        menuUserProfile.addMenuItem(new MenuItem("Change user address", new CommandChangeUserAddress()));
         int choice;
         do {
             menuUserProfile.display();

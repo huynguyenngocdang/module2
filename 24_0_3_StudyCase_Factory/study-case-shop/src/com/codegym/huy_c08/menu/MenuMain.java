@@ -6,6 +6,7 @@ public class MenuMain {
                 Menu Login
                 1. Login
                 2. Create new user
+                3. Forgot password
                 99. See all user
                 0. Exit""");
     }
@@ -16,11 +17,12 @@ public class MenuMain {
                 1. User profile
                 2. Show all user
                 3. Check user status
+                4. search user by name
                 4. Change user name
-                5. Change user password
+                5. Change user password 
                 6. Banned/unbanned user
-                7. Delete user
-                8. Create new admin
+                7. Delete user (soft delete) -> isDelete = t/f
+                8. Create new admin (superAdmin / admin)
                 9. Manage promotion program
                 0. Exit""");
     }
@@ -68,10 +70,10 @@ public class MenuMain {
         System.out.println("""
                 User shop detail
                 1. See user cash
-                2. See your current item
-                3. Add new item
-                4. Change your item
-                5. Remove your item
+                2. See your current product
+                3. Add new product
+                4. Change your product
+                5. Remove your product
                 0. Exit""");
     }
 
@@ -90,7 +92,7 @@ public class MenuMain {
         System.out.println("""
                 Shop menu
                 1. Search for item
-                2. Purchase item
+                2. Add to cart
                 3. Check out
                 0. Exit""");
     }
@@ -99,7 +101,8 @@ public class MenuMain {
                 Cart menu
                 1. Show your cart items
                 2. Remove your cart
-                3. Purchase
+                3. Remove item in cart
+                3. Check out
                 0. Exit""");
     }
 
