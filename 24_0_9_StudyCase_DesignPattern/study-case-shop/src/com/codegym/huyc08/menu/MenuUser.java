@@ -5,6 +5,7 @@ import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandUserShop;
 import com.codegym.huyc08.service.CommandUserShopProfile;
 import com.codegym.huyc08.service.SingletonCurrentUser;
+import com.codegym.huyc08.service.SingletonCurrentUserListMessage;
 import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
 
 import java.util.Scanner;
@@ -15,6 +16,7 @@ public class MenuUser implements Navigator{
         Menu menuUser = new MenuTemplate("Menu User");
         menuUser.addMenuItem(new MenuItem("Exit", new CommandExit("Menu user")));
         menuUser.addMenuItem(new MenuItem("User profile", new MenuUserProfile()));
+        menuUser.addMenuItem(new MenuItem("Inbox", new MenuInbox(SingletonCurrentUser.getInstance().getCurrentUser().getUserId())));
         menuUser.addMenuItem(new MenuItem("Shop profile", new MenuUserShopProfile()));
         menuUser.addMenuItem(new MenuItem("Shopping", new MenuUserShopping()));
         int choice;
@@ -29,6 +31,7 @@ public class MenuUser implements Navigator{
     @Override
     public void navigate() {
         SingletonCurrentUserListProducts.getInstance().generateCurrentUserProductList();
+        SingletonCurrentUserListMessage.getInstance().setCurrentUserMessage(SingletonCurrentUser.getInstance().getCurrentUser().getUserId());
         displayMenuUser();
     }
 }

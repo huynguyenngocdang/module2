@@ -3,7 +3,7 @@
     "userId": 1,
     "username": "Huy",
     "password": "123",
-    "walletBalance": 8550.0,
+    "walletBalance": 8055.0,
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": true
@@ -12,7 +12,7 @@
     "userId": 2,
     "username": "Giang",
     "password": "123",
-    "walletBalance": 11450.0,
+    "walletBalance": 11945.0,
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": true
@@ -24,6 +24,6 @@
     "walletBalance": 10000.0,
     "userType": "NORMAL",
     "address": "HCM City",
-    "isActive": false
+    "isActive": true
   }
 ]

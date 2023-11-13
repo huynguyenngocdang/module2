@@ -4,7 +4,7 @@ import com.codegym.huyc08.entity.CartItem;
 import com.codegym.huyc08.entity.PurchaseOrder;
 import com.codegym.huyc08.entity.PurchaseOrderFactory;
 import com.codegym.huyc08.service.Observer;
-import com.codegym.huyc08.service.SingletonCurrentUserMail;
+import com.codegym.huyc08.service.SingletonCurrentUserDelivery;
 import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.SingletonListPurchaseOrder;
@@ -35,7 +35,7 @@ public abstract class TemplateCheckout extends Subject {
                 Iterator<CartItem> cartItemIterator = cartItems.iterator();
                 Observer productObserver = SingletonListProduct.getInstance();
                 Observer normalUserObserver = SingletonListNormalUser.getInstance();
-                Observer mailingObserver = SingletonCurrentUserMail.getInstance();
+                Observer mailingObserver = SingletonCurrentUserDelivery.getInstance();
                 Observer purchaseOrderObserver = SingletonListPurchaseOrder.getInstance();
 
                 PurchaseOrderFactory factory = new PurchaseOrderFactory();

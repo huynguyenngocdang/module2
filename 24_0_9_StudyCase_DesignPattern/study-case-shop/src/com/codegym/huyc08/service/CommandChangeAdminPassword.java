@@ -9,7 +9,7 @@ public class CommandChangeAdminPassword extends Subject implements Command {
         try {
             System.out.println("Input your new password");
             String newPassword = SCANNER.next();
-            Observer observer = SingletonCurrentAdmin.getInstance();
+            Observer observer = SingletonListAdmin.getInstance();
             addObserver(observer);
             SingletonCurrentAdmin.getInstance().changeAdminPassword(newPassword);
             notifyObserver();

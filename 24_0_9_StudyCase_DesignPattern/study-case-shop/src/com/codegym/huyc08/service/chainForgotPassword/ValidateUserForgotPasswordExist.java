@@ -1,14 +1,14 @@
-package com.codegym.huyc08.service.chainCreateNewUser;
+package com.codegym.huyc08.service.chainForgotPassword;
 
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorUserNameExist;
 
-public class ValidateUserExist implements HandlerUserInformation {
+public class ValidateUserForgotPasswordExist implements HandlerUserInformation {
     private HandlerUserInformation nextHandlerUserInformation;
 
-    public ValidateUserExist(HandlerUserInformation nextHandlerUserInformation) {
+    public ValidateUserForgotPasswordExist(HandlerUserInformation nextHandlerUserInformation) {
         this.nextHandlerUserInformation = nextHandlerUserInformation;
     }
 
@@ -17,21 +17,21 @@ public class ValidateUserExist implements HandlerUserInformation {
         Validator validator = new ValidatorUserNameExist(requestUserInformation.getUsername());
         boolean isUserExist = validator.isCheck();
         if (isUserExist) {
-            System.out.println("User already exist in database, get a new username");
-            return false;
-        } else {
-            System.out.println("Check user not exist completed");
+            System.out.println("Check user exist completed");
             return true;
+        } else {
+            System.out.println("Username does not exist in database");
+            return false;
         }
     }
 
     @Override
     public void handle(RequestUserInformation requestUserInformation) {
-            if(!doHandle(requestUserInformation)){
-                return;
-            }
-            if (nextHandlerUserInformation != null) {
-                nextHandlerUserInformation.handle(requestUserInformation);
-            }
+        if(!doHandle(requestUserInformation)){
+            return;
+        }
+        if (nextHandlerUserInformation != null) {
+            nextHandlerUserInformation.handle(requestUserInformation);
+        }
     }
 }

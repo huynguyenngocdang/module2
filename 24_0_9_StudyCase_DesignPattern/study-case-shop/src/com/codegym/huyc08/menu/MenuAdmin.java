@@ -8,6 +8,8 @@ import com.codegym.huyc08.service.CommandGetAllUsersInformation;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandRedirectPromotionMenu;
 import com.codegym.huyc08.service.CommandRemoveAllExpiredPromotion;
+import com.codegym.huyc08.service.SingletonCurrentAdmin;
+import com.codegym.huyc08.service.SingletonCurrentUserListMessage;
 
 import java.util.Scanner;
 
@@ -17,8 +19,9 @@ public class MenuAdmin implements Navigator{
         Menu menuAdmin = new MenuTemplate("Menu Admin");
         menuAdmin.addMenuItem(new MenuItem("Exit", new CommandExit("Menu Admin")));
         menuAdmin.addMenuItem(new MenuItem("Admin profile", new MenuAdminProfile()));
+        menuAdmin.addMenuItem(new MenuItem("Admin inbox", new MenuInbox(SingletonCurrentAdmin.getInstance().getCurrentAdmin().getUserId())));
         menuAdmin.addMenuItem(new MenuItem("Display all user information", new CommandGetAllUsersInformation()));
-        menuAdmin.addMenuItem(new MenuItem("Banned/Unbanned user", new CommandChangeUserActive()));
+        menuAdmin.addMenuItem(new MenuItem("Banned/Unbanned user", new CommandChangeUserActive(SingletonCurrentAdmin.getInstance().getCurrentAdmin().getUserId())));
         menuAdmin.addMenuItem(new MenuItem("Get all promotion information", new CommandGetAllPromotionsInformation()));
         menuAdmin.addMenuItem(new MenuItem("Promotion profile", new CommandRedirectPromotionMenu()));
         menuAdmin.addMenuItem(new MenuItem("Remove all expired promotion", new CommandRemoveAllExpiredPromotion()));
@@ -35,6 +38,7 @@ public class MenuAdmin implements Navigator{
 
     @Override
     public void navigate() {
+        SingletonCurrentUserListMessage.getInstance().setCurrentUserMessage(SingletonCurrentAdmin.getInstance().getCurrentAdmin().getUserId());
         displayMenuAdmin();
     }
 }

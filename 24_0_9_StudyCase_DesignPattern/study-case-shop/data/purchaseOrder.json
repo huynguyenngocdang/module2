@@ -68,5 +68,19 @@
     "promotionCode": "none",
     "promotionAmount": 0.0,
     "promotionPercent": 0.0
+  },
+  {
+    "purchaseOrderId": 6,
+    "customerId": 1,
+    "sellerId": 2,
+    "productId": 2,
+    "orderDate": "13/11/2023,10:55:46",
+    "price": 550.0,
+    "quantity": 1.0,
+    "totalCost": 550.0,
+    "totalCostAfterPromotion": 495.0,
+    "promotionCode": "KM03",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.1
   }
 ]

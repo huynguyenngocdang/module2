@@ -20,13 +20,23 @@ public class SingletonCurrentUserListProducts {
         return instance;
     }
     public void generateCurrentUserProductList() {
-        currentUserProducts.clear();
-        for (Product product: SingletonListProduct.getInstance().getProducts()
-        ) {
-            if(product.getSellerId() == SingletonCurrentUser.getInstance().getCurrentUser().getUserId() ) {
-                currentUserProducts.add(product);
+        try {
+            currentUserProducts.clear();
+            for (Product product: SingletonListProduct.getInstance().getProducts()
+            ) {
+                if(product.getSellerId() == SingletonCurrentUser.getInstance().getCurrentUser().getUserId() ) {
+                    currentUserProducts.add(product);
+                }
+            }
+        } catch (NullPointerException e) {
+            for (Product product: SingletonListProduct.getInstance().getProducts()
+            ) {
+                if(product.getSellerId() == SingletonCurrentUser.getInstance().getCurrentUser().getUserId() ) {
+                    currentUserProducts.add(product);
+                }
             }
         }
+
 
     }
     public List<Product> getCurrentUsersProduct() {

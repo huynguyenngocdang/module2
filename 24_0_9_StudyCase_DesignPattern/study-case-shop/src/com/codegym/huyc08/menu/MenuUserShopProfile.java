@@ -9,6 +9,8 @@ import com.codegym.huyc08.service.CommandUserDisplayBalance;
 import com.codegym.huyc08.service.CommandUserDisplayProducts;
 import com.codegym.huyc08.service.SingletonCurrentUser;
 import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
+import com.codegym.huyc08.service.Validator;
+import com.codegym.huyc08.service.ValidatorUserStatus;
 
 import java.util.Scanner;
 
@@ -35,7 +37,12 @@ public class MenuUserShopProfile implements Navigator, Command {
 
     @Override
     public void execute() {
-        SingletonCurrentUserListProducts.getInstance().generateCurrentUserProductList();
-        navigate();
+        Validator validator = new ValidatorUserStatus();
+        if(validator.isCheck()) {
+            navigate();
+        } else {
+            System.out.println("You have been banned from using this function");
+        }
+
     }
 }

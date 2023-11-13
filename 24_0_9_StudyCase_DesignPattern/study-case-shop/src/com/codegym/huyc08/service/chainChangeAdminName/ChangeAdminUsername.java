@@ -4,6 +4,7 @@ import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.Observer;
 import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.SingletonCurrentAdmin;
+import com.codegym.huyc08.service.SingletonListAdmin;
 import com.codegym.huyc08.service.Subject;
 
 public class ChangeAdminUsername extends Subject implements HandlerUserInformation {
@@ -16,7 +17,7 @@ public class ChangeAdminUsername extends Subject implements HandlerUserInformati
     @Override
     public boolean doHandle(RequestUserInformation requestUserInformation) {
         try {
-            Observer observer = SingletonCurrentAdmin.getInstance();
+            Observer observer = SingletonListAdmin.getInstance();
             addObserver(observer);
             String username = requestUserInformation.getUsername();
             SingletonCurrentAdmin.getInstance().changeAdminUsername(username);

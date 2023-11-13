@@ -5,6 +5,7 @@ import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.SingletonCurrentAdmin;
 import com.codegym.huyc08.service.SingletonCurrentUser;
+import com.codegym.huyc08.service.SingletonCurrentUserListMessage;
 import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
 
 public class LoginLogger implements HandlerUserInformation {
@@ -50,9 +51,6 @@ public class LoginLogger implements HandlerUserInformation {
         try {
             SingletonCurrentUser.getInstance().setCurrentUser(username, password);
             System.out.println("Set current user successfully");
-
-
-
             return true;
         } catch (NullPointerException e){
             System.out.println(e.getMessage());

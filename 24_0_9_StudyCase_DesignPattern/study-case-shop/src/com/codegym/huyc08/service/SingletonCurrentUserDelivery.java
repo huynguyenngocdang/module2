@@ -2,15 +2,15 @@ package com.codegym.huyc08.service;
 
 import com.codegym.huyc08.entity.NormalUser;
 
-public class SingletonCurrentUserMail implements Observer {
+public class SingletonCurrentUserDelivery implements Observer {
     private NormalUser currentUser;
-    private static SingletonCurrentUserMail instance;
-    private SingletonCurrentUserMail() {
+    private static SingletonCurrentUserDelivery instance;
+    private SingletonCurrentUserDelivery() {
         currentUser = SingletonCurrentUser.getInstance().getCurrentUser();
     }
-    public static SingletonCurrentUserMail getInstance() {
+    public static SingletonCurrentUserDelivery getInstance() {
         if(instance == null) {
-            instance = new SingletonCurrentUserMail();
+            instance = new SingletonCurrentUserDelivery();
         }
         return instance;
     }
