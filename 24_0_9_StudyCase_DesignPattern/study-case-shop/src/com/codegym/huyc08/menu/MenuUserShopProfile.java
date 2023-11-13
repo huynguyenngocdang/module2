@@ -2,6 +2,7 @@ package com.codegym.huyc08.menu;
 
 import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.service.Command;
+import com.codegym.huyc08.service.CommandChangeUserSelectProduct;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandUserAddNewProduct;
 import com.codegym.huyc08.service.CommandUserDisplayBalance;
@@ -18,6 +19,7 @@ public class MenuUserShopProfile implements Navigator, Command {
         menuUserShopProfile.addMenuItem(new MenuItem("Exit", new CommandExit("User shop profile")));
         menuUserShopProfile.addMenuItem(new MenuItem("Display user balance", new CommandUserDisplayBalance()));
         menuUserShopProfile.addMenuItem(new MenuItem("Display user products", new CommandUserDisplayProducts()));
+        menuUserShopProfile.addMenuItem(new MenuItem("Change your product information", new CommandChangeUserSelectProduct()));
         menuUserShopProfile.addMenuItem(new MenuItem("Create new product", new CommandUserAddNewProduct()));
         int choice;
         do {
@@ -33,7 +35,7 @@ public class MenuUserShopProfile implements Navigator, Command {
 
     @Override
     public void execute() {
-        navigate();
         SingletonCurrentUserListProducts.getInstance().generateCurrentUserProductList();
+        navigate();
     }
 }

@@ -5,6 +5,7 @@ import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandUserShop;
 import com.codegym.huyc08.service.CommandUserShopProfile;
 import com.codegym.huyc08.service.SingletonCurrentUser;
+import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
 
 import java.util.Scanner;
 
@@ -27,6 +28,7 @@ public class MenuUser implements Navigator{
     }
     @Override
     public void navigate() {
+        SingletonCurrentUserListProducts.getInstance().generateCurrentUserProductList();
         displayMenuUser();
     }
 }

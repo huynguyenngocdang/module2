@@ -8,17 +8,16 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingletonCurrentAdmin implements Observer{
-    private List<Admin> admins;
+public class SingletonCurrentAdmin {
+
     private Admin currentAdmin;
-    private final Type ADMINTYPE = new TypeToken<ArrayList<Admin>>(){}.getType();
+
     private static SingletonCurrentAdmin instance;
-    private MyFileHandler fileHandler;
+
 
     private SingletonCurrentAdmin() {
-        fileHandler = new JsonFileHandler();
-//        this.admins = (List<Admin>) fileHandler.readFromFile(Constants.ADMIN_FILE_PATH, ADMINTYPE);
-        this.admins = SingletonListAdmin.getInstance().getAdmins();
+
+
     }
     public static SingletonCurrentAdmin getInstance() {
         if(instance == null) {
@@ -30,7 +29,7 @@ public class SingletonCurrentAdmin implements Observer{
         return currentAdmin;
     }
     public void setCurrentAdmin(String username, String password) {
-        for (Admin admin: admins
+        for (Admin admin: SingletonListAdmin.getInstance().getAdmins()
              ) {
             if(admin.getUsername().equals(username) && admin.getPassword().equals(password)){
                 currentAdmin = admin;
@@ -45,10 +44,4 @@ public class SingletonCurrentAdmin implements Observer{
         currentAdmin.setPassword(newPassword);
     }
 
-    @Override
-    public void update() {
-//        fileHandler.saveToFile(Constants.ADMIN_FILE_PATH, admins);
-        SingletonListAdmin.getInstance().update();
-        System.out.println("Admin file updated successfully");
-    }
 }

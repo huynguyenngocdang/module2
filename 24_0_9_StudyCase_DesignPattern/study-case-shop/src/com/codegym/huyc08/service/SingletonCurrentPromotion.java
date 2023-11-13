@@ -5,11 +5,11 @@ import com.codegym.huyc08.entity.Promotion;
 import java.util.List;
 
 public class SingletonCurrentPromotion implements Observer{
-    private List<Promotion> promotions;
+
     private Promotion currentPromotion;
     private static SingletonCurrentPromotion instance;
     private SingletonCurrentPromotion(){
-        promotions = SingletonListPromotion.getInstance().getPromotions();
+
     }
     public static SingletonCurrentPromotion getInstance() {
         if(instance == null) {
@@ -23,7 +23,8 @@ public class SingletonCurrentPromotion implements Observer{
     }
 
     public void setCurrentPromotion(int promotionId) {
-        for (Promotion promotion: promotions
+
+        for (Promotion promotion: SingletonListPromotion.getInstance().getPromotions()
              ) {
             if(promotion.getPromotionId() == promotionId) {
                 currentPromotion = promotion;
@@ -32,7 +33,8 @@ public class SingletonCurrentPromotion implements Observer{
         }
     }
     public void setCurrentPromotion(String promotionCode) {
-        for (Promotion promotion: promotions
+
+        for (Promotion promotion: SingletonListPromotion.getInstance().getPromotions()
         ) {
             if(promotion.getPromotionCode().equals(promotionCode)) {
                 currentPromotion = promotion;

@@ -6,6 +6,7 @@ import com.codegym.huyc08.menu.MenuUser;
 import com.codegym.huyc08.menu.Navigator;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
+import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorRegexString;
 
@@ -25,6 +26,7 @@ public class LoginRedirect implements HandlerUserInformation {
         if(validator.isCheck()) {
             Navigator menuUser = new MenuUser();
             System.out.println("Redirecting to Menu User");
+
             menuUser.navigate();
             return true;
         } else if(validator1.isCheck()) {
