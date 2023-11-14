@@ -76,5 +76,23 @@
     "receiverId": 3,
     "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
     "dateCreated": "13/11/2023,13:29:58"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 1,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "14/11/2023,11:41:21"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 2,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "14/11/2023,11:41:21"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "14/11/2023,11:41:21"
   }
 ]

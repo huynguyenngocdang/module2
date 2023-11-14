@@ -16,8 +16,10 @@ public class CommandRemoveUserProduct extends Subject implements Command{
          Product product = SingletonCurrentUserListProducts.getInstance().getCurrentUsersProduct().get(choice);
          Confirm confirm = new Confirmation("remove this product " + product.toString());
          if(confirm.isConfirm()) {
+
              Observer observerListProducts = SingletonListProduct.getInstance();
              Observer observerListCurrentUserProducts = SingletonCurrentUserListProducts.getInstance();
+
              addObserver(observerListProducts);
              addObserver(observerListCurrentUserProducts);
              SingletonCurrentUserListProducts.getInstance().removeUserProduct(choice);
