@@ -1,0 +1,98 @@
+[
+  {
+    "senderId": 1,
+    "receiverId": -1,
+    "message": "abc",
+    "dateCreated": "13/11/2023,11:56:58"
+  },
+  {
+    "senderId": 2,
+    "receiverId": -1,
+    "message": "userid 2 with username Giang has forgot password",
+    "dateCreated": "13/11/2023,12:46:55"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 2,
+    "message": "your password is 123",
+    "dateCreated": "13/11/2023,12:47:27"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 1,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "13/11/2023,13:06:54"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 2,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "13/11/2023,13:06:54"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "13/11/2023,13:06:54"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "You have been unbanned",
+    "dateCreated": "13/11/2023,13:23:30"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "You have been banned",
+    "dateCreated": "13/11/2023,13:24:25"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "You have been unbanned",
+    "dateCreated": "13/11/2023,13:26:33"
+  },
+  {
+    "senderId": 3,
+    "receiverId": 1,
+    "message": "abc xyz",
+    "dateCreated": "13/11/2023,13:27:16"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 1,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "13/11/2023,13:29:58"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 2,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "13/11/2023,13:29:58"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "13/11/2023,13:29:58"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 1,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "14/11/2023,11:41:21"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 2,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "14/11/2023,11:41:21"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 20/11/2023",
+    "dateCreated": "14/11/2023,11:41:21"
+  }
+]
