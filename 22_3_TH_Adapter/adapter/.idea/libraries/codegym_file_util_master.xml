@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="codegym-file-util-master">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/codegym-file-util-master" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/codegym-file-util-master" recursive="false" />
+  </library>
+</component>
