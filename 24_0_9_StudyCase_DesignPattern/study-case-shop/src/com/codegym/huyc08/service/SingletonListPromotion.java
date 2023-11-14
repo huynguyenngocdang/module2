@@ -16,6 +16,9 @@ public class SingletonListPromotion implements Observer, GenerateId {
     private SingletonListPromotion(){
         fileHandler = new JsonFileHandler();
         promotions = (ArrayList<Promotion>) fileHandler.readFromFile(Constants.PROMOTION_FILE_PATH, PROMOTIONTYPE);
+        if (promotions == null) {
+            promotions = new ArrayList<>();
+        }
     }
     public static SingletonListPromotion getInstance() {
         if(instance == null) {
@@ -40,13 +43,18 @@ public class SingletonListPromotion implements Observer, GenerateId {
 
     @Override
     public int getNewId() {
-        int max = 0;
-        for (Promotion promotion: promotions
-             ) {
-            if(promotion.getPromotionId() > max) {
-                max = promotion.getPromotionId();
+        try {
+            int max = 0;
+            for (Promotion promotion: promotions
+            ) {
+                if(promotion.getPromotionId() > max) {
+                    max = promotion.getPromotionId();
+                }
             }
+            return max + 1;
+        } catch (NullPointerException e) {
+            return 1;
         }
-        return max + 1;
+
     }
 }

@@ -19,6 +19,9 @@ public class SingletonListAdmin implements Observer{
     private SingletonListAdmin() {
         fileHandler = new JsonFileHandler();
         admins = (List<Admin>) fileHandler.readFromFile(Constants.ADMIN_FILE_PATH, ADMINTYPE);
+        if(admins == null) {
+            admins = new ArrayList<>();
+        }
     }
     public static SingletonListAdmin getInstance() {
         if(instance == null) {

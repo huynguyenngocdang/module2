@@ -15,6 +15,9 @@ public class SingletonListPurchaseOrder implements Observer, GenerateId{
     private SingletonListPurchaseOrder() {
         fileHandler = new JsonFileHandler();
         purchaseOrders = (List<PurchaseOrder>) fileHandler.readFromFile(Constants.PURCHASE_ORDER_FILE_PATH, PO_TYPE);
+        if (purchaseOrders == null) {
+            purchaseOrders = new ArrayList<>();
+        }
     }
     private static SingletonListPurchaseOrder instance;
     public static SingletonListPurchaseOrder getInstance() {
@@ -39,13 +42,18 @@ public class SingletonListPurchaseOrder implements Observer, GenerateId{
 
     @Override
     public int getNewId() {
-        int max = 0;
-        for (PurchaseOrder po: purchaseOrders
-             ) {
-            if(max < po.getPurchaseOrderId()) {
-                max = po.getPurchaseOrderId();
+        try {
+            int max = 0;
+            for (PurchaseOrder po: purchaseOrders
+            ) {
+                if(max < po.getPurchaseOrderId()) {
+                    max = po.getPurchaseOrderId();
+                }
             }
+            return max +1;
+        } catch (NullPointerException e) {
+            return 1;
         }
-        return max +1;
+
     }
 }

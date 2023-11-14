@@ -16,6 +16,9 @@ public class SingletonListMessage implements Observer {
     private SingletonListMessage(){
         this.fileHandler  = new JsonFileHandler();
         this.messages = (List<Message>) fileHandler.readFromFile(Constants.MESSAGE_FILE_PATH, MESSAGE_TYPE);
+        if(messages == null) {
+            messages = new ArrayList<>();
+        }
     }
     public static SingletonListMessage getInstance(){
         if(instance == null) {

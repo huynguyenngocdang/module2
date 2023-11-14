@@ -19,6 +19,9 @@ public class SingletonListNormalUser implements Observer, GenerateId {
     private SingletonListNormalUser() {
         fileHandler = new JsonFileHandler();
         users = (ArrayList<NormalUser>) fileHandler.readFromFile(Constants.USER_FILE_PATH, USERTYPE);
+        if(users == null) {
+            users = new ArrayList<>();
+        }
     }
 
     public static SingletonListNormalUser getInstance() {
@@ -70,13 +73,18 @@ public class SingletonListNormalUser implements Observer, GenerateId {
 
     @Override
     public int getNewId() {
-        int max = 0;
-        for (User user : users) {
-            if (max < user.getUserId()) {
-                max = user.getUserId();
+        try {
+            int max = 0;
+            for (User user : users) {
+                if (max < user.getUserId()) {
+                    max = user.getUserId();
+                }
             }
+            return max + 1;
+        } catch (NullPointerException e) {
+            return 1;
         }
-        return max + 1;
+
     }
 
     @Override

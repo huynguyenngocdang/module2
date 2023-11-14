@@ -17,6 +17,9 @@ public class SingletonListProduct implements GenerateId, Observer {
     private SingletonListProduct() {
         fileHandler = new JsonFileHandler();
         products = (ArrayList<Product>) fileHandler.readFromFile(Constants.PRODUCT_FILE_PATH, PRODUCTTYPE);
+        if (products == null) {
+            products = new ArrayList<>();
+        }
     }
     public static SingletonListProduct getInstance() {
         if(instance == null) {
@@ -31,14 +34,19 @@ public class SingletonListProduct implements GenerateId, Observer {
 
     @Override
     public int getNewId() {
-        int max = 0;
-        for (Product product: products
-             ) {
-            if (max < product.getProductId()) {
-                max = product.getProductId();
+        try {
+            int max = 0;
+            for (Product product: products
+            ) {
+                if (max < product.getProductId()) {
+                    max = product.getProductId();
+                }
             }
+            return max + 1;
+        } catch (NullPointerException e) {
+            return 1;
         }
-        return max + 1;
+
     }
     public Product getProduct(int productId) {
         for (Product product: products
