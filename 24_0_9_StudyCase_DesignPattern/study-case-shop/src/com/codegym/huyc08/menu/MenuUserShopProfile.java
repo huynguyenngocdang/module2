@@ -4,6 +4,11 @@ import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandChangeUserSelectProduct;
 import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandGenerateMonthlyCostReport;
+import com.codegym.huyc08.service.CommandGenerateMontlyProfitReport;
+import com.codegym.huyc08.service.CommandGenerateWeeklyCostReport;
+import com.codegym.huyc08.service.CommandGenerateWeeklyProfitReport;
+import com.codegym.huyc08.service.CommandRemoveUserProduct;
 import com.codegym.huyc08.service.CommandUserAddNewProduct;
 import com.codegym.huyc08.service.CommandUserDisplayBalance;
 import com.codegym.huyc08.service.CommandUserDisplayProducts;
@@ -23,6 +28,11 @@ public class MenuUserShopProfile implements Navigator, Command {
         menuUserShopProfile.addMenuItem(new MenuItem("Display user products", new CommandUserDisplayProducts()));
         menuUserShopProfile.addMenuItem(new MenuItem("Change your product information", new CommandChangeUserSelectProduct()));
         menuUserShopProfile.addMenuItem(new MenuItem("Create new product", new CommandUserAddNewProduct()));
+        menuUserShopProfile.addMenuItem(new MenuItem("Remove your product", new CommandRemoveUserProduct()));
+        menuUserShopProfile.addMenuItem(new MenuItem("Weekly profit report", new CommandGenerateWeeklyProfitReport()));
+        menuUserShopProfile.addMenuItem(new MenuItem("Weekly cost report", new CommandGenerateWeeklyCostReport()));
+        menuUserShopProfile.addMenuItem(new MenuItem("Monthly profit report", new CommandGenerateMontlyProfitReport()));
+        menuUserShopProfile.addMenuItem(new MenuItem("Monthly cost report", new CommandGenerateMonthlyCostReport()));
         int choice;
         do {
             menuUserShopProfile.display();

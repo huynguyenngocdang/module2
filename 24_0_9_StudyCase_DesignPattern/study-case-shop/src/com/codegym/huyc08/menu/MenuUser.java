@@ -30,7 +30,7 @@ public class MenuUser implements Navigator{
     }
     @Override
     public void navigate() {
-        SingletonCurrentUserListProducts.getInstance().generateCurrentUserProductList();
+
         SingletonCurrentUserListMessage.getInstance().setCurrentUserMessage(SingletonCurrentUser.getInstance().getCurrentUser().getUserId());
         displayMenuUser();
     }

@@ -10,7 +10,6 @@ public class CommandGetAllProductsInformation implements Command{
     public CommandGetAllProductsInformation() {
         this.productList = SingletonListProduct.getInstance().getProducts();
     }
-
     @Override
     public void execute() {
         for (Product product: productList

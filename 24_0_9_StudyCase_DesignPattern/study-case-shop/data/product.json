@@ -38,5 +38,15 @@
     "productQuantity": 10.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
+  },
+  {
+    "productId": 5,
+    "sellerId": 1,
+    "productName": "Laptop Intel",
+    "productType": "Laptop",
+    "productPrice": 1000.0,
+    "productQuantity": 5.0,
+    "productManufacturer": "Gigabyte",
+    "productDescription": "A good laptop"
   }
 ]

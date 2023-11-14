@@ -7,6 +7,7 @@ import com.codegym.huyc08.service.HandlerNewProduct;
 import com.codegym.huyc08.service.Observer;
 import com.codegym.huyc08.service.RequestNewProduct;
 import com.codegym.huyc08.service.SingletonCurrentUser;
+import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
 import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.Subject;
 
@@ -51,11 +52,14 @@ public class CreateNewProduct extends Subject implements HandlerNewProduct {
     }
 
     private void updateNewProduct(Product newProduct) {
-        Observer observer = SingletonListProduct.getInstance();
-        addObserver(observer);
+        Observer observerListProduct = SingletonListProduct.getInstance();
+        Observer observerListCurrentUserProducts = SingletonCurrentUserListProducts.getInstance();
+        addObserver(observerListProduct);
+        addObserver(observerListCurrentUserProducts);
         SingletonListProduct.getInstance().getProducts().add(newProduct);
         notifyObserver();
-        removeObserver(observer);
+        removeObserver(observerListProduct);
+        removeObserver(observerListCurrentUserProducts);
     }
 
     @Override
