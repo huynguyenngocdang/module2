@@ -17,11 +17,12 @@ import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorUserStatus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuUserShopProfile implements Navigator, Command {
-    private final Scanner SCANNER = new Scanner(System.in);
-    private void displayMenuUserShopProfile(){
+    private void displayMenuUserShopProfile() {
+        Scanner SCANNER = new Scanner(System.in);
         Menu menuUserShopProfile = new MenuTemplate("User Shop Profile");
         menuUserShopProfile.addMenuItem(new MenuItem("Exit", new CommandExit("User shop profile")));
         menuUserShopProfile.addMenuItem(new MenuItem("Display user balance", new CommandUserDisplayBalance()));
@@ -34,12 +35,18 @@ public class MenuUserShopProfile implements Navigator, Command {
         menuUserShopProfile.addMenuItem(new MenuItem("Monthly profit report", new CommandGenerateMontlyProfitReport()));
         menuUserShopProfile.addMenuItem(new MenuItem("Monthly cost report", new CommandGenerateMonthlyCostReport()));
         int choice;
-        do {
-            menuUserShopProfile.display();
-            choice = SCANNER.nextInt();
-            menuUserShopProfile.runCommand(choice);
-        } while (choice != Constants.USER_EXIT_CHOICE);
+        try {
+            do {
+                menuUserShopProfile.display();
+                choice = SCANNER.nextInt();
+                menuUserShopProfile.runCommand(choice);
+            } while (choice != Constants.USER_EXIT_CHOICE);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, please try again");
+            displayMenuUserShopProfile();
+        }
     }
+
     @Override
     public void navigate() {
         displayMenuUserShopProfile();
@@ -48,7 +55,7 @@ public class MenuUserShopProfile implements Navigator, Command {
     @Override
     public void execute() {
         Validator validator = new ValidatorUserStatus();
-        if(validator.isCheck()) {
+        if (validator.isCheck()) {
             navigate();
         } else {
             System.out.println("You have been banned from using this function");

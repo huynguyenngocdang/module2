@@ -14,11 +14,13 @@ import com.codegym.huyc08.service.CommandRemoveCartLine;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorUserStatus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuUserShopping  implements Navigator, Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+
     private void displayMenuShopping() {
+        Scanner SCANNER = new Scanner(System.in);
         Menu menuShopping = new MenuTemplate("Menu Shopping");
         menuShopping.addMenuItem(new MenuItem("Exit", new CommandExit("Menu Shopping")));
         menuShopping.addMenuItem(new MenuItem("Get all product information", new CommandGetAllProductsInformation()));
@@ -30,11 +32,17 @@ public class MenuUserShopping  implements Navigator, Command {
         menuShopping.addMenuItem(new MenuItem("Empty all cart", new CommandRemoveAllCartLine()));
         menuShopping.addMenuItem(new MenuItem("Check out", new CommandCheckout()));
         int choice;
-        do {
-            menuShopping.display();
-            choice = SCANNER.nextInt();
-            menuShopping.runCommand(choice);
-        } while (choice != Constants.USER_EXIT_CHOICE);
+        try {
+            do {
+                menuShopping.display();
+                choice = SCANNER.nextInt();
+                menuShopping.runCommand(choice);
+            } while (choice != Constants.USER_EXIT_CHOICE);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, please try again");
+            displayMenuShopping();
+        }
+
     }
     @Override
     public void navigate() {

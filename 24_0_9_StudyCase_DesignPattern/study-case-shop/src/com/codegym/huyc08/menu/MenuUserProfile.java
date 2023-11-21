@@ -9,11 +9,13 @@ import com.codegym.huyc08.service.CommandChangeUserUsername;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandGetCurrentUserInformation;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuUserProfile implements Navigator, Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+
     private void displayMenuUserProfile(){
+        Scanner SCANNER = new Scanner(System.in);
         Menu menuUserProfile = new MenuTemplate("User profile");
         menuUserProfile.addMenuItem(new MenuItem("Exit", new CommandExit("User profile")));
         menuUserProfile.addMenuItem(new MenuItem("Current user info", new CommandGetCurrentUserInformation()));
@@ -22,11 +24,17 @@ public class MenuUserProfile implements Navigator, Command {
         menuUserProfile.addMenuItem(new MenuItem("Change user balance", new CommandChangeUserBalance()));
         menuUserProfile.addMenuItem(new MenuItem("Change user address", new CommandChangeUserAddress()));
         int choice;
-        do {
-            menuUserProfile.display();
-            choice = SCANNER.nextInt();
-            menuUserProfile.runCommand(choice);
-        } while (choice != Constants.USER_EXIT_CHOICE);
+        try {
+            do {
+                menuUserProfile.display();
+                choice = SCANNER.nextInt();
+                menuUserProfile.runCommand(choice);
+            } while (choice != Constants.USER_EXIT_CHOICE);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, please try again");
+            displayMenuUserProfile();
+        }
+
     }
     @Override
     public void navigate() {
