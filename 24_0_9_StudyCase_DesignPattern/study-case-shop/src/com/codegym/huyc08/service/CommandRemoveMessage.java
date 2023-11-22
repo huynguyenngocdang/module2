@@ -3,6 +3,7 @@ package com.codegym.huyc08.service;
 import com.codegym.huyc08.entity.Message;
 import com.codegym.huyc08.menu.MenuAdmin;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,7 +21,7 @@ public class CommandRemoveMessage extends Subject implements Command{
             SingletonCurrentUserListMessage.getInstance().removeMessage(choice);
             notifyObserver();
             removeObserver(observer);
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException | InputMismatchException e) {
             System.out.println("Invalid choice, please try again");
         }
     }

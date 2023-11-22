@@ -21,14 +21,14 @@ public class SingletonShoppingCart {
         return instance;
     }
 
-    public void addToCart(CartItem cartItem) {
-        if(cartItems.isEmpty() || !itemExistInCart(cartItem)) {
-            cartItems.add(cartItem);
+    public void addToCart(CartItem cartItemAdd) {
+        if(cartItems.isEmpty() || !itemExistInCart(cartItemAdd)) {
+            cartItems.add(cartItemAdd);
         } else {
             for (CartItem currentCartItem: cartItems
                  ) {
-                if(currentCartItem.getProduct().getProductId()== cartItem.getProduct().getProductId()) {
-                    double newAmount = cartItem.getQuantity();
+                if(currentCartItem.getProduct().getProductId()== cartItemAdd.getProduct().getProductId()) {
+                    double newAmount = cartItemAdd.getQuantity();
                     double currentAmount = currentCartItem.getQuantity();
                     currentCartItem.setQuantity(currentAmount + newAmount);
                 }
@@ -73,6 +73,7 @@ public class SingletonShoppingCart {
     public void removeCartLine(int choice) {
         if(choice >=0 && choice < cartItems.size()) {
             cartItems.remove(choice);
+            System.out.println("Remove cart line " + (choice+1) + " successfully");
         } else {
             System.out.println("Invalid cart line, please try again");
         }

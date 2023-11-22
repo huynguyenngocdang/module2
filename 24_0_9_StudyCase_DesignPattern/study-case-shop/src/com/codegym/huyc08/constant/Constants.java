@@ -12,6 +12,9 @@ public interface Constants {
     String PROMOTION_REGEX = "^KM[a-z|A-Z|0-9]{2,}$";
 
     String DATE_REGEX = "^\\d{1,2}/\\d{1,2}/\\d{4}$";
+
+    String SEARCH_REGEX = "\\w{0,}?\\d{0,}?\\s{0,}?";
+
     String DATE_PATTERN_REGEX = "dd/MM/yyyy";
     String FULL_DATE_PATTERN_REGEX = "dd/MM/yyyy,HH:mm:ss";
     int USER_EXIT_CHOICE = 0;

@@ -4,6 +4,7 @@ import com.codegym.huyc08.entity.Product;
 import com.codegym.huyc08.menu.MenuUserShopProductChange;
 import com.codegym.huyc08.menu.Navigator;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,7 +28,7 @@ public class CommandChangeUserSelectProduct implements Command{
             SingletonCurrentUserProduct.getInstance().setCurrentUserProduct(thisProduct);
             Navigator navigator = new MenuUserShopProductChange();
             navigator.navigate();
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException | InputMismatchException e) {
             System.out.println("Invalid choice, please try again");
         }
     }

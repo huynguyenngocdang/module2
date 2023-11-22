@@ -5,20 +5,26 @@ import com.codegym.huyc08.service.chainChangePromotionPercent.RequestChangeModif
 import com.codegym.huyc08.service.chainChangePromotionPercent.ValidateModifyPromotionPercentNotNegative;
 import com.codegym.huyc08.service.chainChangePromotionPercent.ValidateModifyPromotionPercentUnderHundred;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CommandChangePromotionPercent implements Command {
     private final Scanner SCANNER = new Scanner(System.in);
     @Override
     public void execute() {
-        System.out.println("Input new percent (0-100)");
-        double newPercent = SCANNER.nextDouble();
+        try {
+            System.out.println("Input new percent (0-100)");
+            double newPercent = SCANNER.nextDouble();
 
-        //validate not negative - validate under 100 - change new amount;
-        HandlerModifyPromotion changePromotionPercent = new ChangeModifyPromotionPercent(null);
-        HandlerModifyPromotion validatePromotionPercentUnderHundred = new ValidateModifyPromotionPercentUnderHundred(changePromotionPercent);
-        HandlerModifyPromotion validatePromotionPercentNotNegative = new ValidateModifyPromotionPercentNotNegative(validatePromotionPercentUnderHundred);
-        validatePromotionPercentNotNegative.handle(new RequestChangeModifyPromotionPercent(newPercent));
+            //validate not negative - validate under 100 - change new amount;
+            HandlerModifyPromotion changePromotionPercent = new ChangeModifyPromotionPercent(null);
+            HandlerModifyPromotion validatePromotionPercentUnderHundred = new ValidateModifyPromotionPercentUnderHundred(changePromotionPercent);
+            HandlerModifyPromotion validatePromotionPercentNotNegative = new ValidateModifyPromotionPercentNotNegative(validatePromotionPercentUnderHundred);
+            validatePromotionPercentNotNegative.handle(new RequestChangeModifyPromotionPercent(newPercent));
+
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, please try again");
+        }
 
     }
 }

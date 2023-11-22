@@ -38,7 +38,6 @@ public abstract class TemplateCheckout extends Subject {
                 Observer mailingObserver = SingletonCurrentUserDelivery.getInstance();
                 Observer purchaseOrderObserver = SingletonListPurchaseOrder.getInstance();
 
-                PurchaseOrderFactory factory = new PurchaseOrderFactory();
                 addObserver(productObserver);
                 addObserver(normalUserObserver);
                 addObserver(mailingObserver);

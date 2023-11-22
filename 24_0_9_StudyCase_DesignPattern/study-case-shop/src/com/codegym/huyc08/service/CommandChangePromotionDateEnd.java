@@ -10,9 +10,10 @@ import com.codegym.huyc08.service.chainChangePromotionEndDate.ValidateEndDateIsD
 import java.util.Scanner;
 
 public class CommandChangePromotionDateEnd implements Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+    private Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         System.out.println("Input new end date (dd/MM/yyyy)");
         String newEndDate = SCANNER.next();
         //validate follow regex -validate date is date - validate end date after start date - validate end date after today -  change start date

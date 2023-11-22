@@ -1,33 +1,31 @@
 package com.codegym.huyc08.service.chainAddToCart;
 
+import com.codegym.huyc08.entity.Product;
 import com.codegym.huyc08.service.RequestAddToCart;
 
 public class RequestToAddToCart implements RequestAddToCart {
-    private int productId;
+    private Product product;
+    private double quantity;
 
-    private double productQuantity;
+    public RequestToAddToCart(Product product) {
+        this.product = product;
+    }
 
-    public RequestToAddToCart() {
+    public double getQuantity() {
+        return quantity;
+    }
 
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
     }
 
     @Override
-    public int getProductId() {
-        return productId;
+    public Product getProduct() {
+        return product;
     }
 
     @Override
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    @Override
-    public double getProductQuantity() {
-        return productQuantity;
-    }
-
-    @Override
-    public void setProductQuantity(double productQuantity) {
-        this.productQuantity = productQuantity;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

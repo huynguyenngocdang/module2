@@ -35,6 +35,20 @@ public class SingletonListPromotion implements Observer, GenerateId {
         this.promotions = promotions;
     }
 
+    public Promotion getPromotionWithCode(String code) {
+        if(promotions.isEmpty()) {
+            return null;
+        } else {
+            for (Promotion promotion: promotions
+            ) {
+                if(promotion.getPromotionCode().equals(code)) {
+                    return promotion;
+                }
+            }
+        }
+        return null;
+    }
+
     @Override
     public void update() {
         fileHandler.saveToFile(Constants.PROMOTION_FILE_PATH, promotions);

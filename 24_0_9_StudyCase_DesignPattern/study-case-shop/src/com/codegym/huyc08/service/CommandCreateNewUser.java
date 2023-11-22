@@ -8,10 +8,10 @@ import com.codegym.huyc08.service.chainCreateNewUser.ValidateUsername;
 import java.util.Scanner;
 
 public class CommandCreateNewUser implements Command {
-    private final Scanner SCANNER = new Scanner(System.in);
-
+    private  Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         System.out.println("Input your username");
         String username = SCANNER.next();
         System.out.println("Input your password");

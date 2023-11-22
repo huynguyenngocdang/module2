@@ -63,7 +63,7 @@ public class DisplayAllExpiredModifyPromotion implements HandlerModifyPromotion 
                  ) {
                 System.out.println("Removing expired promotion code " + promotion.getPromotionCode() + " with end date " + promotion.getPromotionDateEnd());
             }
-            Confirm confirm = new Confirmation("remove these promotions (Y/N)");
+            Confirm confirm = new Confirmation("remove these promotions");
             return confirm.isConfirm();
         }
     }

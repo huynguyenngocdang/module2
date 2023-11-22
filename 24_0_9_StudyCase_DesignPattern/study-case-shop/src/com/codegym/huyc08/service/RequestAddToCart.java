@@ -1,12 +1,12 @@
 package com.codegym.huyc08.service;
 
+import com.codegym.huyc08.entity.Product;
+
 public interface RequestAddToCart {
-    int getProductId();
+    Product getProduct();
+    void setProduct(Product product);
 
-    void setProductId(int productId);
+     double getQuantity();
 
-    double getProductQuantity();
-
-    void setProductQuantity(double productQuantity);
-
+     void setQuantity(double quantity);
 }

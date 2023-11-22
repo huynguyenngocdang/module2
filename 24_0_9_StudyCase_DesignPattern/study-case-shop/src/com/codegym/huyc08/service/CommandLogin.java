@@ -8,14 +8,10 @@ import com.codegym.huyc08.service.chainLogin.RequestUserInformationLogin;
 import java.util.Scanner;
 
 public class CommandLogin implements Command {
-    private final Scanner SCANNER;
-
-    public CommandLogin() {
-        this.SCANNER = new Scanner(System.in);
-    }
-
+    private  Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         System.out.println("Input your username");
         String username = SCANNER.next();
         System.out.println("Input your password");

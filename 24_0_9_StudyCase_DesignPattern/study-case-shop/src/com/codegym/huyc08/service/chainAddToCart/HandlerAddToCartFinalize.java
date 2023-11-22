@@ -4,7 +4,6 @@ import com.codegym.huyc08.entity.CartItem;
 import com.codegym.huyc08.entity.Product;
 import com.codegym.huyc08.service.HandlerAddToCart;
 import com.codegym.huyc08.service.RequestAddToCart;
-import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.SingletonShoppingCart;
 
 public class HandlerAddToCartFinalize implements HandlerAddToCart {
@@ -16,11 +15,9 @@ public class HandlerAddToCartFinalize implements HandlerAddToCart {
 
     @Override
     public boolean doHandle(RequestAddToCart requestAddToCart) {
-        Product thisProduct = SingletonListProduct.getInstance().getProduct(requestAddToCart.getProductId());
-//        SingletonShoppingCart.getInstance().addToCart(thisProduct, requestAddToCart.getProductQuantity());
-        CartItem cartItem = new CartItem(thisProduct, requestAddToCart.getProductQuantity());
+        Product thisProduct = requestAddToCart.getProduct();
+        CartItem cartItem = new CartItem(thisProduct, requestAddToCart.getQuantity());
         SingletonShoppingCart.getInstance().addToCart(cartItem);
-        System.out.println("Product added to cart successful");
         return true;
     }
 

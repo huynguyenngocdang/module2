@@ -8,12 +8,13 @@ import com.codegym.huyc08.service.chainChangePromotionCode.ValidateModifyPromoti
 import java.util.Scanner;
 
 public class CommandChangePromotionCode implements Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+    private  Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         System.out.println("Changing promotion Code");
         System.out.println("Input new promotion code");
-        String newCode = SCANNER.next();
+        String newCode = SCANNER.nextLine();
         int currentPromotionId = SingletonCurrentPromotion.getInstance().getCurrentPromotion().getPromotionId();
         //validate promotion code regex, validate promotion code exist, change promotion code
         HandlerModifyPromotion changeCode = new ChangeModifyPromotionCode(null);

@@ -22,7 +22,7 @@ import com.codegym.huyc08.service.chainCreateNewPromotion.ValidateNewPromotionSt
 import java.util.Scanner;
 
 public class CommandCreateNewPromotion implements Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+
     @Override
     public void execute() {
 

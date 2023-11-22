@@ -3,6 +3,7 @@ package com.codegym.huyc08.service;
 import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.entity.MessageFactory;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CommandChangeUserActive extends Subject implements Command {
@@ -15,33 +16,38 @@ public class CommandChangeUserActive extends Subject implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Input user id ");
-        int userId = SCANNER.nextInt();
-        if(isUserIdExist(userId)) {
-            setCurrentUser(userId);
-            System.out.println("Current user is " + (getCurrentUserStatus()? "active" : "banned"));
-            Confirm confirm = new Confirmation("change this user status");
-            if(confirm.isConfirm()){
-                Observer observerUser = SingletonCurrentUser.getInstance();
-                Observer observerMessage = SingletonListMessage.getInstance();
-                MessageFactory factory = new MessageFactory();
-                addObserver(observerUser);
-                addObserver(observerMessage);
+        try {
+            System.out.println("Input user id ");
+            int userId = SCANNER.nextInt();
+            if(isUserIdExist(userId)) {
+                setCurrentUser(userId);
+                System.out.println("Current user is " + (getCurrentUserStatus()? "active" : "banned"));
+                Confirm confirm = new Confirmation("change this user status");
+                if(confirm.isConfirm()){
+                    Observer observerUser = SingletonCurrentUser.getInstance();
+                    Observer observerMessage = SingletonListMessage.getInstance();
+                    MessageFactory factory = new MessageFactory();
+                    addObserver(observerUser);
+                    addObserver(observerMessage);
 
 
-                SingletonCurrentUser.getInstance().changeUserStatus();
-                SingletonListMessage.getInstance().getMessages().add(factory.createMessage(adminId, SingletonCurrentUser.getInstance().getCurrentUser().getUserId(), "You have been " + ((getCurrentUserStatus()? "unbanned" : "banned"))));
-                notifyObserver();
+                    SingletonCurrentUser.getInstance().changeUserStatus();
+                    SingletonListMessage.getInstance().getMessages().add(factory.createMessage(adminId, SingletonCurrentUser.getInstance().getCurrentUser().getUserId(), "You have been " + ((getCurrentUserStatus()? "unbanned" : "banned"))));
+                    notifyObserver();
 
-                removeObserver(observerUser);
-                removeObserver(observerMessage);
+                    removeObserver(observerUser);
+                    removeObserver(observerMessage);
+                } else {
+                    System.out.println("You have not yet change this user status");
+                }
+
             } else {
-                System.out.println("You have not yet change this user status");
+                System.out.println("User id does not exist in database");
             }
-
-        } else {
-            System.out.println("User id does not exist in database");
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, please try again");
         }
+
 
     }
     private boolean isUserIdExist(int userId) {

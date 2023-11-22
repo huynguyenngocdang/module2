@@ -4,18 +4,25 @@ import com.codegym.huyc08.service.chainChangePromotionAmount.ChangeModifyPromoti
 import com.codegym.huyc08.service.chainChangePromotionAmount.RequestChangeModifyPromotionAmount;
 import com.codegym.huyc08.service.chainChangePromotionAmount.ValidateModifyPromotionAmountNotNegative;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CommandChangePromotionAmount implements Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+    private  Scanner SCANNER;
     @Override
     public void execute() {
-        System.out.println("Input new amount (>= 0)");
-        double newAmount = SCANNER.nextDouble();
+        try {
+            SCANNER = new Scanner(System.in);
+            System.out.println("Input new amount (>= 0)");
+            double newAmount = SCANNER.nextDouble();
 
-        //validate not negative - change new amount;
-        HandlerModifyPromotion changePromotionAmount = new ChangeModifyPromotionAmount(null);
-        HandlerModifyPromotion validatePromotionAmountNotNegative = new ValidateModifyPromotionAmountNotNegative(changePromotionAmount);
-        validatePromotionAmountNotNegative.handle(new RequestChangeModifyPromotionAmount(newAmount));
+            //validate not negative - change new amount;
+            HandlerModifyPromotion changePromotionAmount = new ChangeModifyPromotionAmount(null);
+            HandlerModifyPromotion validatePromotionAmountNotNegative = new ValidateModifyPromotionAmountNotNegative(changePromotionAmount);
+            validatePromotionAmountNotNegative.handle(new RequestChangeModifyPromotionAmount(newAmount));
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, please try again");
+        }
+
     }
 }

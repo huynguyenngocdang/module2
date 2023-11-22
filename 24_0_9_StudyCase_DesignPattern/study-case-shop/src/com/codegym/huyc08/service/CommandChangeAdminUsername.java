@@ -8,9 +8,10 @@ import com.codegym.huyc08.service.chainChangeAdminName.ValidateAdminFollowRegex;
 import java.util.Scanner;
 
 public class CommandChangeAdminUsername implements Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+    private Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         System.out.println("Input new admin name");
         String newAdminName = SCANNER.next();
 

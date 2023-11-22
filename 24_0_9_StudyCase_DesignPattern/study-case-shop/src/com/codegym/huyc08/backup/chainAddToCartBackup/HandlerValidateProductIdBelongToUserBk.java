@@ -1,25 +1,19 @@
-package com.codegym.huyc08.service.chainAddToCart;
+package com.codegym.huyc08.backup.chainAddToCartBackup;
 
-import com.codegym.huyc08.entity.Product;
-import com.codegym.huyc08.service.HandlerAddToCart;
-import com.codegym.huyc08.service.RequestAddToCart;
 import com.codegym.huyc08.service.SingletonCurrentUser;
-import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorProductBelongToUser;
 
-import java.util.Scanner;
+public class HandlerValidateProductIdBelongToUserBk implements HandlerAddToCartBk {
+    private HandlerAddToCartBk next;
 
-public class HandlerValidateProductIdBelongToUser implements HandlerAddToCart {
-    private HandlerAddToCart next;
-
-    public HandlerValidateProductIdBelongToUser(HandlerAddToCart next) {
+    public HandlerValidateProductIdBelongToUserBk(HandlerAddToCartBk next) {
         this.next = next;
     }
 
     @Override
-    public boolean doHandle(RequestAddToCart requestAddToCart) {
-        int productId = requestAddToCart.getProductId();
+    public boolean doHandle(RequestAddToCartBk requestAddToCartBk) {
+        int productId = requestAddToCartBk.getProductId();
         int buyerId = SingletonCurrentUser.getInstance().getCurrentUser().getUserId();
         Validator validator = new ValidatorProductBelongToUser(productId, buyerId);
         if(validator.isCheck()) {
@@ -33,12 +27,12 @@ public class HandlerValidateProductIdBelongToUser implements HandlerAddToCart {
     }
 
     @Override
-    public void handle(RequestAddToCart requestAddToCart) {
-        if(!doHandle(requestAddToCart)) {
+    public void handle(RequestAddToCartBk requestAddToCartBk) {
+        if(!doHandle(requestAddToCartBk)) {
             return;
         }
         if(next != null) {
-            next.handle(requestAddToCart);
+            next.handle(requestAddToCartBk);
         }
     }
 }

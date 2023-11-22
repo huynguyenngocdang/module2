@@ -2,6 +2,7 @@ package com.codegym.huyc08.service;
 
 import com.codegym.huyc08.entity.Product;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CommandRemoveUserProduct extends Subject implements Command{
@@ -29,7 +30,7 @@ public class CommandRemoveUserProduct extends Subject implements Command{
          } else {
              System.out.println("You have not remove this product " + product.toString());
          }
-     } catch (IndexOutOfBoundsException exception) {
+     } catch (IndexOutOfBoundsException | InputMismatchException exception) {
          System.out.println("Invalid choice, please try again");
      }
 

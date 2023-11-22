@@ -9,9 +9,10 @@ import com.codegym.huyc08.service.chainChangeUsername.ValidateUsernameLikeAdmin;
 import java.util.Scanner;
 
 public class CommandChangeUserUsername implements Command {
-    private final Scanner SCANNER = new Scanner(System.in);
+    private  Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         System.out.println("Changing username");
         System.out.println("Input new username");
         String newUsername = SCANNER.next();
