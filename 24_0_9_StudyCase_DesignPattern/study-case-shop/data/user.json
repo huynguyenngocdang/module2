@@ -12,7 +12,7 @@
     "userId": 2,
     "username": "Giang",
     "password": "123",
-    "walletBalance": 14395.0,
+    "walletBalance": 15395.0,
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": true
@@ -25,5 +25,14 @@
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": false
+  },
+  {
+    "userId": 4,
+    "username": "Dao",
+    "password": "123",
+    "walletBalance": 100000.0,
+    "userType": "NORMAL",
+    "address": "   ",
+    "isActive": true
   }
 ]

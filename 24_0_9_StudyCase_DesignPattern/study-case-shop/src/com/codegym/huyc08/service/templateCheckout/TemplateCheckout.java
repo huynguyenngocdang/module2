@@ -16,6 +16,7 @@ import java.util.List;
 
 public abstract class TemplateCheckout extends Subject {
     protected abstract boolean validateCash();
+    protected abstract boolean validateAddress();
 
     protected abstract void updateProduct(CartItem currentCartLine);
 
@@ -31,38 +32,45 @@ public abstract class TemplateCheckout extends Subject {
             System.out.println("There is nothing to checkout");
         } else {
             if (validateCash()) {
-                List<PurchaseOrder> purchaseOrders = SingletonListPurchaseOrder.getInstance().getPurchaseOrders();
-                Iterator<CartItem> cartItemIterator = cartItems.iterator();
-                Observer productObserver = SingletonListProduct.getInstance();
-                Observer normalUserObserver = SingletonListNormalUser.getInstance();
-                Observer mailingObserver = SingletonCurrentUserDelivery.getInstance();
-                Observer purchaseOrderObserver = SingletonListPurchaseOrder.getInstance();
+                if(validateAddress()) {
+                    List<PurchaseOrder> purchaseOrders = SingletonListPurchaseOrder.getInstance().getPurchaseOrders();
+                    Iterator<CartItem> cartItemIterator = cartItems.iterator();
+                    Observer productObserver = SingletonListProduct.getInstance();
+                    Observer normalUserObserver = SingletonListNormalUser.getInstance();
+                    Observer mailingObserver = SingletonCurrentUserDelivery.getInstance();
+                    Observer purchaseOrderObserver = SingletonListPurchaseOrder.getInstance();
 
-                addObserver(productObserver);
-                addObserver(normalUserObserver);
-                addObserver(mailingObserver);
-                addObserver(purchaseOrderObserver);
+                    addObserver(productObserver);
+                    addObserver(normalUserObserver);
+                    addObserver(mailingObserver);
+                    addObserver(purchaseOrderObserver);
 
-                while (cartItemIterator.hasNext()) {
-                    CartItem currentCartLine = cartItemIterator.next();
-                    double cost = calculateCost(currentCartLine);
+                    while (cartItemIterator.hasNext()) {
+                        CartItem currentCartLine = cartItemIterator.next();
+                        double cost = calculateCost(currentCartLine);
 
-                    updateProduct(currentCartLine);
-                    updateSeller(currentCartLine, cost);
-                    updateBuyer(currentCartLine, cost);
+                        updateProduct(currentCartLine);
+                        updateSeller(currentCartLine, cost);
+                        updateBuyer(currentCartLine, cost);
 
-                    PurchaseOrder newPO = createPurchaseOrder(currentCartLine, cost);
-                    purchaseOrders.add(newPO);
+                        PurchaseOrder newPO = createPurchaseOrder(currentCartLine, cost);
+                        purchaseOrders.add(newPO);
 
-                    // remove cartItemLine:
-                    cartItemIterator.remove();
+                        // remove cartItemLine:
+                        cartItemIterator.remove();
+                    }
+
+                    notifyObserver();
+                    removeObserver(productObserver);
+                    removeObserver(normalUserObserver);
+                    removeObserver(mailingObserver);
+                    removeObserver(purchaseOrderObserver);
+                } else {
+                    System.out.println("You have not set an address. Please change your address before buying");
                 }
 
-                notifyObserver();
-                removeObserver(productObserver);
-                removeObserver(normalUserObserver);
-                removeObserver(mailingObserver);
-                removeObserver(purchaseOrderObserver);
+            } else {
+                System.out.println("You don't have enough cash");
             }
         }
 

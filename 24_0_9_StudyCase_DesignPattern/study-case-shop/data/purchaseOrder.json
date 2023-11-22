@@ -68,5 +68,19 @@
     "promotionCode": "none",
     "promotionAmount": 0.0,
     "promotionPercent": 0.0
+  },
+  {
+    "purchaseOrderId": 6,
+    "customerId": 4,
+    "sellerId": 2,
+    "productId": 5,
+    "orderDate": "22/11/2023,14:06:55",
+    "price": 1000.0,
+    "quantity": 1.0,
+    "totalCost": 1000.0,
+    "totalCostAfterPromotion": 1000.0,
+    "promotionCode": "none",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.0
   }
 ]

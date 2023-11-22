@@ -4,5 +4,23 @@
     "receiverId": -1,
     "message": "userid 1 with username Huy has forgot password",
     "dateCreated": "14/11/2023,17:08:41"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 1,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 31/12/2023",
+    "dateCreated": "22/11/2023,13:43:30"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 2,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 31/12/2023",
+    "dateCreated": "22/11/2023,13:43:30"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "Promotion KM03 is available to use from 10/10/2023 until 31/12/2023",
+    "dateCreated": "22/11/2023,13:43:30"
   }
 ]

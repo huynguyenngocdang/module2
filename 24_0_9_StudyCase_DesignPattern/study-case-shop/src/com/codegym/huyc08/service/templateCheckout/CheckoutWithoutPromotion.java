@@ -21,6 +21,21 @@ public class CheckoutWithoutPromotion extends TemplateCheckout {
     }
 
     @Override
+    protected boolean validateAddress() {
+        try {
+            String address = SingletonCurrentUser.getInstance().getCurrentUser().getAddress();
+            if(address.isBlank()) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+
+    }
+
+    @Override
     protected void updateProduct(CartItem currentCartLine) {
         Product thisProduct = SingletonListProduct.getInstance().getProduct(currentCartLine.getProduct().getProductId());
         thisProduct.setProductQuantity(thisProduct.getProductQuantity() - currentCartLine.getQuantity());

@@ -5,17 +5,17 @@
     "productName": "Laptop Intel",
     "productType": "Laptop",
     "productPrice": 1000.0,
-    "productQuantity": 7.0,
+    "productQuantity": 6.0,
     "productManufacturer": "Intel",
     "productDescription": "A good laptop"
   },
   {
     "productId": 3,
     "sellerId": 2,
-    "productName": "Iphone7+",
-    "productType": "phone",
-    "productPrice": 750.0,
-    "productQuantity": 10.0,
+    "productName": "Iphone7Plus",
+    "productType": "Phone",
+    "productPrice": 700.0,
+    "productQuantity": 20.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
   },
@@ -58,5 +58,15 @@
     "productQuantity": 9.0,
     "productManufacturer": "Gigabyte",
     "productDescription": "A good laptop"
+  },
+  {
+    "productId": 7,
+    "sellerId": 4,
+    "productName": "Laptop ASUS",
+    "productType": "Laptop",
+    "productPrice": 1000.0,
+    "productQuantity": 10.0,
+    "productManufacturer": "ASUS",
+    "productDescription": "A laptop"
   }
 ]

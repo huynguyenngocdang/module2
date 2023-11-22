@@ -40,6 +40,7 @@ public class SingletonCurrentUserListProducts implements Observer {
 
     }
     public List<Product> getCurrentUsersProduct() {
+        generateCurrentUserProductList();
         return  currentUserProducts;
     }
     public void displayUserProduct(){
