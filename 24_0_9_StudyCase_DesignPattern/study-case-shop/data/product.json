@@ -5,7 +5,7 @@
     "productName": "Laptop Intel",
     "productType": "Laptop",
     "productPrice": 1000.0,
-    "productQuantity": 6.0,
+    "productQuantity": 4.0,
     "productManufacturer": "Intel",
     "productDescription": "A good laptop"
   },
@@ -62,11 +62,21 @@
   {
     "productId": 7,
     "sellerId": 4,
-    "productName": "Laptop ASUS",
+    "productName": "Laptop MSI",
+    "productType": "Laptop",
+    "productPrice": 1000.0,
+    "productQuantity": 9.0,
+    "productManufacturer": "MSI",
+    "productDescription": "an iphone"
+  },
+  {
+    "productId": 8,
+    "sellerId": 1,
+    "productName": "Laptop MSI",
     "productType": "Laptop",
     "productPrice": 1000.0,
     "productQuantity": 10.0,
-    "productManufacturer": "ASUS",
-    "productDescription": "A laptop"
+    "productManufacturer": "MSI",
+    "productDescription": "A laptop of MSI"
   }
 ]

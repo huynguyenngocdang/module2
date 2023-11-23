@@ -4,6 +4,7 @@ import com.codegym.huyc08.constant.Constants;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.SingletonCurrentUser;
 import com.codegym.huyc08.service.SingletonCurrentUserListMessage;
+import com.codegym.huyc08.service.SingletonShoppingCart;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -37,6 +38,7 @@ public class MenuUser implements Navigator{
     @Override
     public void navigate() {
         SingletonCurrentUserListMessage.getInstance().setCurrentUserMessage(SingletonCurrentUser.getInstance().getCurrentUser().getUserId());
+        SingletonShoppingCart.getInstance().emptyCart();
         displayMenuUser();
     }
 }

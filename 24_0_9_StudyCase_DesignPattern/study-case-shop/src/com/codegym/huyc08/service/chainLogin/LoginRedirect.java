@@ -26,7 +26,6 @@ public class LoginRedirect implements HandlerUserInformation {
         if(validator.isCheck()) {
             Navigator menuUser = new MenuUser();
             System.out.println("Redirecting to Menu User");
-
             menuUser.navigate();
             return true;
         } else if(validator1.isCheck()) {

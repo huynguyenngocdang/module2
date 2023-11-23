@@ -55,7 +55,7 @@ public class SingletonShoppingCart {
         } else {
                 double productTotalCartPrice = 0;
                 double currentUserBalance = SingletonCurrentUser.getInstance().getCurrentUser().getWalletBalance();
-                System.out.println("Line\t Product ID \t Product \t Quantity \t Price \t\t Total Price");
+                System.out.println("Line\t Product ID \t Product \t\t Quantity \t Price \t\t Total Price");
                 for (int i = 0; i < cartItems.size(); i++) {
                     CartItem currentCartItem = cartItems.get(i);
                     int productId = currentCartItem.getProduct().getProductId();
@@ -64,7 +64,7 @@ public class SingletonShoppingCart {
                     double productPrice = currentCartItem.getProduct().getProductPrice();
                     double productTotalPrice = productPrice * productQuantity;
                     productTotalCartPrice += productTotalPrice;
-                    System.out.println((i+1) +". \t\t\t" + productId + " \t\t\t " + productName + " \t " + productQuantity + " \t\t " + productPrice + " \t\t " + productTotalPrice);
+                    System.out.println((i+1) +". \t\t\t" + productId + " \t\t\t " + productName + " \t " + productQuantity + " \t " + productPrice + " \t\t " + productTotalPrice);
             }
             System.out.println("Your current balance: " + currentUserBalance );
             System.out.println("Your balance after purchase: " + (currentUserBalance - productTotalCartPrice));

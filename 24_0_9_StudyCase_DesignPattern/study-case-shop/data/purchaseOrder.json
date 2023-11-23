@@ -82,5 +82,47 @@
     "promotionCode": "none",
     "promotionAmount": 0.0,
     "promotionPercent": 0.0
+  },
+  {
+    "purchaseOrderId": 7,
+    "customerId": 1,
+    "sellerId": 4,
+    "productId": 7,
+    "orderDate": "22/11/2023,15:02:56",
+    "price": 1000.0,
+    "quantity": 1.0,
+    "totalCost": 1000.0,
+    "totalCostAfterPromotion": 900.0,
+    "promotionCode": "KM03",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.1
+  },
+  {
+    "purchaseOrderId": 8,
+    "customerId": 1,
+    "sellerId": 4,
+    "productId": 7,
+    "orderDate": "22/11/2023,15:07:11",
+    "price": 1000.0,
+    "quantity": 1.0,
+    "totalCost": 1000.0,
+    "totalCostAfterPromotion": 1000.0,
+    "promotionCode": "none",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.0
+  },
+  {
+    "purchaseOrderId": 9,
+    "customerId": 1,
+    "sellerId": 2,
+    "productId": 5,
+    "orderDate": "22/11/2023,15:07:11",
+    "price": 1000.0,
+    "quantity": 2.0,
+    "totalCost": 2000.0,
+    "totalCostAfterPromotion": 2000.0,
+    "promotionCode": "none",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.0
   }
 ]

@@ -6,10 +6,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CommandRemoveUserProduct extends Subject implements Command{
-    private Scanner SCANNER = new Scanner(System.in);
+    private Scanner SCANNER;
     @Override
     public void execute() {
      try {
+         SCANNER = new Scanner(System.in);
          Command command = new CommandUserDisplayProducts();
          command.execute();
          System.out.println("Input your product lines you want to remove");

@@ -11,11 +11,13 @@ import com.codegym.huyc08.service.CommandRemoveAllExpiredPromotion;
 import com.codegym.huyc08.service.SingletonCurrentAdmin;
 import com.codegym.huyc08.service.SingletonCurrentUserListMessage;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuAdmin implements Navigator{
-    private final Scanner SCANNER = new Scanner(System.in);
+
     private void displayMenuAdmin() {
+        Scanner SCANNER = new Scanner(System.in);
         Menu menuAdmin = new MenuTemplate("Menu Admin");
         menuAdmin.addMenuItem(new MenuItem("Exit", new CommandExit("Menu Admin")));
         menuAdmin.addMenuItem(new MenuItem("Admin profile", new MenuAdminProfile()));
@@ -28,11 +30,17 @@ public class MenuAdmin implements Navigator{
         menuAdmin.addMenuItem(new MenuItem("Create new promotion", new CommandCreateNewPromotion()));
 
         int choice;
-        do {
-            menuAdmin.display();
-            choice = SCANNER.nextInt();
-            menuAdmin.runCommand(choice);
-        } while (choice != Constants.USER_EXIT_CHOICE);
+        try {
+            do {
+                menuAdmin.display();
+                choice = SCANNER.nextInt();
+                menuAdmin.runCommand(choice);
+            } while (choice != Constants.USER_EXIT_CHOICE);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid choice, please try again");
+            displayMenuAdmin();
+        }
+
 
     }
 
