@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandChangeUserAddress;
 import com.codegym.huyc08.service.CommandChangeUserBalance;
@@ -29,7 +29,7 @@ public class MenuUserProfile implements Navigator, Command {
                 menuUserProfile.display();
                 choice = SCANNER.nextInt();
                 menuUserProfile.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try again");
             displayMenuUserProfile();

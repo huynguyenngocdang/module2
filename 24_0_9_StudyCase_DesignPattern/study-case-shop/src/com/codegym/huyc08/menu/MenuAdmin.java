@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.CommandChangeUserActive;
 import com.codegym.huyc08.service.CommandCreateNewPromotion;
 import com.codegym.huyc08.service.CommandGetAllPromotionsInformation;
@@ -35,7 +35,7 @@ public class MenuAdmin implements Navigator{
                 menuAdmin.display();
                 choice = SCANNER.nextInt();
                 menuAdmin.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid choice, please try again");
             displayMenuAdmin();

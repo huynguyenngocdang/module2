@@ -1,7 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
-import com.codegym.huyc08.service.CommandChangeUserSelectProduct;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.CommandChangeUserSelectProductDescription;
 import com.codegym.huyc08.service.CommandChangeUserSelectProductManufacturer;
 import com.codegym.huyc08.service.CommandChangeUserSelectProductName;
@@ -10,7 +9,6 @@ import com.codegym.huyc08.service.CommandChangeUserSelectProductQuantity;
 import com.codegym.huyc08.service.CommandChangeUserSelectProductType;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandGetCurrentUserProductInformation;
-import com.codegym.huyc08.service.Confirm;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -34,7 +32,7 @@ public class MenuUserShopProductChange implements Navigator {
                 menuShopProductChange.display();
                 choice = SCANNER.nextInt();
                 menuShopProductChange.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try again");
             displayMenuUserShopProductChange();

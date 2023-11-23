@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.PurchaseOrder;
 import com.google.gson.reflect.TypeToken;
 
@@ -14,7 +14,7 @@ public class SingletonListPurchaseOrder implements Observer, GenerateId{
     private final Type PO_TYPE = new TypeToken<ArrayList<PurchaseOrder>>(){}.getType();
     private SingletonListPurchaseOrder() {
         fileHandler = new JsonFileHandler();
-        purchaseOrders = (List<PurchaseOrder>) fileHandler.readFromFile(Constants.PURCHASE_ORDER_FILE_PATH, PO_TYPE);
+        purchaseOrders = (List<PurchaseOrder>) fileHandler.readFromFile(AppConstant.PURCHASE_ORDER_FILE_PATH, PO_TYPE);
         if (purchaseOrders == null) {
             purchaseOrders = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class SingletonListPurchaseOrder implements Observer, GenerateId{
 
     @Override
     public void update() {
-        fileHandler.saveToFile(Constants.PURCHASE_ORDER_FILE_PATH, purchaseOrders);
+        fileHandler.saveToFile(AppConstant.PURCHASE_ORDER_FILE_PATH, purchaseOrders);
         System.out.println("Purchase order database update successfully");
     }
 

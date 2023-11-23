@@ -1,6 +1,6 @@
 package com.codegym.huyc08.backup;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.UserFactory;
 import com.codegym.huyc08.entity.UserType;
@@ -44,7 +44,7 @@ public class CommandCreateNewUserBackup extends Subject implements Command {
     }
 
     private boolean checkUserSyntax(String username) {
-        Validator validator = new ValidatorRegexString(username, Constants.USER_REGEX);
+        Validator validator = new ValidatorRegexString(username, AppConstant.USER_REGEX);
         return validator.isCheck();
     }
     private boolean checkUserExist(String username) {

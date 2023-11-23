@@ -1,6 +1,6 @@
 package com.codegym.huyc08.test;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Product;
 import com.codegym.huyc08.service.JsonFileHandler;
 import com.codegym.huyc08.service.MyFileHandler;
@@ -18,11 +18,11 @@ public class ProductTest {
         productArrayListWrite.add(new Product(2, 2, "Iphone15", "Phone", 500,10,"Apple" ));
         productArrayListWrite.add(new Product(3, 2, "Iphone7", "Phone", 700,10,"Apple" ));
         productArrayListWrite.add(new Product(4, 3, "Iphone15", "Phone", 600,10,"Apple" ));
-        fileHandler.saveToFile(Constants.PRODUCT_FILE_PATH, productArrayListWrite);
+        fileHandler.saveToFile(AppConstant.PRODUCT_FILE_PATH, productArrayListWrite);
 
         ArrayList<Product>  productArrayListRead = new ArrayList<>();
         Type producType = new TypeToken<ArrayList<Product>>(){}.getType();
-        productArrayListRead = (ArrayList<Product>) fileHandler.readFromFile(Constants.PRODUCT_FILE_PATH, producType);
+        productArrayListRead = (ArrayList<Product>) fileHandler.readFromFile(AppConstant.PRODUCT_FILE_PATH, producType);
         for (Product product:productArrayListRead
              ) {
             System.out.println(product.toString());

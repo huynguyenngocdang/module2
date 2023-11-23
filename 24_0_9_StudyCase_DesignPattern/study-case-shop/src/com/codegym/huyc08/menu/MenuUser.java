@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.SingletonCurrentUser;
 import com.codegym.huyc08.service.SingletonCurrentUserListMessage;
@@ -28,7 +28,7 @@ public class MenuUser implements Navigator{
                 menuUser.display();
                 choice = SCANNER.nextInt();
                 menuUser.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try again");
             displayMenuUser();

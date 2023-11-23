@@ -1,8 +1,7 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Admin;
-import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.User;
 import com.google.gson.reflect.TypeToken;
 
@@ -18,7 +17,7 @@ public class SingletonListAdmin implements Observer{
 
     private SingletonListAdmin() {
         fileHandler = new JsonFileHandler();
-        admins = (List<Admin>) fileHandler.readFromFile(Constants.ADMIN_FILE_PATH, ADMINTYPE);
+        admins = (List<Admin>) fileHandler.readFromFile(AppConstant.ADMIN_FILE_PATH, ADMINTYPE);
         if(admins == null) {
             admins = new ArrayList<>();
         }
@@ -57,7 +56,7 @@ public class SingletonListAdmin implements Observer{
     }
     @Override
     public void update() {
-        fileHandler.saveToFile(Constants.ADMIN_FILE_PATH, admins);
+        fileHandler.saveToFile(AppConstant.ADMIN_FILE_PATH, admins);
         System.out.println("Admin database updated successfully");
     }
 }

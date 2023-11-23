@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Message;
 import com.google.gson.reflect.TypeToken;
 
@@ -15,7 +15,7 @@ public class SingletonListMessage implements Observer {
     private static SingletonListMessage instance;
     private SingletonListMessage(){
         this.fileHandler  = new JsonFileHandler();
-        this.messages = (List<Message>) fileHandler.readFromFile(Constants.MESSAGE_FILE_PATH, MESSAGE_TYPE);
+        this.messages = (List<Message>) fileHandler.readFromFile(AppConstant.MESSAGE_FILE_PATH, MESSAGE_TYPE);
         if(messages == null) {
             messages = new ArrayList<>();
         }
@@ -33,7 +33,7 @@ public class SingletonListMessage implements Observer {
 
     @Override
     public void update() {
-        fileHandler.saveToFile(Constants.MESSAGE_FILE_PATH, messages);
+        fileHandler.saveToFile(AppConstant.MESSAGE_FILE_PATH, messages);
         System.out.println("Message updated successfully");
     }
 }

@@ -1,6 +1,6 @@
 package com.codegym.huyc08.entity;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -28,7 +28,7 @@ public class PurchaseOrder {
         this.quantity = quantity;
         this.totalCost = totalCost;
         LocalDateTime orderDateNow = LocalDateTime.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(Constants.FULL_DATE_PATTERN_REGEX);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(AppConstant.FULL_DATE_PATTERN_REGEX);
         this.orderDate = orderDateNow.format(dateTimeFormatter);
         this.totalCostAfterPromotion = this.totalCost;
     }
@@ -42,7 +42,7 @@ public class PurchaseOrder {
         this.quantity = quantity;
         this.totalCost = totalCost;
         LocalDateTime orderDateNow = LocalDateTime.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(Constants.FULL_DATE_PATTERN_REGEX);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(AppConstant.FULL_DATE_PATTERN_REGEX);
         this.orderDate = orderDateNow.format(dateTimeFormatter);
         this.totalCostAfterPromotion = totalCostAfterPromotion;
         this.promotionCode = promotionCode;

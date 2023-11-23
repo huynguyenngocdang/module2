@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Promotion;
 import com.codegym.huyc08.service.templateCheckout.CheckoutWithPromotion;
 import com.codegym.huyc08.service.templateCheckout.CheckoutWithoutPromotion;
@@ -22,7 +22,7 @@ public class CommandCheckout implements Command{
                 System.out.println("Input your promotion code");
                 String promotionCode = SCANNER.nextLine();
                 try {
-                    SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_PATTERN_REGEX);
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(AppConstant.DATE_PATTERN_REGEX);
                     String todayDateZeroTime = dateFormat.format(new Date());
 
                     Promotion thisPromotion = SingletonListPromotion.getInstance().getPromotionWithCode(promotionCode);

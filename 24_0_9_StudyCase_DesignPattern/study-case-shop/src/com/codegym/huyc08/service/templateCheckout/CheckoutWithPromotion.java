@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.templateCheckout;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.CartItem;
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.Product;
@@ -14,7 +14,6 @@ import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.SingletonListPurchaseOrder;
 import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserHasEnoughCash;
 import com.codegym.huyc08.service.ValidatorUserHasEnoughCashWithPromotion;
 
 public class CheckoutWithPromotion  extends  TemplateCheckout{
@@ -29,7 +28,7 @@ public class CheckoutWithPromotion  extends  TemplateCheckout{
         SingletonCurrentPromotion.getInstance().setCurrentPromotion(promotionCode);
         this.currentPromotion = SingletonCurrentPromotion.getInstance().getCurrentPromotion();
         this.promotionAmount = this.currentPromotion.getPromotionAmount();
-        this.promotionPercent = this.currentPromotion.getPromotionPercent() * Constants.PERCENT;
+        this.promotionPercent = this.currentPromotion.getPromotionPercent() * AppConstant.PERCENT;
     }
 
     @Override

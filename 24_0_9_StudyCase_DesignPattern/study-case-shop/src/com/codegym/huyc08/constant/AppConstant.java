@@ -1,6 +1,6 @@
 package com.codegym.huyc08.constant;
 
-public interface Constants {
+public interface AppConstant {
     String USER_FILE_PATH = "data/user.json";
     String ADMIN_FILE_PATH = "data/admin.json";
     String PROMOTION_FILE_PATH = "data/promotion.json";

@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandChangeUserSelectProduct;
 import com.codegym.huyc08.service.CommandExit;
@@ -12,8 +12,6 @@ import com.codegym.huyc08.service.CommandRemoveUserProduct;
 import com.codegym.huyc08.service.CommandUserAddNewProduct;
 import com.codegym.huyc08.service.CommandUserDisplayBalance;
 import com.codegym.huyc08.service.CommandUserDisplayProducts;
-import com.codegym.huyc08.service.SingletonCurrentUser;
-import com.codegym.huyc08.service.SingletonCurrentUserListProducts;
 import com.codegym.huyc08.service.Validator;
 import com.codegym.huyc08.service.ValidatorUserStatus;
 
@@ -40,7 +38,7 @@ public class MenuUserShopProfile implements Navigator, Command {
                 menuUserShopProfile.display();
                 choice = SCANNER.nextInt();
                 menuUserShopProfile.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try again");
             displayMenuUserShopProfile();

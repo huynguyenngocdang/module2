@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.PurchaseOrder;
 
 import java.time.LocalDate;
@@ -19,7 +19,7 @@ public class StrategyReportWeeklyProfit implements StrategyReport {
         this.purchaseOrders = SingletonListPurchaseOrder.getInstance().getPurchaseOrders();
         this.totalProfit = 0;
         this.quantity = 0;
-        this.dateTimeFormatter = DateTimeFormatter.ofPattern(Constants.DATE_PATTERN_REGEX);
+        this.dateTimeFormatter = DateTimeFormatter.ofPattern(AppConstant.DATE_PATTERN_REGEX);
         LocalDate today = LocalDate.now();
         LocalDate previous = today.minusWeeks(1).atStartOfDay().toLocalDate();
         this.previousWeekString = previous.format(dateTimeFormatter);

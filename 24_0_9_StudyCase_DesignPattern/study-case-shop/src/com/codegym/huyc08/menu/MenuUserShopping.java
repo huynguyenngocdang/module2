@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandAddToCart;
 import com.codegym.huyc08.service.CommandCheckout;
@@ -37,7 +37,7 @@ public class MenuUserShopping  implements Navigator, Command {
                 menuShopping.display();
                 choice = SCANNER.nextInt();
                 menuShopping.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try again");
             displayMenuShopping();

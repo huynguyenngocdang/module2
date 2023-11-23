@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Promotion;
 import com.google.gson.reflect.TypeToken;
 
@@ -15,7 +15,7 @@ public class SingletonListPromotion implements Observer, GenerateId {
     private static SingletonListPromotion instance;
     private SingletonListPromotion(){
         fileHandler = new JsonFileHandler();
-        promotions = (ArrayList<Promotion>) fileHandler.readFromFile(Constants.PROMOTION_FILE_PATH, PROMOTIONTYPE);
+        promotions = (ArrayList<Promotion>) fileHandler.readFromFile(AppConstant.PROMOTION_FILE_PATH, PROMOTIONTYPE);
         if (promotions == null) {
             promotions = new ArrayList<>();
         }
@@ -51,7 +51,7 @@ public class SingletonListPromotion implements Observer, GenerateId {
 
     @Override
     public void update() {
-        fileHandler.saveToFile(Constants.PROMOTION_FILE_PATH, promotions);
+        fileHandler.saveToFile(AppConstant.PROMOTION_FILE_PATH, promotions);
         System.out.println("Promotion database updated successfully");
     }
 

@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandCreateNewMessage;
 import com.codegym.huyc08.service.CommandExit;
@@ -31,7 +31,7 @@ public class MenuInbox implements Navigator, Command {
                 menuInbox.display();
                 choice = SCANNER.nextInt();
                 menuInbox.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try again");
             displayInbox();

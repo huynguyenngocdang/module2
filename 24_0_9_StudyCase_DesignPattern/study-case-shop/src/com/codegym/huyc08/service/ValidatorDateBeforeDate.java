@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,7 +12,7 @@ public class ValidatorDateBeforeDate implements Validator{
     private SimpleDateFormat format;
 
     public ValidatorDateBeforeDate(String startDate, String endDate) {
-        this.format = new SimpleDateFormat(Constants.DATE_PATTERN_REGEX);
+        this.format = new SimpleDateFormat(AppConstant.DATE_PATTERN_REGEX);
         this.startDate = startDate;
         this.endDate = endDate;
     }

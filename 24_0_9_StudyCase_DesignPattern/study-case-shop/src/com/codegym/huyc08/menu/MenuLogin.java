@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.CommandCreateNewUser;
 import com.codegym.huyc08.service.CommandExit;
 import com.codegym.huyc08.service.CommandForgotPassword;
@@ -24,7 +24,7 @@ public class MenuLogin implements Navigator {
                 menuLogin.display();
                 choice = SCANNER.nextInt();
                 menuLogin.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try again");
             displayMenuLogin();

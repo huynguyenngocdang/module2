@@ -1,6 +1,6 @@
 package com.codegym.huyc08.entity;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,7 +18,7 @@ public class Message  {
         this.receiverId = receiverId;
         this.message = message;
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.FULL_DATE_PATTERN_REGEX);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(AppConstant.FULL_DATE_PATTERN_REGEX);
         this.dateCreated = formatter.format(now);
     }
 

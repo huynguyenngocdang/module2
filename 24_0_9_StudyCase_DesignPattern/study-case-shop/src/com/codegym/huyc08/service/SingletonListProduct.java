@@ -1,8 +1,7 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Product;
-import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -16,7 +15,7 @@ public class SingletonListProduct implements GenerateId, Observer {
     private static SingletonListProduct instance;
     private SingletonListProduct() {
         fileHandler = new JsonFileHandler();
-        products = (ArrayList<Product>) fileHandler.readFromFile(Constants.PRODUCT_FILE_PATH, PRODUCTTYPE);
+        products = (ArrayList<Product>) fileHandler.readFromFile(AppConstant.PRODUCT_FILE_PATH, PRODUCTTYPE);
         if (products == null) {
             products = new ArrayList<>();
         }
@@ -60,7 +59,7 @@ public class SingletonListProduct implements GenerateId, Observer {
 
     @Override
     public void update() {
-        fileHandler.saveToFile(Constants.PRODUCT_FILE_PATH, products);
+        fileHandler.saveToFile(AppConstant.PRODUCT_FILE_PATH, products);
         System.out.println("Product database update successfully");
     }
 }

@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainCreateNewPromotion;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerNewPromotion;
 import com.codegym.huyc08.service.RequestNewPromotion;
 import com.codegym.huyc08.service.Validator;
@@ -19,7 +19,7 @@ public class ValidateNewPromotionCodeFollowRegex implements HandlerNewPromotion 
 
     @Override
     public boolean doHandle(RequestNewPromotion requestNewPromotion) {
-        Validator validateRegex = new ValidatorRegexString(requestNewPromotion.getPromotionCode(), Constants.PROMOTION_REGEX);
+        Validator validateRegex = new ValidatorRegexString(requestNewPromotion.getPromotionCode(), AppConstant.PROMOTION_REGEX);
         if (validateRegex.isCheck()){
             System.out.println("Check new promotion code regex successfully");
             return true;

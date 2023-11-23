@@ -1,6 +1,6 @@
 package com.codegym.huyc08.test;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Promotion;
 import com.codegym.huyc08.entity.PromotionFactory;
 import com.codegym.huyc08.service.JsonFileHandler;
@@ -22,6 +22,6 @@ public class PromotionTest {
         promotions.add(promotionExpired1);
         promotions.add(promotionExpired2);
         MyFileHandler fileHandler = new JsonFileHandler();
-        fileHandler.saveToFile(Constants.PROMOTION_FILE_PATH, promotions);
+        fileHandler.saveToFile(AppConstant.PROMOTION_FILE_PATH, promotions);
     }
 }

@@ -1,6 +1,6 @@
 package com.codegym.huyc08.test;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.PurchaseOrder;
 import com.codegym.huyc08.entity.PurchaseOrderFactory;
 import com.codegym.huyc08.service.JsonFileHandler;
@@ -21,9 +21,9 @@ public class PurchaseOrderTest {
         purchaseOrders.add(purchaseOrder2);
 
         MyFileHandler fileHandler = new JsonFileHandler();
-        fileHandler.saveToFile(Constants.PURCHASE_ORDER_FILE_PATH, purchaseOrders);
+        fileHandler.saveToFile(AppConstant.PURCHASE_ORDER_FILE_PATH, purchaseOrders);
         Type purchaseOrderType = new TypeToken<ArrayList<PurchaseOrder>>(){}.getType();
-        ArrayList<PurchaseOrder> purchaseOrdersRead = (ArrayList<PurchaseOrder>) fileHandler.readFromFile(Constants.PURCHASE_ORDER_FILE_PATH, purchaseOrderType);
+        ArrayList<PurchaseOrder> purchaseOrdersRead = (ArrayList<PurchaseOrder>) fileHandler.readFromFile(AppConstant.PURCHASE_ORDER_FILE_PATH, purchaseOrderType);
 
         for (PurchaseOrder po: purchaseOrdersRead
              ) {

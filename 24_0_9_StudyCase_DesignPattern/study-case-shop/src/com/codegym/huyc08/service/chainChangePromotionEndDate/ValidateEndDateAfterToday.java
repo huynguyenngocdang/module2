@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainChangePromotionEndDate;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
 import com.codegym.huyc08.service.Validator;
@@ -18,7 +18,7 @@ public class ValidateEndDateAfterToday implements HandlerModifyPromotion {
 
     @Override
     public boolean doHandle(RequestModifyPromotion requestModifyPromotion) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_PATTERN_REGEX);
+        SimpleDateFormat dateFormat = new SimpleDateFormat(AppConstant.DATE_PATTERN_REGEX);
         String todayDateZeroTime = dateFormat.format(new Date());
         String newEndDate = requestModifyPromotion.getPromotionDateEnd();
         Validator validateEndDateAfterToday = new ValidatorDateBeforeDate(todayDateZeroTime, newEndDate );

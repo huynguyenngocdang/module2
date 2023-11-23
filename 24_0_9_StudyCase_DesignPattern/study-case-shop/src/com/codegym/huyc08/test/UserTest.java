@@ -1,6 +1,6 @@
 package com.codegym.huyc08.test;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Admin;
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.User;
@@ -33,14 +33,14 @@ public class UserTest {
         users.add(normalUser2);
         users.add(normalUser3);
 
-        fileHandler.saveToFile(Constants.USER_FILE_PATH,  users);
-        fileHandler.saveToFile(Constants.ADMIN_FILE_PATH,  admins);
+        fileHandler.saveToFile(AppConstant.USER_FILE_PATH,  users);
+        fileHandler.saveToFile(AppConstant.ADMIN_FILE_PATH,  admins);
 
         Type adminType = new TypeToken<ArrayList<Admin>>(){}.getType();
         Type userType = new TypeToken<ArrayList<NormalUser>>(){}.getType();
 
-        List<Admin> adminsRead = (ArrayList<Admin>) fileHandler.readFromFile(Constants.ADMIN_FILE_PATH, adminType);
-        List<NormalUser> userListRead = (ArrayList<NormalUser>) fileHandler.readFromFile(Constants.USER_FILE_PATH, userType);
+        List<Admin> adminsRead = (ArrayList<Admin>) fileHandler.readFromFile(AppConstant.ADMIN_FILE_PATH, adminType);
+        List<NormalUser> userListRead = (ArrayList<NormalUser>) fileHandler.readFromFile(AppConstant.USER_FILE_PATH, userType);
 
         for (Admin adminUser: adminsRead) {
             System.out.println(adminUser.toString());

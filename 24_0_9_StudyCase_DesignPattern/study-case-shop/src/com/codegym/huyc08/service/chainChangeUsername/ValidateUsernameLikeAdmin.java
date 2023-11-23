@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainChangeUsername;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
@@ -15,7 +15,7 @@ public class ValidateUsernameLikeAdmin implements HandlerUserInformation {
 
     @Override
     public boolean doHandle(RequestUserInformation requestUserInformation) {
-        Validator validatorRegex = new ValidatorRegexString(requestUserInformation.getUsername(), Constants.ADMIN_REGEX);
+        Validator validatorRegex = new ValidatorRegexString(requestUserInformation.getUsername(), AppConstant.ADMIN_REGEX);
         if(validatorRegex.isCheck()) {
             System.out.println("Can't make new name start with admin");
             return false;

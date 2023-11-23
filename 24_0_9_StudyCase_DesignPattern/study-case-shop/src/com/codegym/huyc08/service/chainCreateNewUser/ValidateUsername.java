@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainCreateNewUser;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
@@ -15,7 +15,7 @@ public class ValidateUsername implements HandlerUserInformation {
 
     @Override
     public boolean doHandle(RequestUserInformation requestUserInformation) {
-        Validator validatorRegex = new ValidatorRegexString(requestUserInformation.getUsername(), Constants.USER_REGEX);
+        Validator validatorRegex = new ValidatorRegexString(requestUserInformation.getUsername(), AppConstant.USER_REGEX);
         boolean isUserFollowRegex = validatorRegex.isCheck();
         if (isUserFollowRegex) {
             System.out.println("Check username regex completed");

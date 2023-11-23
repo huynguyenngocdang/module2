@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainRemoveExpirePromotion;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Promotion;
 import com.codegym.huyc08.service.Confirm;
 import com.codegym.huyc08.service.Confirmation;
@@ -23,7 +23,7 @@ public class DisplayAllExpiredModifyPromotion implements HandlerModifyPromotion 
 
     public DisplayAllExpiredModifyPromotion(HandlerModifyPromotion next) {
         this.next = next;
-        this.format = new SimpleDateFormat(Constants.DATE_PATTERN_REGEX);
+        this.format = new SimpleDateFormat(AppConstant.DATE_PATTERN_REGEX);
         this.promotions = SingletonListPromotion.getInstance().getPromotions();
         this.promotionsRemove = new ArrayList<>();
     }

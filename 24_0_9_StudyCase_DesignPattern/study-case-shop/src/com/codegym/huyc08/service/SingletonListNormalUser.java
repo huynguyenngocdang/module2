@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.User;
 import com.google.gson.reflect.TypeToken;
@@ -18,7 +18,7 @@ public class SingletonListNormalUser implements Observer, GenerateId {
 
     private SingletonListNormalUser() {
         fileHandler = new JsonFileHandler();
-        users = (ArrayList<NormalUser>) fileHandler.readFromFile(Constants.USER_FILE_PATH, USERTYPE);
+        users = (ArrayList<NormalUser>) fileHandler.readFromFile(AppConstant.USER_FILE_PATH, USERTYPE);
         if(users == null) {
             users = new ArrayList<>();
         }
@@ -89,7 +89,7 @@ public class SingletonListNormalUser implements Observer, GenerateId {
 
     @Override
     public void update() {
-        fileHandler.saveToFile(Constants.USER_FILE_PATH, users);
+        fileHandler.saveToFile(AppConstant.USER_FILE_PATH, users);
         System.out.println("User list update");
     }
 }

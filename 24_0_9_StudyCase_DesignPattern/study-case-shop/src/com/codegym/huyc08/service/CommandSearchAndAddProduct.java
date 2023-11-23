@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.Product;
 import com.codegym.huyc08.service.chainAddToCart.HandlerAddToCartFinalize;
 import com.codegym.huyc08.service.chainAddToCart.HandlerValidateProductEnoughQuantity;
@@ -23,9 +23,9 @@ public class CommandSearchAndAddProduct implements Command{
         System.out.println("Input search queue (Do not input anything if you want to search all)");
         String search = SCANNER.nextLine().toLowerCase();
         StringBuilder regex = new StringBuilder();
-        regex.append(Constants.SEARCH_REGEX);
+        regex.append(AppConstant.SEARCH_REGEX);
         regex.append(search);
-        regex.append(Constants.SEARCH_REGEX);
+        regex.append(AppConstant.SEARCH_REGEX);
 
         for (Product product: SingletonListProduct.getInstance().getProducts()
              ) {
@@ -46,7 +46,7 @@ public class CommandSearchAndAddProduct implements Command{
             try {
                 System.out.println("Input product line you want to add (Input 0 if you want to quit)");
                 int choice = SCANNER.nextInt()-1;
-                if(choice == Constants.USER_EXIT_CHOICE - 1) {
+                if(choice == AppConstant.USER_EXIT_CHOICE - 1) {
                     System.out.println("You choose to not add to cart");
                 } else {
                     Product chooseProduct = getProduct(choice);

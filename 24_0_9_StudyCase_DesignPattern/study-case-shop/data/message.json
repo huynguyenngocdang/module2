@@ -34,5 +34,11 @@
     "receiverId": 3,
     "message": "You have been banned",
     "dateCreated": "23/11/2023,09:17:19"
+  },
+  {
+    "senderId": 1,
+    "receiverId": -1,
+    "message": "userid 1 with username Huy has forgot password",
+    "dateCreated": "23/11/2023,11:11:51"
   }
 ]

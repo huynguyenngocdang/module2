@@ -1,6 +1,6 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandChangeAdminPassword;
 import com.codegym.huyc08.service.CommandChangeAdminUsername;
@@ -23,7 +23,7 @@ public class MenuAdminProfile implements Navigator, Command {
                 menuAdminProfile.display();
                 choice = SCANNER.nextInt();
                 menuAdminProfile.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid choice, please try again");
             displayMenuAdminProfile();

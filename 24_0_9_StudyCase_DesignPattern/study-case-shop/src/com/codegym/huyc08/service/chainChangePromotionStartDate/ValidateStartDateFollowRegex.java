@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainChangePromotionStartDate;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
 import com.codegym.huyc08.service.Validator;
@@ -15,7 +15,7 @@ public class ValidateStartDateFollowRegex implements HandlerModifyPromotion {
 
     @Override
     public boolean doHandle(RequestModifyPromotion requestModifyPromotion) {
-        Validator validateDate = new ValidatorRegexString(requestModifyPromotion.getPromotionDateStart(), Constants.DATE_REGEX);
+        Validator validateDate = new ValidatorRegexString(requestModifyPromotion.getPromotionDateStart(), AppConstant.DATE_REGEX);
         if(validateDate.isCheck()){
             System.out.println("Validate input follow date regex successfully");
             return true;

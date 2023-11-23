@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainChangeAdminName;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
 import com.codegym.huyc08.service.Validator;
@@ -15,7 +15,7 @@ public class ValidateAdminFollowRegex implements HandlerUserInformation {
 
     @Override
     public boolean doHandle(RequestUserInformation requestUserInformation) {
-        Validator validateAdminRegex = new ValidatorRegexString(requestUserInformation.getUsername(), Constants.ADMIN_REGEX);
+        Validator validateAdminRegex = new ValidatorRegexString(requestUserInformation.getUsername(), AppConstant.ADMIN_REGEX);
         if(validateAdminRegex.isCheck()) {
             System.out.println("Check admin regex successfully");
             return true;

@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 
 import java.util.Scanner;
 
@@ -15,10 +15,10 @@ public class Confirmation implements Confirm{
 
     @Override
     public boolean isConfirm() {
-        System.out.println("Do you want to " + this.action + " (" + Constants.USER_CONFIRM + "/" + Constants.USER_REJECT + ")");
+        System.out.println("Do you want to " + this.action + " (" + AppConstant.USER_CONFIRM + "/" + AppConstant.USER_REJECT + ")");
         String choice = SCANNER.next().toUpperCase().trim();
         switch (choice) {
-            case Constants.USER_CONFIRM:
+            case AppConstant.USER_CONFIRM:
                 return true;
             default:
                 return false;

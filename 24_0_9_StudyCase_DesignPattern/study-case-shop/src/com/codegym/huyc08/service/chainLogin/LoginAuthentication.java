@@ -1,6 +1,6 @@
 package com.codegym.huyc08.service.chainLogin;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.UserType;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
@@ -56,7 +56,7 @@ public class LoginAuthentication implements HandlerUserInformation {
         }
     }
     private boolean handleNormalUser(String username, String password) {
-        if(loginAttempt < Constants.MAX_LOGIN_ATTEMPT) {
+        if(loginAttempt < AppConstant.MAX_LOGIN_ATTEMPT) {
             Validator validateUserCorrect = new ValidatorUserCorrectLoginInformation(username, password);
             Validator validateUserExist = new ValidatorUserNameExist(username);
             boolean isUserExist = validateUserExist.isCheck();
@@ -81,7 +81,7 @@ public class LoginAuthentication implements HandlerUserInformation {
         }
     }
     private boolean handleAdmin(String username, String password) {
-        if(loginAttempt < Constants.MAX_LOGIN_ATTEMPT) {
+        if(loginAttempt < AppConstant.MAX_LOGIN_ATTEMPT) {
             Validator validateAdminCorrect = new ValidatorAdminCorrect(username, password);
             Validator validateAdminExist = new ValidatorAdminExist(username);
             boolean isAdminExist = validateAdminExist.isCheck();
@@ -106,7 +106,7 @@ public class LoginAuthentication implements HandlerUserInformation {
         }
     }
     private void quitSystem() {
-        System.out.println("You have enter wrong password more than " + Constants.MAX_LOGIN_ATTEMPT + " times");
+        System.out.println("You have enter wrong password more than " + AppConstant.MAX_LOGIN_ATTEMPT + " times");
         System.out.println("The system is now quit");
         System.exit(0);
     }

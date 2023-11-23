@@ -1,13 +1,12 @@
 package com.codegym.huyc08.menu;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.CommandChangePromotionAmount;
 import com.codegym.huyc08.service.CommandChangePromotionCode;
 import com.codegym.huyc08.service.CommandChangePromotionDateEnd;
 import com.codegym.huyc08.service.CommandChangePromotionDateStart;
 import com.codegym.huyc08.service.CommandChangePromotionPercent;
 import com.codegym.huyc08.service.CommandExit;
-import com.codegym.huyc08.service.CommandGetAllPromotionsInformation;
 import com.codegym.huyc08.service.CommandGetCurrentPromotionInformation;
 import com.codegym.huyc08.service.CommandNotifyUsersAboutPromotion;
 import com.codegym.huyc08.service.CommandRemoveCurrentPromotion;
@@ -37,7 +36,7 @@ public class MenuAdminPromotionProfile implements Navigator{
                 menuPromotionProfile.display();
                 choice = SCANNER.nextInt();
                 menuPromotionProfile.runCommand(choice);
-            } while (choice != Constants.USER_EXIT_CHOICE);
+            } while (choice != AppConstant.USER_EXIT_CHOICE);
         } catch (InputMismatchException e) {
             System.out.println("Invalid choice, please try again");
             displayMenuAdminPromotionManagement();

@@ -1,6 +1,6 @@
 package com.codegym.huyc08.backup;
 
-import com.codegym.huyc08.constant.Constants;
+import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.CartItem;
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.Product;
@@ -82,7 +82,7 @@ public class CommandCheckout extends Subject implements Command {
         //set current promotion
         SingletonCurrentPromotion.getInstance().setCurrentPromotion(promotionCode);
         Promotion thisPromotion = SingletonCurrentPromotion.getInstance().getCurrentPromotion();
-        SimpleDateFormat format = new SimpleDateFormat(Constants.DATE_PATTERN_REGEX);
+        SimpleDateFormat format = new SimpleDateFormat(AppConstant.DATE_PATTERN_REGEX);
         String today = format.format(new Date());
         Validator validateEndDate = new ValidatorDateBeforeDate(today, thisPromotion.getPromotionDateEnd());
         if (validateEndDate.isCheck()) {
@@ -90,7 +90,7 @@ public class CommandCheckout extends Subject implements Command {
             if (validateEnoughCashWithPromotion.isCheck()) {
                 Iterator<CartItem> cartItemIterator = cartItems.iterator();
 
-                double promotionPercent = thisPromotion.getPromotionPercent() * Constants.PERCENT;
+                double promotionPercent = thisPromotion.getPromotionPercent() * AppConstant.PERCENT;
                 double promotionAmount = thisPromotion.getPromotionAmount();
 
                 Observer productObserver = SingletonListProduct.getInstance();
