@@ -5,12 +5,12 @@ import com.codegym.huyc08.entity.User;
 
 import java.util.List;
 
-public class ValidatorUserCorrect implements Validator{
+public class ValidatorUserCorrectLoginInformation implements Validator{
     private String username;
     private String password;
     private List<NormalUser> users;
 
-    public ValidatorUserCorrect(String username, String password) {
+    public ValidatorUserCorrectLoginInformation(String username, String password) {
         this.username = username;
         this.password = password;
         this.users = SingletonListNormalUser.getInstance().getUsers();

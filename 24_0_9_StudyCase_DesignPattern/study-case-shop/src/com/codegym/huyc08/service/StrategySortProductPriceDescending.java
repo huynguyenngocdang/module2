@@ -4,7 +4,7 @@ import com.codegym.huyc08.entity.Product;
 
 import java.util.List;
 
-public class ProductPriceDescendingSort implements StrategySort{
+public class StrategySortProductPriceDescending implements StrategySort{
     @Override
     public void sort(List<Product> products) {
         products.sort((p1, p2)-> Double.compare(p2.getProductPrice(), p1.getProductPrice()));

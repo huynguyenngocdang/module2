@@ -9,7 +9,7 @@ public class CommandDisplayProductsPriceAscending implements Command{
     private List<Product> products;
 
     public CommandDisplayProductsPriceAscending() {
-        this.strategySort = new ProductPriceAscendingSort();
+        this.strategySort = new StrategySortProductPriceAscending();
         this.products = SingletonListProduct.getInstance().getProducts();
     }
 
