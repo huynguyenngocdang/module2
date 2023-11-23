@@ -9,11 +9,12 @@ import java.util.Scanner;
 
 public class CommandRemoveMessage extends Subject implements Command{
 
-    private Scanner SCANNER = new Scanner(System.in);
+    private Scanner SCANNER;
 
     @Override
     public void execute() {
         try {
+            SCANNER = new Scanner(System.in);
             System.out.println("Input message line you want to remove");
             int choice = SCANNER.nextInt() - 1;
             Observer observer = SingletonListMessage.getInstance();

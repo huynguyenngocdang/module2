@@ -61,16 +61,6 @@
   },
   {
     "productId": 7,
-    "sellerId": 4,
-    "productName": "Laptop MSI",
-    "productType": "Laptop",
-    "productPrice": 1000.0,
-    "productQuantity": 9.0,
-    "productManufacturer": "MSI",
-    "productDescription": "an iphone"
-  },
-  {
-    "productId": 8,
     "sellerId": 1,
     "productName": "Laptop MSI",
     "productType": "Laptop",

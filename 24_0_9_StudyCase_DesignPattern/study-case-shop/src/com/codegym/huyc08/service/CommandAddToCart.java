@@ -4,7 +4,7 @@ public class CommandAddToCart implements Command{
 
     @Override
     public void execute() {
-        Command commandSearchProduct = new CommandSearchProduct();
-        commandSearchProduct.execute();
+        Command commandSearchAndAddProduct = new CommandSearchAndAddProduct();
+        commandSearchAndAddProduct.execute();
     }
 }

@@ -1,7 +1,7 @@
 package com.codegym.huyc08.backup;
 
 import com.codegym.huyc08.service.Command;
-import com.codegym.huyc08.service.CommandSearchProduct;
+import com.codegym.huyc08.service.CommandSearchAndAddProduct;
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class CommandAddToCartBk implements Command {
 //        RequestAddToCart requestAddToCart = new RequestToAddToCart();
 //        inputProductId.handle(requestAddToCart);
 
-        Command commandSearchProduct = new CommandSearchProduct();
+        Command commandSearchProduct = new CommandSearchAndAddProduct();
         commandSearchProduct.execute();
     }
 }

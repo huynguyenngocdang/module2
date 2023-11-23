@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CommandChangeUserSelectProduct implements Command{
-    private final Scanner SCANNER = new Scanner(System.in);
+    private Scanner SCANNER;
     private List<Product> userProducts;
 
     public CommandChangeUserSelectProduct() {
@@ -19,6 +19,7 @@ public class CommandChangeUserSelectProduct implements Command{
     @Override
     public void execute() {
         try {
+            SCANNER = new Scanner(System.in);
             for (int i = 0; i < userProducts.size(); i++) {
                 System.out.println((i+1) + ". " + userProducts.get(i).toString());
             }

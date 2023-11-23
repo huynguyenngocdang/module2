@@ -3,9 +3,10 @@ package com.codegym.huyc08.service;
 import java.util.Scanner;
 
 public class CommandChangeUserSelectProductManufacturer extends Subject implements Command{
-    private final Scanner SCANNER = new Scanner(System.in);
+    private Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         String currentManufacturer = SingletonCurrentUserProduct.getInstance().getCurrentUserProduct().getProductManufacturer();
         System.out.println("Your current product manufacturer is " + currentManufacturer);
         Confirm confirm = new Confirmation("change product manufacturer");

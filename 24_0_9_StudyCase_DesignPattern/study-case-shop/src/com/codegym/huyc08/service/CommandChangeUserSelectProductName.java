@@ -3,9 +3,10 @@ package com.codegym.huyc08.service;
 import java.util.Scanner;
 
 public class CommandChangeUserSelectProductName extends Subject implements Command{
-    private final Scanner SCANNER = new Scanner(System.in);
+    private Scanner SCANNER;
     @Override
     public void execute() {
+        SCANNER = new Scanner(System.in);
         String currentName = SingletonCurrentUserProduct.getInstance().getCurrentUserProduct().getProductName();
         System.out.println("Your current product name is " + currentName);
         Confirm confirm = new Confirmation("change product name");
