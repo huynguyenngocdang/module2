@@ -6,10 +6,7 @@ import com.codegym.huyc08.service.HandlerNewMessage;
 import com.codegym.huyc08.service.Observer;
 import com.codegym.huyc08.service.RequestNewMessage;
 import com.codegym.huyc08.service.SingletonListMessage;
-import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.Subject;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserNameExist;
 
 import java.util.Scanner;
 

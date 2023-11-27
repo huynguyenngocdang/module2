@@ -3,7 +3,7 @@ package com.codegym.huyc08.menu;
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandChangeUserSelectProduct;
-import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandExitMenu;
 import com.codegym.huyc08.service.CommandGenerateMonthlyCostReport;
 import com.codegym.huyc08.service.CommandGenerateMontlyProfitReport;
 import com.codegym.huyc08.service.CommandGenerateWeeklyCostReport;
@@ -12,8 +12,8 @@ import com.codegym.huyc08.service.CommandRemoveUserProduct;
 import com.codegym.huyc08.service.CommandUserAddNewProduct;
 import com.codegym.huyc08.service.CommandUserDisplayBalance;
 import com.codegym.huyc08.service.CommandUserDisplayProducts;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserStatus;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorUserStatus;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class MenuUserShopProfile implements Navigator, Command {
     private void displayMenuUserShopProfile() {
         Scanner SCANNER = new Scanner(System.in);
         Menu menuUserShopProfile = new MenuTemplate("User Shop Profile");
-        menuUserShopProfile.addMenuItem(new MenuItem("Exit", new CommandExit("User shop profile")));
+        menuUserShopProfile.addMenuItem(new MenuItem("Exit", new CommandExitMenu("User shop profile")));
         menuUserShopProfile.addMenuItem(new MenuItem("Display user balance", new CommandUserDisplayBalance()));
         menuUserShopProfile.addMenuItem(new MenuItem("Display user products", new CommandUserDisplayProducts()));
         menuUserShopProfile.addMenuItem(new MenuItem("Change your product information", new CommandChangeUserSelectProduct()));

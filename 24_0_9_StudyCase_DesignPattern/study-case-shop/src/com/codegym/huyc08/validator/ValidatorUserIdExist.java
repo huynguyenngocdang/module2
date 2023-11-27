@@ -1,7 +1,8 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.User;
+import com.codegym.huyc08.service.SingletonListNormalUser;
 
 import java.util.List;
 

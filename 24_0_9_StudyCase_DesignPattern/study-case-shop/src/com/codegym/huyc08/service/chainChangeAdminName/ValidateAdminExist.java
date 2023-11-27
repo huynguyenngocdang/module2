@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainChangeAdminName;
 
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorAdminExist;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorAdminExist;
 
 public class ValidateAdminExist implements HandlerUserInformation {
     private HandlerUserInformation next;

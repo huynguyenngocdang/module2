@@ -3,9 +3,8 @@ package com.codegym.huyc08.service.chainSendMessage;
 import com.codegym.huyc08.service.HandlerNewMessage;
 import com.codegym.huyc08.service.RequestNewMessage;
 import com.codegym.huyc08.service.SingletonListNormalUser;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserNameExist;
-import com.codegym.huyc08.service.chainCreateNewUser.ValidateUserExist;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorUserNameExist;
 
 import java.util.Scanner;
 

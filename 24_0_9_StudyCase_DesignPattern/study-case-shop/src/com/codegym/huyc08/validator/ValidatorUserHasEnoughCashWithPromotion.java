@@ -1,7 +1,10 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.CartItem;
+import com.codegym.huyc08.service.SingletonCurrentPromotion;
+import com.codegym.huyc08.service.SingletonCurrentUser;
+import com.codegym.huyc08.service.SingletonShoppingCart;
 
 import java.util.List;
 

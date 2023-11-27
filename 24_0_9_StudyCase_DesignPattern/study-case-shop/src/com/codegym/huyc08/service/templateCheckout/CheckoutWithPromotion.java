@@ -13,8 +13,8 @@ import com.codegym.huyc08.service.SingletonCurrentUser;
 import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.SingletonListPurchaseOrder;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserHasEnoughCashWithPromotion;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorUserHasEnoughCashWithPromotion;
 
 public class CheckoutWithPromotion  extends  TemplateCheckout{
     private String promotionCode;
@@ -92,6 +92,10 @@ public class CheckoutWithPromotion  extends  TemplateCheckout{
 
     private double getProductTotalPriceWithPromotion(double cost) {
         double productTotalPrice = cost * (1 - promotionPercent) - promotionAmount;
-        return productTotalPrice;
+        if(productTotalPrice < 0) {
+            return 0;
+        } else {
+            return productTotalPrice;
+        }
     }
 }

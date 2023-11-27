@@ -7,8 +7,8 @@ import com.codegym.huyc08.service.Observer;
 import com.codegym.huyc08.service.RequestModifyPromotion;
 import com.codegym.huyc08.service.SingletonListPromotion;
 import com.codegym.huyc08.service.Subject;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorDateBeforeDate;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDateBeforeDate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

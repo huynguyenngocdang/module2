@@ -1,4 +1,4 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

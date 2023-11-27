@@ -15,7 +15,7 @@
     "productName": "Iphone7Plus",
     "productType": "Phone",
     "productPrice": 700.0,
-    "productQuantity": 20.0,
+    "productQuantity": 19.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
   },
@@ -25,7 +25,7 @@
     "productName": "Iphone15",
     "productType": "Phone",
     "productPrice": 600.0,
-    "productQuantity": 10.0,
+    "productQuantity": 9.0,
     "productManufacturer": "Apple",
     "productDescription": "A Phone manufactured by Apple"
   },

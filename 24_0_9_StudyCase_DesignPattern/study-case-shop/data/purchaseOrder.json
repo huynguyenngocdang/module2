@@ -82,5 +82,33 @@
     "promotionCode": "none",
     "promotionAmount": 0.0,
     "promotionPercent": 0.0
+  },
+  {
+    "purchaseOrderId": 10,
+    "customerId": 1,
+    "sellerId": 2,
+    "productId": 3,
+    "orderDate": "27/11/2023,15:01:05",
+    "price": 700.0,
+    "quantity": 1.0,
+    "totalCost": 700.0,
+    "totalCostAfterPromotion": 700.0,
+    "promotionCode": "none",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.0
+  },
+  {
+    "purchaseOrderId": 11,
+    "customerId": 1,
+    "sellerId": 3,
+    "productId": 4,
+    "orderDate": "27/11/2023,15:01:05",
+    "price": 600.0,
+    "quantity": 1.0,
+    "totalCost": 600.0,
+    "totalCostAfterPromotion": 600.0,
+    "promotionCode": "none",
+    "promotionAmount": 0.0,
+    "promotionPercent": 0.0
   }
 ]

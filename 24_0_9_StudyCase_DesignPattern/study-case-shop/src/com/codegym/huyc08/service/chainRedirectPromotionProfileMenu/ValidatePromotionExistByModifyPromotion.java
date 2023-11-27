@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainRedirectPromotionProfileMenu;
 
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorPromotionExistById;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorPromotionExistById;
 
 public class ValidatePromotionExistByModifyPromotion implements HandlerModifyPromotion {
     private HandlerModifyPromotion next;

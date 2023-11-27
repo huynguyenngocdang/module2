@@ -15,6 +15,8 @@ public class CommandRemoveMessage extends Subject implements Command{
     public void execute() {
         try {
             SCANNER = new Scanner(System.in);
+            Command displayInbox = new CommandViewInbox();
+            displayInbox.execute();
             System.out.println("Input message line you want to remove");
             int choice = SCANNER.nextInt() - 1;
             Observer observer = SingletonListMessage.getInstance();

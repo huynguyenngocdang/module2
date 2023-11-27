@@ -2,6 +2,7 @@ package com.codegym.huyc08.service;
 
 import com.codegym.huyc08.constant.AppConstant;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Confirmation implements Confirm{
@@ -15,14 +16,18 @@ public class Confirmation implements Confirm{
 
     @Override
     public boolean isConfirm() {
-        System.out.println("Do you want to " + this.action + " (" + AppConstant.USER_CONFIRM + "/" + AppConstant.USER_REJECT + ")");
-        String choice = SCANNER.next().toUpperCase().trim();
-        switch (choice) {
-            case AppConstant.USER_CONFIRM:
-                return true;
-            default:
-                return false;
+        try {
+            System.out.println("Do you want to " + this.action + " (" + AppConstant.USER_CONFIRM + "/" + AppConstant.USER_REJECT + ")");
+            String choice = SCANNER.next().toUpperCase().trim();
+            switch (choice) {
+                case AppConstant.USER_CONFIRM:
+                    return true;
+                default:
+                    return false;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid choice, please try again");
+            return false;
         }
-
     }
 }

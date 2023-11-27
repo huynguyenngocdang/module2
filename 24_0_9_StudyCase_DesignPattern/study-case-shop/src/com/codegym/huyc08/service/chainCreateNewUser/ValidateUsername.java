@@ -3,8 +3,8 @@ package com.codegym.huyc08.service.chainCreateNewUser;
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegexString;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorRegexString;
 
 public class ValidateUsername implements HandlerUserInformation {
     private HandlerUserInformation nextHandlerUserInformation;

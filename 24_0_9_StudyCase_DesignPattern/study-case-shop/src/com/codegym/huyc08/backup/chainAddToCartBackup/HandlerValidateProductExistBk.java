@@ -1,7 +1,7 @@
 package com.codegym.huyc08.backup.chainAddToCartBackup;
 
 import com.codegym.huyc08.service.ValidateProductExist;
-import com.codegym.huyc08.service.Validator;
+import com.codegym.huyc08.validator.Validator;
 
 public class HandlerValidateProductExistBk implements HandlerAddToCartBk {
     private HandlerAddToCartBk next;

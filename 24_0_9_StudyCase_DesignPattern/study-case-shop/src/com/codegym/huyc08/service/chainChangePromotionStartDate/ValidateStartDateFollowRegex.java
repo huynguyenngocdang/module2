@@ -3,8 +3,8 @@ package com.codegym.huyc08.service.chainChangePromotionStartDate;
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegexString;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorRegexString;
 
 public class ValidateStartDateFollowRegex implements HandlerModifyPromotion {
     private HandlerModifyPromotion next;

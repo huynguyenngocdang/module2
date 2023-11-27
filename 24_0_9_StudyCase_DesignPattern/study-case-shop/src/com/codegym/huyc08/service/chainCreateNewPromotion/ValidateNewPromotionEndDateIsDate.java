@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainCreateNewPromotion;
 
 import com.codegym.huyc08.service.HandlerNewPromotion;
 import com.codegym.huyc08.service.RequestNewPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegexDate;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorRegexDate;
 
 import java.util.Scanner;
 

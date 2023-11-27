@@ -1,25 +1,24 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 import com.codegym.huyc08.entity.NormalUser;
 import com.codegym.huyc08.entity.User;
+import com.codegym.huyc08.service.SingletonListNormalUser;
 
 import java.util.List;
 
-public class ValidatorUserCorrectLoginInformation implements Validator{
+public class ValidatorUserNameExist implements Validator{
     private String username;
-    private String password;
     private List<NormalUser> users;
 
-    public ValidatorUserCorrectLoginInformation(String username, String password) {
+    public ValidatorUserNameExist(String username) {
         this.username = username;
-        this.password = password;
         this.users = SingletonListNormalUser.getInstance().getUsers();
     }
     @Override
     public boolean isCheck() {
         for (User user: users
-        ) {
-            if( user.getUsername().equals(username) && user.getPassword().equals(password)){
+             ) {
+            if( user.getUsername().equals(username)){
                 return true;
             }
         }

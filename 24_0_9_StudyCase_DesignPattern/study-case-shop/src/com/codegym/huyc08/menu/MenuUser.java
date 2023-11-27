@@ -1,7 +1,7 @@
 package com.codegym.huyc08.menu;
 
 import com.codegym.huyc08.constant.AppConstant;
-import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandExitMenu;
 import com.codegym.huyc08.service.SingletonCurrentUser;
 import com.codegym.huyc08.service.SingletonCurrentUserListMessage;
 import com.codegym.huyc08.service.SingletonShoppingCart;
@@ -15,7 +15,7 @@ public class MenuUser implements Navigator{
 
         Scanner SCANNER = new Scanner(System.in);
         Menu menuUser = new MenuTemplate("Menu User");
-        menuUser.addMenuItem(new MenuItem("Exit", new CommandExit("Menu user")));
+        menuUser.addMenuItem(new MenuItem("Exit", new CommandExitMenu("Menu user")));
         menuUser.addMenuItem(new MenuItem("User profile", new MenuUserProfile()));
         menuUser.addMenuItem(new MenuItem("Inbox", new MenuInbox(SingletonCurrentUser.getInstance().getCurrentUser().getUserId())));
         menuUser.addMenuItem(new MenuItem("Shop profile", new MenuUserShopProfile()));

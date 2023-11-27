@@ -2,10 +2,8 @@ package com.codegym.huyc08.service.chainCreateNewProduct;
 
 import com.codegym.huyc08.service.HandlerNewProduct;
 import com.codegym.huyc08.service.RequestNewProduct;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorDoubleNotNegative;
-
-import java.util.Scanner;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDoubleNotNegative;
 
 public class ValidateNewProductPriceNotNegative implements HandlerNewProduct {
     private HandlerNewProduct next;

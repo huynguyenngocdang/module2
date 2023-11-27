@@ -1,6 +1,7 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 import com.codegym.huyc08.entity.Product;
+import com.codegym.huyc08.service.SingletonListProduct;
 
 public class ValidatorProductEnoughQuantity implements Validator{
     private int productId;

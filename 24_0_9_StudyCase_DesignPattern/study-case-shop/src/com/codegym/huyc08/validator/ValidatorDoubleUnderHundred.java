@@ -1,4 +1,4 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 public class ValidatorDoubleUnderHundred implements Validator{
     private double inputDouble;

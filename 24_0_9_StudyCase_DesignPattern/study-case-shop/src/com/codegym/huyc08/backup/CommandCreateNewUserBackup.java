@@ -8,9 +8,9 @@ import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.Observer;
 import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.Subject;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserNameExist;
-import com.codegym.huyc08.service.ValidatorRegexString;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorUserNameExist;
+import com.codegym.huyc08.validator.ValidatorRegexString;
 
 import java.util.Scanner;
 

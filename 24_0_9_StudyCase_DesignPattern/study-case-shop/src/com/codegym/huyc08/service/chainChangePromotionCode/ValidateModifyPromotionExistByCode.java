@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainChangePromotionCode;
 
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorPromotionExistByCode;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorPromotionExistByCode;
 
 public class ValidateModifyPromotionExistByCode implements HandlerModifyPromotion {
     private HandlerModifyPromotion next;

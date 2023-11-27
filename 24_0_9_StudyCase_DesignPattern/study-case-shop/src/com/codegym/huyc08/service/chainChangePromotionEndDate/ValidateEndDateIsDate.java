@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainChangePromotionEndDate;
 
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegexDate;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorRegexDate;
 
 public class ValidateEndDateIsDate implements HandlerModifyPromotion {
     private HandlerModifyPromotion next;

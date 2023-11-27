@@ -1,8 +1,8 @@
 package com.codegym.huyc08.backup.chainAddToCartBackup;
 
 import com.codegym.huyc08.service.SingletonCurrentUser;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorProductBelongToUser;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorProductBelongToUser;
 
 public class HandlerValidateProductIdBelongToUserBk implements HandlerAddToCartBk {
     private HandlerAddToCartBk next;

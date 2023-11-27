@@ -1,8 +1,8 @@
 package com.codegym.huyc08.backup.chainAddToCartBackup;
 
 import com.codegym.huyc08.service.SingletonShoppingCart;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorProductEnoughQuantity;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorProductEnoughQuantity;
 
 public class HandlerValidateProductQuantityEnoughBk implements HandlerAddToCartBk {
     private HandlerAddToCartBk next;

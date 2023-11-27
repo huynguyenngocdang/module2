@@ -3,7 +3,7 @@
     "userId": 1,
     "username": "Huy",
     "password": "123",
-    "walletBalance": 11705.0,
+    "walletBalance": 10000.0,
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": true
@@ -12,7 +12,7 @@
     "userId": 2,
     "username": "Giang",
     "password": "123",
-    "walletBalance": 17395.0,
+    "walletBalance": 10000.0,
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": true
@@ -25,5 +25,13 @@
     "userType": "NORMAL",
     "address": "HCM City",
     "isActive": false
+  },
+  {
+    "userId": 4,
+    "username": "Dao",
+    "password": "123",
+    "walletBalance": 10000.0,
+    "userType": "NORMAL",
+    "isActive": true
   }
 ]

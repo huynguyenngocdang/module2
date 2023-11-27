@@ -7,7 +7,7 @@ import com.codegym.huyc08.service.CommandChangeUserSelectProductName;
 import com.codegym.huyc08.service.CommandChangeUserSelectProductPrice;
 import com.codegym.huyc08.service.CommandChangeUserSelectProductQuantity;
 import com.codegym.huyc08.service.CommandChangeUserSelectProductType;
-import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandExitMenu;
 import com.codegym.huyc08.service.CommandGetCurrentUserProductInformation;
 
 import java.util.InputMismatchException;
@@ -18,7 +18,7 @@ public class MenuUserShopProductChange implements Navigator {
     private void displayMenuUserShopProductChange() {
         Scanner SCANNER = new Scanner(System.in);
         Menu menuShopProductChange = new MenuTemplate("Product information");
-        menuShopProductChange.addMenuItem(new MenuItem("Exit", new CommandExit("Product information")));
+        menuShopProductChange.addMenuItem(new MenuItem("Exit", new CommandExitMenu("Product information")));
         menuShopProductChange.addMenuItem(new MenuItem("Display current product information", new CommandGetCurrentUserProductInformation()));
         menuShopProductChange.addMenuItem(new MenuItem("Change product name", new CommandChangeUserSelectProductName()));
         menuShopProductChange.addMenuItem(new MenuItem("Change product type", new CommandChangeUserSelectProductType()));

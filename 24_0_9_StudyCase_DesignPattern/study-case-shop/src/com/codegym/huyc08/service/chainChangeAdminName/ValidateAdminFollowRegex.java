@@ -3,8 +3,8 @@ package com.codegym.huyc08.service.chainChangeAdminName;
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegexString;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorRegexString;
 
 public class ValidateAdminFollowRegex implements HandlerUserInformation {
     private HandlerUserInformation next;

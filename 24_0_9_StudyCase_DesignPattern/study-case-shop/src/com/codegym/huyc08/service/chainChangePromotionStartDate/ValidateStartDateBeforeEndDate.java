@@ -3,8 +3,8 @@ package com.codegym.huyc08.service.chainChangePromotionStartDate;
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
 import com.codegym.huyc08.service.SingletonCurrentPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorDateBeforeDate;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDateBeforeDate;
 
 public class ValidateStartDateBeforeEndDate implements HandlerModifyPromotion {
     private HandlerModifyPromotion next;

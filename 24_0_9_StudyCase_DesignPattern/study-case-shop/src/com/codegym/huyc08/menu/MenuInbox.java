@@ -3,7 +3,7 @@ package com.codegym.huyc08.menu;
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.Command;
 import com.codegym.huyc08.service.CommandCreateNewMessage;
-import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandExitMenu;
 import com.codegym.huyc08.service.CommandRemoveMessage;
 import com.codegym.huyc08.service.CommandViewInbox;
 
@@ -21,7 +21,7 @@ public class MenuInbox implements Navigator, Command {
     private void displayInbox(){
         Scanner SCANNER = new Scanner(System.in);
         Menu menuInbox = new MenuTemplate("Inbox");
-        menuInbox.addMenuItem(new MenuItem("Exit", new CommandExit("Inbox")));
+        menuInbox.addMenuItem(new MenuItem("Exit", new CommandExitMenu("Inbox")));
         menuInbox.addMenuItem(new MenuItem("View inbox", new CommandViewInbox()));
         menuInbox.addMenuItem(new MenuItem("Remove message line", new CommandRemoveMessage()));
         menuInbox.addMenuItem(new MenuItem("Create new message", new CommandCreateNewMessage(userId)));

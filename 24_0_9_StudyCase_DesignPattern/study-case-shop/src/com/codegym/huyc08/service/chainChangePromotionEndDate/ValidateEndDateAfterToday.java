@@ -3,8 +3,8 @@ package com.codegym.huyc08.service.chainChangePromotionEndDate;
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorDateBeforeDate;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDateBeforeDate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

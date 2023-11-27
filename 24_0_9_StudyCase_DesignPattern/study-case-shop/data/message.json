@@ -7,12 +7,6 @@
   },
   {
     "senderId": -1,
-    "receiverId": 1,
-    "message": "Promotion KM03 is available to use from 10/10/2023 until 31/12/2023",
-    "dateCreated": "22/11/2023,13:43:30"
-  },
-  {
-    "senderId": -1,
     "receiverId": 2,
     "message": "Promotion KM03 is available to use from 10/10/2023 until 31/12/2023",
     "dateCreated": "22/11/2023,13:43:30"
@@ -40,5 +34,29 @@
     "receiverId": -1,
     "message": "userid 1 with username Huy has forgot password",
     "dateCreated": "23/11/2023,11:11:51"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 1,
+    "message": "Promotion KM21 is available to use from 01/11/2023 until 31/12/2023",
+    "dateCreated": "27/11/2023,15:29:49"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 2,
+    "message": "Promotion KM21 is available to use from 01/11/2023 until 31/12/2023",
+    "dateCreated": "27/11/2023,15:29:49"
+  },
+  {
+    "senderId": -1,
+    "receiverId": 3,
+    "message": "Promotion KM21 is available to use from 01/11/2023 until 31/12/2023",
+    "dateCreated": "27/11/2023,15:29:49"
+  },
+  {
+    "senderId": 1,
+    "receiverId": -1,
+    "message": "userid 1 with username Huy has forgot password",
+    "dateCreated": "27/11/2023,15:30:49"
   }
 ]

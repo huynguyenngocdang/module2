@@ -4,8 +4,8 @@ import com.codegym.huyc08.service.HandlerAddToCart;
 import com.codegym.huyc08.service.RequestAddToCart;
 import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.SingletonShoppingCart;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorDoubleNotNegative;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDoubleNotNegative;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

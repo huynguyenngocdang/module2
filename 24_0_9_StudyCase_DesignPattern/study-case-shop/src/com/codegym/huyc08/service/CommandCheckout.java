@@ -5,12 +5,15 @@ import com.codegym.huyc08.entity.Promotion;
 import com.codegym.huyc08.service.templateCheckout.CheckoutWithPromotion;
 import com.codegym.huyc08.service.templateCheckout.CheckoutWithoutPromotion;
 import com.codegym.huyc08.service.templateCheckout.TemplateCheckout;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDateBeforeDate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class CommandCheckout implements Command{
+public class
+CommandCheckout implements Command{
     private  Scanner SCANNER;
     @Override
     public void execute() {

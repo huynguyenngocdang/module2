@@ -6,13 +6,13 @@ import com.codegym.huyc08.service.CommandAddToCart;
 import com.codegym.huyc08.service.CommandCheckout;
 import com.codegym.huyc08.service.CommandDisplayProductPriceDescending;
 import com.codegym.huyc08.service.CommandDisplayProductsPriceAscending;
-import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandExitMenu;
 import com.codegym.huyc08.service.CommandGetAllProductInformationInCart;
 import com.codegym.huyc08.service.CommandGetAllProductsInformation;
 import com.codegym.huyc08.service.CommandRemoveAllCartLine;
 import com.codegym.huyc08.service.CommandRemoveCartLine;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserStatus;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorUserStatus;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class MenuUserShopping  implements Navigator, Command {
     private void displayMenuShopping() {
         Scanner SCANNER = new Scanner(System.in);
         Menu menuShopping = new MenuTemplate("Menu Shopping");
-        menuShopping.addMenuItem(new MenuItem("Exit", new CommandExit("Menu Shopping")));
+        menuShopping.addMenuItem(new MenuItem("Exit", new CommandExitMenu("Menu Shopping")));
         menuShopping.addMenuItem(new MenuItem("Get all product information", new CommandGetAllProductsInformation()));
         menuShopping.addMenuItem(new MenuItem("Display product by price ascending", new CommandDisplayProductsPriceAscending()));
         menuShopping.addMenuItem(new MenuItem("Display product by price descending", new CommandDisplayProductPriceDescending()));

@@ -1,4 +1,4 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 public class ValidatorDoubleNotNegative implements Validator{
     private double inputDouble;

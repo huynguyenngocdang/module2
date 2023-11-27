@@ -2,7 +2,7 @@ package com.codegym.huyc08.menu;
 
 import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.service.CommandCreateNewUser;
-import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandExitMenu;
 import com.codegym.huyc08.service.CommandForgotPassword;
 import com.codegym.huyc08.service.CommandLogin;
 
@@ -14,7 +14,7 @@ public class MenuLogin implements Navigator {
     private void displayMenuLogin() {
         Scanner SCANNER = new Scanner(System.in);
         Menu menuLogin = new MenuTemplate("Menu login");
-        menuLogin.addMenuItem(new MenuItem("Exit", new CommandExit("Menu login")));
+        menuLogin.addMenuItem(new MenuItem("Exit", new CommandExitMenu("Menu login")));
         menuLogin.addMenuItem(new MenuItem("Login", new CommandLogin()));
         menuLogin.addMenuItem(new MenuItem("Create new user", new CommandCreateNewUser()));
         menuLogin.addMenuItem(new MenuItem("Forgot password", new CommandForgotPassword()));

@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainForgotPassword;
 
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserNameExist;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorUserNameExist;
 
 public class ValidateUserForgotPasswordExist implements HandlerUserInformation {
     private HandlerUserInformation nextHandlerUserInformation;

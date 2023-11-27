@@ -3,8 +3,8 @@ package com.codegym.huyc08.service.chainAddToCart;
 import com.codegym.huyc08.service.HandlerAddToCart;
 import com.codegym.huyc08.service.RequestAddToCart;
 import com.codegym.huyc08.service.SingletonShoppingCart;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorProductEnoughQuantity;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorProductEnoughQuantity;
 
 public class HandlerValidateProductEnoughQuantity implements HandlerAddToCart {
     private HandlerAddToCart next;

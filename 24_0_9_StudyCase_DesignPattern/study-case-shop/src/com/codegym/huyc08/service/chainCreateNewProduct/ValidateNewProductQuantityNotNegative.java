@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainCreateNewProduct;
 
 import com.codegym.huyc08.service.HandlerNewProduct;
 import com.codegym.huyc08.service.RequestNewProduct;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorDoubleNotNegative;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDoubleNotNegative;
 
 public class ValidateNewProductQuantityNotNegative implements HandlerNewProduct {
     private HandlerNewProduct next;

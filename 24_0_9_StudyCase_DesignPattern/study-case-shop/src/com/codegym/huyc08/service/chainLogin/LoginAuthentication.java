@@ -4,11 +4,11 @@ import com.codegym.huyc08.constant.AppConstant;
 import com.codegym.huyc08.entity.UserType;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorAdminCorrect;
-import com.codegym.huyc08.service.ValidatorAdminExist;
-import com.codegym.huyc08.service.ValidatorUserNameExist;
-import com.codegym.huyc08.service.ValidatorUserCorrectLoginInformation;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.AdminValidValidator;
+import com.codegym.huyc08.validator.ValidatorAdminExist;
+import com.codegym.huyc08.validator.ValidatorUserNameExist;
+import com.codegym.huyc08.validator.ValidatorUserCorrectLoginInformation;
 
 import java.util.Scanner;
 
@@ -82,7 +82,7 @@ public class LoginAuthentication implements HandlerUserInformation {
     }
     private boolean handleAdmin(String username, String password) {
         if(loginAttempt < AppConstant.MAX_LOGIN_ATTEMPT) {
-            Validator validateAdminCorrect = new ValidatorAdminCorrect(username, password);
+            Validator validateAdminCorrect = new AdminValidValidator(username, password);
             Validator validateAdminExist = new ValidatorAdminExist(username);
             boolean isAdminExist = validateAdminExist.isCheck();
             boolean isAdminCorrect = validateAdminCorrect.isCheck();

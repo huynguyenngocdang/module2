@@ -1,25 +1,26 @@
-package com.codegym.huyc08.service;
+package com.codegym.huyc08.validator;
 
 import com.codegym.huyc08.entity.Promotion;
+import com.codegym.huyc08.service.SingletonListPromotion;
 
 import java.util.List;
 
-public class ValidatorPromotionExistByCode implements Validator{
+public class ValidatorPromotionExistById implements Validator{
     private List<Promotion> promotions;
+    private int promotionId;
 
-    private String promotionCode;
-
-
-    public ValidatorPromotionExistByCode(String promotionCode) {
+    public ValidatorPromotionExistById(int promotionId) {
         this.promotions = SingletonListPromotion.getInstance().getPromotions();
-        this.promotionCode = promotionCode;
+        this.promotionId = promotionId;
     }
+
+
 
     @Override
     public boolean isCheck() {
         for (Promotion promotion: promotions
              ) {
-            if(promotion.getPromotionCode().equals(promotionCode)) {
+            if(promotion.getPromotionId() == promotionId) {
                 return true;
             }
         }

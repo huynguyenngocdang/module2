@@ -6,8 +6,8 @@ import com.codegym.huyc08.menu.MenuUser;
 import com.codegym.huyc08.menu.Navigator;
 import com.codegym.huyc08.service.HandlerUserInformation;
 import com.codegym.huyc08.service.RequestUserInformation;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorRegexString;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorRegexString;
 
 public class LoginRedirect implements HandlerUserInformation {
     private HandlerUserInformation next;

@@ -2,8 +2,8 @@ package com.codegym.huyc08.service.chainChangePromotionPercent;
 
 import com.codegym.huyc08.service.HandlerModifyPromotion;
 import com.codegym.huyc08.service.RequestModifyPromotion;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorDoubleUnderHundred;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorDoubleUnderHundred;
 
 public class ValidateModifyPromotionPercentUnderHundred implements HandlerModifyPromotion {
     private HandlerModifyPromotion next;

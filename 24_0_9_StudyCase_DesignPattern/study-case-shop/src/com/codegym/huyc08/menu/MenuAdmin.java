@@ -5,7 +5,7 @@ import com.codegym.huyc08.service.CommandChangeUserActive;
 import com.codegym.huyc08.service.CommandCreateNewPromotion;
 import com.codegym.huyc08.service.CommandGetAllPromotionsInformation;
 import com.codegym.huyc08.service.CommandGetAllUsersInformation;
-import com.codegym.huyc08.service.CommandExit;
+import com.codegym.huyc08.service.CommandExitMenu;
 import com.codegym.huyc08.service.CommandRedirectPromotionMenu;
 import com.codegym.huyc08.service.CommandRemoveAllExpiredPromotion;
 import com.codegym.huyc08.service.SingletonCurrentAdmin;
@@ -19,7 +19,7 @@ public class MenuAdmin implements Navigator{
     private void displayMenuAdmin() {
         Scanner SCANNER = new Scanner(System.in);
         Menu menuAdmin = new MenuTemplate("Menu Admin");
-        menuAdmin.addMenuItem(new MenuItem("Exit", new CommandExit("Menu Admin")));
+        menuAdmin.addMenuItem(new MenuItem("Exit", new CommandExitMenu("Menu Admin")));
         menuAdmin.addMenuItem(new MenuItem("Admin profile", new MenuAdminProfile()));
         menuAdmin.addMenuItem(new MenuItem("Admin inbox", new MenuInbox(SingletonCurrentAdmin.getInstance().getCurrentAdmin().getUserId())));
         menuAdmin.addMenuItem(new MenuItem("Display all user information", new CommandGetAllUsersInformation()));

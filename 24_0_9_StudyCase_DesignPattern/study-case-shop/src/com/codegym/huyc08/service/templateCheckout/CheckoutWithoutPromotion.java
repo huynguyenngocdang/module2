@@ -10,8 +10,8 @@ import com.codegym.huyc08.service.SingletonCurrentUser;
 import com.codegym.huyc08.service.SingletonListNormalUser;
 import com.codegym.huyc08.service.SingletonListProduct;
 import com.codegym.huyc08.service.SingletonListPurchaseOrder;
-import com.codegym.huyc08.service.Validator;
-import com.codegym.huyc08.service.ValidatorUserHasEnoughCash;
+import com.codegym.huyc08.validator.Validator;
+import com.codegym.huyc08.validator.ValidatorUserHasEnoughCash;
 
 public class CheckoutWithoutPromotion extends TemplateCheckout {
     @Override

@@ -1,9 +1,9 @@
 package com.codegym.huyc08.service;
 
-public class CommandExit implements Command {
+public class CommandExitMenu implements Command {
     private String title;
 
-    public CommandExit(String title) {
+    public CommandExitMenu(String title) {
         this.title = title;
     }
 
